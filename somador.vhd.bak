@@ -7,7 +7,7 @@ entity somador is
           s    : out std_logic_vector(31 downto 0));
     End;
 
-architecture somador_arq of somador is
+architecture somador_arq of adder is
     begin
     s <= a + b;
 end;
