@@ -30,7 +30,7 @@ begin
 	process(clk, wren)
 	begin 
 	if(rising_edge(clk)) then
-		if (wren = '1' and wadd/="00000") then 
+		if (wren = '1') then 
 				regs(to_integer(unsigned(wadd)))<= wdata;
 		end if;
 	end if;

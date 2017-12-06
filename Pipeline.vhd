@@ -4,6 +4,8 @@ use ieee.numeric_std.all;
 
 entity Pipeline is
 
+end Pipeline;
 
-end pipeline;
-
+architecture behavior of Pipeline is
+begin
+end architecture behavior;
