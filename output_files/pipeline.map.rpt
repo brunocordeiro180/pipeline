@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pipeline
-Wed Dec 06 14:21:32 2017
+Wed Dec 06 23:24:33 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Dec 06 14:21:32 2017               ;
+; Analysis & Synthesis Status        ; Failed - Wed Dec 06 23:24:33 2017               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Pipeline                                        ;
 ; Top-level Entity Name              ; Pipeline                                        ;
@@ -154,7 +154,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Dec 06 14:21:30 2017
+    Info: Processing started: Wed Dec 06 23:24:31 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipeline -c Pipeline
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ula_mips.vhd
@@ -182,11 +182,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file minst.v
 Info (12021): Found 2 design units, including 1 entities, in source file mdata.vhd
     Info (12022): Found design unit 1: mdata-SYN
     Info (12023): Found entity 1: mdata
+Info (12021): Found 2 design units, including 1 entities, in source file controle_ula.vhd
+    Info (12022): Found design unit 1: controle_ula-behav
+    Info (12023): Found entity 1: controle_ula
+Info (12021): Found 2 design units, including 1 entities, in source file controle.vhd
+    Info (12022): Found design unit 1: controle-arq_controle
+    Info (12023): Found entity 1: controle
 Info (12127): Elaborating entity "Pipeline" for the top level hierarchy
 Error (12061): Can't synthesize current design -- Top partition does not contain any logic
 Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 2 warnings
     Error: Peak virtual memory: 516 megabytes
-    Error: Processing ended: Wed Dec 06 14:21:32 2017
+    Error: Processing ended: Wed Dec 06 23:24:33 2017
     Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:02
 

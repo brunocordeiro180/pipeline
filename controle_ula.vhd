@@ -10,7 +10,7 @@ entity controle_ula is
 	);
 end entity;
 
-architecture behav of controle_ula is
+architecture  behav of controle_ula is
 
 	constant ULA_ADD		: std_logic_vector(3 downto 0) := "0010"; 
 	constant ULA_SUB		: std_logic_vector(3 downto 0) := "0011";
@@ -22,36 +22,32 @@ architecture behav of controle_ula is
 	constant ULA_SLT		: std_logic_vector(3 downto 0) := "0100";
 
 	
-	-- Campo funct			  
-	constant iADD			: std_logic_vector(5 downto 0) := "100000";
-	constant iSUB			: std_logic_vector(5 downto 0) := "100010";
-	constant iAND			: std_logic_vector(5 downto 0) := "100100";
-	constant iOR			: std_logic_vector(5 downto 0) := "100101";
-	constant iXOR			: std_logic_vector(5 downto 0) := "100110";
-	constant iNOR			: std_logic_vector(5 downto 0) := "100111";
-	constant iSLT			: std_logic_vector(5 downto 0) := "101010";
 
 begin
 
-	--process (op_alu, funct) is
-	--begin
-
-	alu_ctr <= 
-				ULA_ADD when (op_alu="000") else
-				
-				ULA_AND when (op_alu="010" and funct=iAND) else		--AND
-				ULA_OR  when (op_alu="010" and funct=iOR)  else		--OR
-				ULA_XOR when (op_alu="010" and funct=iXOR) else		--XOR
-
-				
-				ULA_ADD when (op_alu="010" and funct=iADD) else		--ADD
-				ULA_SUB when (op_alu="010" and funct=iSUB) else		--SUB
-				ULA_SLT when (op_alu="010" and funct=iSLT) else		--SLT
-				ULA_NOR when (op_alu="010" and funct=iNOR) else		--NOR
-				
-
+	process (op_alu, funct) is
+	begin
+	
+	case funct is
+			when  "100100" => alu_ctr <= ULA_AND; --and
 			
+			when "100101" => alu_ctr <= ULA_OR; 		--OR
+				
+			when "100110" => alu_ctr <=  ULA_XOR; --xor
+			
+			when "100000" => alu_ctr <= ULA_ADD; --add
+			
+			when "100010" => alu_ctr <= ULA_SUB; --sub
+			
+			when "101010" => alu_ctr <= ULA_SLT; --slt
+			
+			when "100111" => alu_ctr <= ULA_NOR; --nor
+			
+			
+
+	END CASE;
+
 				
 	--end process;
-				
-end architecture;
+	end process;		
+end behav;
