@@ -56,4 +56,9 @@ set_global_assignment -name QIP_FILE minst.qip
 set_global_assignment -name QIP_FILE mdata.qip
 set_global_assignment -name VHDL_FILE controle_ula.vhd
 set_global_assignment -name VHDL_FILE controle.vhd
+set_global_assignment -name VHDL_FILE sign_extend.vhd
+set_global_assignment -name VHDL_FILE if_id.vhd
+set_global_assignment -name VHDL_FILE id_ex.vhd
+set_global_assignment -name VHDL_FILE ex_mem.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE mem_wb.vhd
