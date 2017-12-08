@@ -7,7 +7,7 @@ entity if_id is
 	generic (WSIZE : natural := 32);
 	port (
 		clk: in std_logic;
-		pc4 : in std_logic_vector(WSIZE-1 downto 0);
+		ent_pc4 : in std_logic_vector(WSIZE-1 downto 0);
 		in_instruction : in std_logic_vector(WSIZE-1 downto 0);
 		out_pc4 : out std_logic_vector(WSIZE-1 downto 0);
 		out_instruction :out std_logic_vector(WSIZE-1 downto 0));
@@ -18,7 +18,7 @@ begin
 proc_if_id: process(clk)
  begin
 	if (rising_edge(clk)) then
-		out_pc4 <= pc4;
+		out_pc4 <= ent_pc4;
 		out_instruction <= in_instruction;
 	end if;
  end process;

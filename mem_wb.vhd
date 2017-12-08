@@ -20,7 +20,7 @@ entity mem_wb is
 		out_result_alu 		: out std_logic_vector(WSIZE-1 downto 0));
 end mem_wb;
 
-architecture behavioral of memwb is	
+architecture behavioral of mem_wb is	
 begin
 proc_mem_wb: process(clk)
  begin

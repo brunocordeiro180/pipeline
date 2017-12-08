@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity bregMIPS is
+entity bregmips is
 
 	generic
 	(
@@ -17,9 +17,9 @@ entity bregMIPS is
 		r1 , r2 : out std_logic_vector(WSIZE-1 downto 0)
 	);
 
-end bregMIPS;
+end bregmips;
 
-architecture breg_arch of bregMIPS is
+architecture breg_arch of bregmips is
 	--TYPE word_array IS ARRAY (31 DOWNTO 0) OF std_logic;
 	type registers is array (0 to 31) of std_logic_vector(31 downto 0);
 	signal regs: registers := (others=> (others => '0'));
