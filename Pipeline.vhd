@@ -105,7 +105,7 @@ end component;
 
 
 --Controle
-component control is
+component controle is
 	port ( opcode, funct	: in std_logic_vector(5 downto 0);
 		 	RegDst: out std_logic; 
 			ALUSrc: out std_logic; 
@@ -251,7 +251,131 @@ signal wb_reg_write : std_logic := '0';
 begin
 	clk_l <= NOT(clock);
 	
--- Precisa codar as transições
+---------------------------------------------Etapa IF----------------------------------------------
+
+	pc_if : pc 
+	PORT MAP (
+		clk => clock, 
+		in_pc => if_new_pc, 
+		out_pc => if_pc
+	);
+	
+	somador_if : somador
+	PORT MAP (
+		A => if_pc, 
+		B => X"00000004", 
+		Z => if_pc4		
+	);
+	
+	mi_if : minst
+	PORT MAP (
+		address => if_pc(9 downto 2), 
+		clock => clk_l, 
+		q => if_instruction
+	);
+	
+-----------------------------------------Transicao IF/ID------------------------------------------
+	reg_ifid: if_id
+	PORT MAP (
+		clk => clock,
+		in_pc4 => if_pc4,
+		in_instruction => if_instruction,
+		out_pc4 => id_pc4,
+		out_instruction => id_instruction
+	);
+
+---------------------------------------------Etapa ID----------------------------------------------
+	id_immediate_ext(15 downto 0) <= id_instruction(15 downto 0);
+	id_immediate_ext(WSIZE-1 downto 16) <= (others => id_instruction(15));
+	id_jump_pc <= id_pc4(31 downto 28) & id_instruction(25 downto 0) & "00";
+
+	breg_id : bregmips
+	PORT MAP (
+		clk => clk_l, 
+		wren => wb_reg_write,
+		radd1 => id_instruction(25 downto 21),
+		radd2 => id_instruction(20 downto 16),
+		wadd => wb_reg_dst,
+		wdata => wb_write_data,
+		r1 => id_rs_data,
+		r2 => id_rt_data
+	);
+
+	-- @TODO: Codar o controle na Parte de ID
+--	controle_id : controle
+--	PORT MAP (
+--		opcode => id_instruction(31 downto 26),
+--		funct	=> id_instruction(5 downto 0),
+--
+--	);
+
+id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
+	somador_id : somador
+	PORT MAP (
+		A => id_pc4, 
+		B => id_pc_offset, 
+		Z => id_somador_result
+	);
+	
+
+----------------------------------------Transicao ID/EX-------------------------------------
+
+---- @TODO: Codar toda essa transição
+
+---------------------------------------------Etapa EX----------------------------------------------
+
+---- @TODO: Codar essa etapa também
+
+------------------------------------------Transicao EX/MEM-----------------------------------------
+	reg_exmem : ex_mem
+	PORT MAP (
+		 clk => clock, 
+		 in_pc4 => ex_pc4,
+		 in_wb => ex_wb, 
+		 in_m => ex_m, 
+		 in_result_alu => ex_ula_result, 
+		 in_data_reg => ex_rt_data, 
+		 in_reg_dst => ex_mux_reg_dst,
+		 out_pc4 => mem_pc4, 
+		 out_wb => mem_wb, 
+		 out_mem_read => mem_read_mem, 
+		 out_mem_write => mem_write_mem, 
+		 out_result_alu => mem_result_alu, 
+		 out_data_reg => mem_wreg_data,
+		 out_reg_dst => mem_reg_dst
+	);
+
+--------------------------------------------ETAPA MEM----------------------------------------------
+	md_mem : mdata
+	PORT MAP (
+		address => mem_result_alu(9 downto 2), 
+		clock	=> clk_l, 
+		data => mem_wreg_data, 
+		wren => mem_write_mem, 
+		q => mem_read_data 
+		--read enable nao usado
+	);
+
+------------------------------------------Transicao MEM/WB-----------------------------------------
+	reg_memwb : memwb
+	PORT MAP (
+		clk => clock, 
+		in_pc4 => mem_pc4,
+		in_read_data => mem_read_data,
+		in_wb => mem_wb,
+		in_result_alu => mem_result_alu,
+		in_reg_dst => mem_reg_dst,
+		out_pc4 => wb_pc4,
+		out_reg_write => wb_reg_write,
+		out_mem_2_reg => wb_mem_2_reg,
+		out_reg_dst => wb_reg_dst,
+		out_read_data => wb_read_data,
+		out_result_alu => wb_result_alu
+	);
+	
+
+---------------------------------------------ETAPA WB----------------------------------------------
+
 -- Precisa codar o display de 7 segmentos
 
 
