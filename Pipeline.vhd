@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_signed.all;
 use ieee.numeric_std.all;
 
-entity pipeline is
+entity Pipeline is
 	generic ( WSIZE : natural := 32 );
 	port (clock : in std_logic;
 	
@@ -19,9 +19,9 @@ entity pipeline is
 
 		);
 			
-end pipeline;
+end Pipeline;
 
-architecture behavior of pipeline is
+architecture behavior of Pipeline is
 ------------------------------------Registradores de Pipeline--------------------------------------
 --IF/ID
 component if_id is
@@ -96,10 +96,17 @@ end component;
 
 ------------------------------Componentes da parte de controle-------------------------------------
 --MUX 2 entradas
-component mux is
+component mux2 is
 	port ( sel			: in std_logic;
 			 in_0, in_1	: in std_logic_vector(WSIZE-1 downto 0);
 			 Z				: out std_logic_vector(WSIZE-1 downto 0));
+end component;
+
+component mux4 is
+	port(  sel: in std_logic_vector(1 downto 0);
+			 in_0, in_1, in_2, in_3: 	in std_logic_vector(WSIZE-1 downto 0);
+			 Z: out std_logic_vector(WSIZE-1 downto 0));
+	
 end component;
 
 
@@ -153,7 +160,7 @@ component ula_mips is
 end component;
 
 --Memoria de Dados
-component md is
+component mdata is
 	port ( address		: in std_logic_vector (7 downto 0);
 			 clock		: in std_logic  := '1';
 			 data			: in std_logic_vector (31 downto 0);
@@ -168,6 +175,12 @@ component somador is
 			 s				: out std_logic_vector(WSIZE-1 downto 0)
 			 );
 			
+end component;
+
+--comparador
+component comparador is
+	port ( A, B			: in std_logic_vector(WSIZE-1 downto 0);
+			 eq			: out std_logic);		
 end component;
 
 
@@ -252,7 +265,19 @@ begin
 	clk_l <= NOT(clock);
 	
 ---------------------------------------------Etapa IF----------------------------------------------
-
+	mux4_if : mux4
+	PORT MAP (
+		sel =>  if_sel_mux, 
+		in_0 => if_pc4, 
+		in_1 => id_somador_result, 
+		in_2 => id_jump_pc, 
+		in_3 => id_rs_data, 
+		Z => if_new_pc
+	);
+	
+	if_sel_mux(0) <= (id_ctrl_beq AND id_equal) OR (id_ctrl_bne AND (NOT id_equal)) OR id_ctrl_jr;
+	if_sel_mux(1) <= id_ctrl_j OR id_ctrl_jr;
+	
 	pc_if : pc 
 	PORT MAP (
 		clk => clock, 
@@ -262,9 +287,9 @@ begin
 	
 	somador_if : somador
 	PORT MAP (
-		A => if_pc, 
-		B => X"00000004", 
-		Z => if_pc4		
+		a => if_pc, 
+		b => X"00000004", 
+		s => if_pc4		
 	);
 	
 	mi_if : minst
@@ -278,7 +303,7 @@ begin
 	reg_ifid: if_id
 	PORT MAP (
 		clk => clock,
-		in_pc4 => if_pc4,
+		ent_pc4 => if_pc4,
 		in_instruction => if_instruction,
 		out_pc4 => id_pc4,
 		out_instruction => id_instruction
@@ -300,31 +325,117 @@ begin
 		r1 => id_rs_data,
 		r2 => id_rt_data
 	);
-
-	-- @TODO: Codar o controle na Parte de ID
---	controle_id : controle
---	PORT MAP (
---		opcode => id_instruction(31 downto 26),
---		funct	=> id_instruction(5 downto 0),
---
---	);
+	
+	comparador_id : comparador
+	PORT MAP (
+		A => id_rs_data,
+		B => id_rt_data,
+		eq => id_equal
+	);
+	
+	
+	controle_id : controle
+		PORT MAP (
+			opcode => id_instruction(31 downto 26),
+			funct	=> id_instruction(5 downto 0),
+			RegDst => 
+			ALUSrc
+			MemtoReg
+			RegWrite
+			Jump
+			MemRead
+			MemWrite
+			Branch
+			ALUOp
+			--wb	=> id_ctrl_wb,
+			--m => id_ctrl_m,
+			--ex => id_ctrl_ex,
+			--jumps => id_ctrl_j,
+			--jr => id_ctrl_jr,
+			--beq => id_ctrl_beq,
+			--bne => id_ctrl_bne
+		);
 
 id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
 	somador_id : somador
 	PORT MAP (
-		A => id_pc4, 
-		B => id_pc_offset, 
-		Z => id_somador_result
+		a => id_pc4, 
+		b => id_pc_offset, 
+		s => id_somador_result
 	);
 	
 
 ----------------------------------------Transicao ID/EX-------------------------------------
 
----- @TODO: Codar toda essa transição
+reg_idex: idex
+	PORT MAP (
+		clk => clock,
+		in_pc4 => id_pc4,
+		in_wb => id_ctrl_wb,
+		in_m => id_ctrl_m,
+		in_ex => id_ctrl_ex,
+		in_reg1 => id_rs_data,
+		in_reg2 => id_rt_data, 
+		in_immediate => id_immediate_ext,
+		in_shamt => id_instruction(10 downto 6),
+		in_rt => id_instruction(20 downto 16),
+		in_rd => id_instruction(15 downto 11),
+		out_pc4 => ex_pc4,
+		out_wb => ex_wb,
+		out_m => ex_m,
+		out_reg_dst => ex_reg_dst,
+		out_alu_op => ex_alu_op,
+		out_alu_src => ex_alu_src,
+		out_alu_src2 => ex_alu_src2,
+		out_reg1 => ex_rs_data,
+		out_reg2 => ex_rt_data,
+		out_immediate => ex_immediate,
+		out_rt => ex_rt,
+		out_rd => ex_rd,
+		out_shamt => ex_shamt
+	);
 
 ---------------------------------------------Etapa EX----------------------------------------------
 
 ---- @TODO: Codar essa etapa também
+
+	ex_shamt_ext <= X"000000" & "000" & ex_shamt;
+	mux2_ex_A : mux2
+	PORT MAP (
+		sel => ex_alu_src,
+		in_0 => ex_rs_data, 
+		in_1 => ex_shamt_ext,
+		Z => ex_mux_A
+	);
+	
+	mux2_ex_B : mux2
+	PORT MAP (
+		sel => ex_alu_src2,
+		in_0 => ex_rt_data, 
+		in_1 => ex_immediate,
+		Z => ex_mux_B
+	);
+
+	ula_ex : ula
+	PORT MAP (
+		opcode => ex_alu_op,
+		A => ex_mux_A,
+		B => ex_mux_B,
+		Z => ex_ula_result,
+		vai => ex_ula_vai,
+		ovfl => ex_ula_ovfl
+	);
+	
+	mux_ex_reg_dst : mux4
+	GENERIC MAP (WSIZE => 5)
+	PORT MAP (
+		sel => ex_reg_dst,
+		in_0 => ex_rt, 
+		in_1 => ex_rd,
+		in_2 => "11111",
+		in_3 => "00000",
+		Z => ex_mux_reg_dst
+	);
 
 ------------------------------------------Transicao EX/MEM-----------------------------------------
 	reg_exmem : ex_mem
@@ -337,7 +448,7 @@ id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
 		 in_data_reg => ex_rt_data, 
 		 in_reg_dst => ex_mux_reg_dst,
 		 out_pc4 => mem_pc4, 
-		 out_wb => mem_wb, 
+		 out_wb => sig_mem_wb, 
 		 out_mem_read => mem_read_mem, 
 		 out_mem_write => mem_write_mem, 
 		 out_result_alu => mem_result_alu, 
@@ -357,12 +468,12 @@ id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
 	);
 
 ------------------------------------------Transicao MEM/WB-----------------------------------------
-	reg_memwb : memwb
+	reg_memwb : mem_wb
 	PORT MAP (
 		clk => clock, 
 		in_pc4 => mem_pc4,
 		in_read_data => mem_read_data,
-		in_wb => mem_wb,
+		in_wb => sig_mem_wb,
 		in_result_alu => mem_result_alu,
 		in_reg_dst => mem_reg_dst,
 		out_pc4 => wb_pc4,
@@ -375,6 +486,15 @@ id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
 	
 
 ---------------------------------------------ETAPA WB----------------------------------------------
+	mux4_wb : mux4 
+	PORT MAP (
+		sel => wb_mem_2_reg,
+		in_0 => wb_result_alu, 
+		in_1 => wb_read_data,
+		in_2 => wb_pc4,
+		in_3 => (others => '0'),
+		Z => wb_write_data
+	);
 
 -- Precisa codar o display de 7 segmentos
 

@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Pipeline
-Thu Dec 07 23:05:49 2017
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Fri Dec 08 17:38:02 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -10,13 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |Pipeline
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -39,24 +33,24 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 07 23:05:49 2017           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; Pipeline                                        ;
-; Top-level Entity Name              ; pipeline                                        ;
-; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 59                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Fri Dec 08 17:38:02 2017          ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; Pipeline                                   ;
+; Top-level Entity Name              ; Pipeline                                   ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; N/A until Partition Merge                  ;
+;     Total combinational functions  ; N/A until Partition Merge                  ;
+;     Dedicated logic registers      ; N/A until Partition Merge                  ;
+; Total registers                    ; N/A until Partition Merge                  ;
+; Total pins                         ; N/A until Partition Merge                  ;
+; Total virtual pins                 ; N/A until Partition Merge                  ;
+; Total memory bits                  ; N/A until Partition Merge                  ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
+; Total PLLs                         ; N/A until Partition Merge                  ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -154,91 +148,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                    ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
-; Pipeline.vhd                     ; yes             ; User VHDL File  ; C:/Users/bjpra/OneDrive/Documentos/pipeline/Pipeline.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 59    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-+---------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |pipeline                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 59   ; 0            ; |pipeline           ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |Pipeline ;
-+----------------+-------+-------------------------------------------------+
-; Parameter Name ; Value ; Type                                            ;
-+----------------+-------+-------------------------------------------------+
-; WSIZE          ; 32    ; Signed Integer                                  ;
-+----------------+-------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Dec 07 23:05:43 2017
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Fri Dec 08 17:38:00 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipeline -c Pipeline
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ula_mips.vhd
@@ -254,12 +170,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file bregmip
     Info (12022): Found design unit 1: bregmips-breg_arch
     Info (12023): Found entity 1: bregmips
 Info (12021): Found 2 design units, including 1 entities, in source file pipeline.vhd
-    Info (12022): Found design unit 1: pipeline-behavior
-    Info (12023): Found entity 1: pipeline
-Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus II megafunction library
+    Info (12022): Found design unit 1: Pipeline-behavior
+    Info (12023): Found entity 1: Pipeline
 Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
-    Info (12022): Found design unit 1: mux-behavioral
-    Info (12023): Found entity 1: mux
+    Info (12022): Found design unit 1: mux2-behavioral
+    Info (12023): Found entity 1: mux2
 Info (12021): Found 2 design units, including 1 entities, in source file minst.vhd
     Info (12022): Found design unit 1: minst-SYN
     Info (12023): Found entity 1: minst
@@ -290,86 +205,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file mem_wb.
 Info (12021): Found 2 design units, including 1 entities, in source file conversor_7seg.vhd
     Info (12022): Found design unit 1: conversor_7seg-behavior
     Info (12023): Found entity 1: conversor_7seg
-Info (12127): Elaborating entity "Pipeline" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(11): used implicit default value for signal "Saida_FPGA_7seg_0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(12): used implicit default value for signal "Saida_FPGA_7seg_1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(13): used implicit default value for signal "Saida_FPGA_7seg_2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(14): used implicit default value for signal "Saida_FPGA_7seg_3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(15): used implicit default value for signal "Saida_FPGA_7seg_4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(16): used implicit default value for signal "Saida_FPGA_7seg_5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(17): used implicit default value for signal "Saida_FPGA_7seg_6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(18): used implicit default value for signal "Saida_FPGA_7seg_7" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(181): object "clk_l" assigned a value but never read
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Saida_FPGA_7seg_0[6]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_0[5]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_0[4]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_0[3]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_0[2]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_0[1]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_0[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_1[6]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_1[5]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_1[4]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_1[3]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_1[2]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_1[1]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_1[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_2[6]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_2[5]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_2[4]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_2[3]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_2[2]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_2[1]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_2[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_3[6]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_3[5]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_3[4]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_3[3]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_3[2]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_3[1]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_3[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_4[6]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_4[5]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_4[4]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_4[3]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_4[2]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_4[1]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_4[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_5[6]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_5[5]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_5[4]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_5[3]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_5[2]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_5[1]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_5[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_6[6]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_6[5]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_6[4]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_6[3]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_6[2]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_6[1]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_6[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_7[6]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_7[5]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_7[4]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_7[3]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_7[2]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_7[1]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_7[0]" is stuck at GND
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock"
-    Warning (15610): No output dependent on input pin "Sel_Saida_FPGA[0]"
-    Warning (15610): No output dependent on input pin "Sel_Saida_FPGA[1]"
-Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 56 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 72 warnings
-    Info: Peak virtual memory: 516 megabytes
-    Info: Processing ended: Thu Dec 07 23:05:49 2017
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:02
+Info (12021): Found 2 design units, including 1 entities, in source file mux4.vhd
+    Info (12022): Found design unit 1: mux4-behavioral
+    Info (12023): Found entity 1: mux4
+Info (12021): Found 2 design units, including 1 entities, in source file comparador.vhd
+    Info (12022): Found design unit 1: comparador-behavior
+    Info (12023): Found entity 1: comparador
+Error (10349): VHDL Association List error at Pipeline.vhd(340): formal "wb" does not exist File: C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline.vhd Line: 340
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 506 megabytes
+    Error: Processing ended: Fri Dec 08 17:38:02 2017
+    Error: Elapsed time: 00:00:02
+    Error: Total CPU time (on all processors): 00:00:01
 
 

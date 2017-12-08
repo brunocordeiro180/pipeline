@@ -17,6 +17,7 @@ entity id_ex is
 		in_shamt 		: in std_logic_vector(4 downto 0);
 		in_rt 			: in std_logic_vector(4 downto 0);
 		in_rd 			: in std_logic_vector(4 downto 0);
+		
 		out_pc4 			: out std_logic_vector(WSIZE-1 downto 0);
 		out_wb 			: out std_logic_vector(2 downto 0);
 		out_m 			: out std_logic_vector(1 downto 0);
