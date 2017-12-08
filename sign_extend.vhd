@@ -11,8 +11,8 @@ end sign_extend;
 	
 architecture sign_extend_arch of sign_extend is
 	begin
-		--process (imm16) is
-		--begin
+	 process (imm16) is
+		begin
 			imm32 <= std_logic_vector(resize(signed(imm16), imm32'length));
-		--end process;
+	 end process;
 end sign_extend_arch;

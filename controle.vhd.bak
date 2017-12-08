@@ -5,17 +5,15 @@ use ieee.numeric_std.all;
 entity controle is
 	port 	(
 			opcode: in std_logic_vector(5 downto 0);
-		 	RegDst: out std_logic_vector(1 downto 0); 
+		 	RegDst: out std_logic; 
 			ALUSrc: out std_logic; 
 			MemtoReg: out std_logic; 
 			RegWrite: out std_logic; 
 			Jump		: out std_logic;
 			MemRead: out std_logic; 
 			MemWrite: out std_logic; 
-			Beq: out std_logic; 
-			Bne: out std_logic; 
-			Jr: out std_logic; 
-			ALUOp: out std_logic_vector(2 downto 0)
+			Branch: out std_logic; 
+			ALUOp: out std_logic_vector(1 downto 0)
 		);
 end controle;
 
@@ -43,100 +41,96 @@ begin
     begin
         case opcode is
           	when R_FORMAT => 
-					RegDst <= "01"; 
+					RegDst <= '1'; 
 					ALUSrc <= '0'; 
 					MemtoReg <= '0'; 
 					RegWrite <='1'; 
 					MemRead<='0'; 
 					MemWrite<='0'; 
+					Branch<='0'; 
 					Jump <='0';
-					ALUOp <= "010"; -- R type
-					Beq<='0';
-					Bne<='0';
-					Jr<='0';
+					ALUOp <= "10"; -- R type
           	when LW => 
-					RegDst <= "00"; 
+					RegDst <= '0'; 
 					ALUSrc <= '1'; 
-					MemtoReg <= '1';  					 
+					MemtoReg <= '1'; 
 					RegWrite <='1'; 
 					MemRead<='1'; 
-					MemWrite<='0'; 					 
+					MemWrite<='0'; 
+					Branch<='0'; 
 					Jump <='0';
-					ALUOp <= "000"; -- LW
-					Beq<='0';
-					Bne<='0';
-					Jr<='0';
+					ALUOp <= "00"; -- LW
 					
 			when SW => 
-				RegDst <= "00"; 
+				RegDst <= 'X'; 
 				ALUSrc <= '1'; 
-				MemtoReg <= '0';
+				MemtoReg <= 'X';
 				RegWrite <='0'; 
 				MemRead<='0'; 
-				MemWrite<='1'; 				 
+				MemWrite<='1'; 
+				Branch<='0'; 
 				Jump <='0';
-				ALUOp <= "000"; -- SW
-				Beq<='0';
-				Bne<='0';
-				Jr<='0';
+				ALUOp <= "00"; -- SW
 				
+			
+					
+			when BEQ => 
+				RegDst <= 'X'; 
+				ALUSrc <= '0'; 
+				MemtoReg <= 'X'; 
+				RegWrite <='0'; 
+				MemRead<='0'; 
+				MemWrite<='1';
+				Branch<='1';
+				Jump <='0';
+				ALUOp <= "01"; -- BEQ
 				
 			when SLTI => 
-				RegDst <= "00"; 
+				RegDst <= '0'; 
 				ALUSrc <= '1'; 
 				MemtoReg <= '0'; 
 				RegWrite <='1';
 				MemRead<='0'; 
-				MemWrite<='0';				 
+				MemWrite<='0';
+				Branch<='0'; 
 				Jump <='0';
-				ALUOp <= "011"; -- SLTI sinais de controle
-				Beq<='0';
-				Bne<='0';
-				Jr<='0';
+				ALUOp <= "10"; -- SLTI sinais de controle
 			
 			when ADDI => 
-				RegDst <= "00"; 
+				RegDst <= '0'; 
 				ALUSrc <= '1'; 
 				MemtoReg <= '0'; 
 				RegWrite <='1';
 				MemRead<='0'; 
 				MemWrite<='0';
+				Branch<='0'; 
 				Jump <='0';
-				ALUOp <= "000"; -- ADDI sinais de controle
-				Beq<='0';
-				Bne<='0';
-				Jr<='0';
-				
+				ALUOp <= "00"; -- ADDI sinais de controle
 			
 			when J => 
-				RegDst <= "00"; 
+				RegDst <= '0'; 
 				ALUSrc <= '0'; 
 				MemtoReg <= '0'; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';
+				Branch<='0'; 
 				Jump <='1';
-				ALUOp <= "000"; -- J sinais de controle
-				Beq<='0';
-				Bne<='0';
-				Jr<='0';
+				ALUOp <= "00"; -- J sinais de controle
 				
 			when BEQ => 
-				RegDst <= "00"; 
+				RegDst <= '0'; 
 				ALUSrc <= '0'; 
-				MemtoReg <= '0'; 
+				MemtoReg <= 'X'; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';
 				Branch<='1'; 
 				Jump <='0';
-				ALUOp <= "001"; -- BEQ sinais de controle
-				Beq<='1';
-				Bne<='0';
-				Jr<='0';
+				ALUOp <= "00"; -- BEQ sinais de controle
 			
 			when BNE => 
-				RegDst <= "00"; 
+				RegDst <= '0'; 
 				ALUSrc <= '0'; 
 				MemtoReg <= 'X'; 
 				RegWrite <='0';
@@ -144,62 +138,53 @@ begin
 				MemWrite<='0';
 				Branch<='1'; 
 				Jump <='0';
-				ALUOp <= "001"; -- BNE sinais de controle
-				Beq<='0';
-				Bne<='1';
-				Jr<='0';
+				ALUOp <= "00"; -- BNE sinais de controle
 				
 			when JAL => 
-				RegDst <= "10"; 
-				ALUSrc <= '0'; 
-				MemtoReg <= 'X'; 
-				RegWrite <='0';
-				MemRead<='0'; 
-				MemWrite<='0';				 
-				Jump <='1';
-				ALUOp <= "000"; -- JAL sinais de controle
-				Beq<='0';
-				Bne<='0';
-				Jr<='0';
-			
-			when JALR => 
-				RegDst <= "10"; 
-				ALUSrc <= '0'; 
-				MemtoReg <= 'X'; 
-				RegWrite <='0';
-				MemRead<='0'; 
-				MemWrite<='0';				 
-				Jump <='1';
-				ALUOp <= "000"; -- JALR sinais de controle
-				Beq<='0';
-				Bne<='0';
-				Jr<='0';
-			
-			when JR => 
-				RegDst <= "01"; 
+				RegDst <= '0'; 
 				ALUSrc <= '0'; 
 				MemtoReg <= 'X'; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';
+				Branch<='0'; 
 				Jump <='1';
-				ALUOp <= "000"; -- JR sinais de controle
-				Beq<='0';
-				Bne<='0';
-				Jr<='1';
+				ALUOp <= "00"; -- JAL sinais de controle
+			
+			when JALR => 
+				RegDst <= '1'; 
+				ALUSrc <= '0'; 
+				MemtoReg <= 'X'; 
+				RegWrite <='0';
+				MemRead<='0'; 
+				MemWrite<='0';
+				Branch<='0'; 
+				Jump <='1';
+				ALUOp <= "00"; -- JALR sinais de controle
+			
+			when JR => 
+				RegDst <= '0'; 
+				ALUSrc <= '0'; 
+				MemtoReg <= 'X'; 
+				RegWrite <='0';
+				MemRead<='0'; 
+				MemWrite<='0';
+				Branch<='0'; 
+				Jump <='1';
+				ALUOp <= "00"; -- JR sinais de controle
 				
 			when LUI => 
-				RegDst <= "0"; 
+				RegDst <= '0'; 
 				ALUSrc <= '1'; 
 				MemtoReg <= '1'; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';
+				Branch<='0'; 
 				Jump <='0';
-				ALUOp <= "100"; -- LUI sinais de controle
-				Beq<='0';
-				Bne<='0';
-				Jr<='0';
+				ALUOp <= "00"; -- LUI sinais de controle
+
+
 				
 		  when others => 
 				RegDst <= '0'; 
@@ -208,10 +193,8 @@ begin
 				RegWrite <='1'; 
 				MemRead<='0'; 
 				MemWrite<='0'; 
-				ALUOp <= "000";
-				Beq<='0';
-				Bne<='0';
-				Jr<='0';
+				Branch<='0';
+				ALUOp <= "00";
 	end case;
 end process;
 

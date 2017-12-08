@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Pipeline
-Fri Dec 08 17:38:02 2017
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Fri Dec 08 16:12:43 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -33,24 +33,24 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
-+------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Dec 08 17:38:02 2017          ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
-; Revision Name                      ; Pipeline                                   ;
-; Top-level Entity Name              ; Pipeline                                   ;
-; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Fri Dec 08 16:12:43 2017               ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Pipeline                                        ;
+; Top-level Entity Name              ; Pipeline                                        ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
++------------------------------------+-------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -153,8 +153,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Fri Dec 08 17:38:00 2017
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Dec 08 16:12:42 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipeline -c Pipeline
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ula_mips.vhd
@@ -169,9 +169,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file bregmips.vhd
     Info (12022): Found design unit 1: bregmips-breg_arch
     Info (12023): Found entity 1: bregmips
-Info (12021): Found 2 design units, including 1 entities, in source file pipeline.vhd
-    Info (12022): Found design unit 1: Pipeline-behavior
-    Info (12023): Found entity 1: Pipeline
+Error (10500): VHDL syntax error at Pipeline.vhd(343) near text "MemtoReg";  expecting ")", or "," File: C:/Users/bjpra/Desktop/Pipeline/pipeline/Pipeline.vhd Line: 343
+Info (12021): Found 0 design units, including 0 entities, in source file pipeline.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
     Info (12022): Found design unit 1: mux2-behavioral
     Info (12023): Found entity 1: mux2
@@ -211,10 +210,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux4.vh
 Info (12021): Found 2 design units, including 1 entities, in source file comparador.vhd
     Info (12022): Found design unit 1: comparador-behavior
     Info (12023): Found entity 1: comparador
-Error (10349): VHDL Association List error at Pipeline.vhd(340): formal "wb" does not exist File: C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline.vhd Line: 340
 Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 506 megabytes
-    Error: Processing ended: Fri Dec 08 17:38:02 2017
+    Error: Peak virtual memory: 510 megabytes
+    Error: Processing ended: Fri Dec 08 16:12:44 2017
     Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:01
 
