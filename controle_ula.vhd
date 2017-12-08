@@ -34,9 +34,9 @@ begin
 	case op_alu is
 			when  "000" => alu_ctr <= ULA_ADD; 
 			
-			when "001" => alu_ctr <= ULA_SUB; 	--OR
+			when "001" => alu_ctr <= ULA_SUB; 	
 				
-			when "100" => alu_ctr <=  ULA_LUI; --xor
+			when "100" => alu_ctr <=  ULA_LUI; 
 			
 			when "010" =>
 				case funct is
@@ -52,8 +52,5 @@ begin
 			
 
 	END CASE;
-
-				
-	--end process;
 	end process;		
 end behav;

@@ -33,7 +33,7 @@ component if_id is
 end component;
 
 --ID/EX
-component idex is
+component id_ex is
 	port ( clk: in std_logic;
 			 in_pc4 : in std_logic_vector(WSIZE-1 downto 0);
 			 in_wb : in std_logic_vector(2 downto 0);
@@ -367,7 +367,7 @@ id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
 
 ----------------------------------------Transicao ID/EX-------------------------------------
 
-reg_idex: idex
+reg_idex: id_ex
 	PORT MAP (
 		clk => clock,
 		in_pc4 => id_pc4,
@@ -425,16 +425,16 @@ reg_idex: idex
 		ovfl => ex_ula_ovfl
 	);
 	
-	mux_ex_reg_dst : mux4
-	GENERIC MAP (WSIZE :=> 5)
-	PORT MAP (
-		sel => ex_reg_dst,
-		in_0 => ex_rt, 
-		in_1 => ex_rd,
-		in_2 => "11111",
-		in_3 => "00000",
-		Z => ex_mux_reg_dst
-	);
+--	mux_ex_reg_dst : mux4
+--	GENERIC MAP (WSIZE => 5)
+--	PORT MAP (
+--		sel => ex_reg_dst,
+--		in_0 => ex_rt, 
+--		in_1 => ex_rd,
+--		in_2 => "11111",
+--		in_3 => "00000",
+--		Z => ex_mux_reg_dst
+--	);
 
 ------------------------------------------Transicao EX/MEM-----------------------------------------
 	reg_exmem : ex_mem
