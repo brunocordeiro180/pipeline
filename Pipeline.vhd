@@ -208,13 +208,15 @@ signal if_pc : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal if_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal if_instruction : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 
-signal id_ctrl_j : std_logic := '0';
-signal id_ctrl_jr : std_logic := '0';
-signal id_ctrl_wb : std_logic_vector(2 downto 0) := (others => '0');
-signal id_ctrl_m : std_logic_vector(1 downto 0) := (others => '0');
-signal id_ctrl_ex : std_logic_vector(7 downto 0) := (others => '0');
-signal id_ctrl_beq : std_logic := '0';
-signal id_ctrl_bne : std_logic := '0';
+signal id_ctrl_alusrc : std_logic := '0';
+signal id_ctrl_aluop : std_logic_vector(2 downto 0) := (others => '0');
+signal id_ctrl_memtoreg : std_logic := '0';
+signal id_ctrl_regdst : std_logic_vector(1 downto 0) := (others => '0');
+signal id_ctrl_memread : std_logic := '0';
+signal id_ctrl_memwrite : std_logic := '0';
+signal id_ctrl_regwrite : std_logic := '0';
+signal id_ctrl_jump : std_logic := '0';
+signal id_ctrl_branch : std_logic := '0';
 signal id_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal id_rs_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal id_rt_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
@@ -227,7 +229,7 @@ signal ex_pc4 :  std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal ex_wb :  std_logic_vector(2 downto 0) := (others => '0');
 signal ex_m :  std_logic_vector(1 downto 0) := (others => '0');
 signal ex_reg_dst :  std_logic_vector(1 downto 0) := (others => '0');
-signal ex_alu_op :  std_logic_vector(3 downto 0) := (others => '0');
+signal ex_alu_op :  std_logic_vector(2 downto 0) := (others => '0');
 signal ex_alu_src :  std_logic := '0';
 signal ex_alu_src2 :  std_logic := '0';
 signal ex_rs_data :  std_logic_vector(WSIZE-1 downto 0) := (others => '0');
@@ -334,27 +336,20 @@ begin
 	);
 	
 	
---	controle_id : controle
---		PORT MAP (
---			opcode => id_instruction(31 downto 26),
---			funct	=> id_instruction(5 downto 0),
---			RegDst => 
---			ALUSrc
---			MemtoReg
---			RegWrite
---			Jump
---			MemRead
---			MemWrite
---			Branch
---			ALUOp
---			--wb	=> id_ctrl_wb,
---			--m => id_ctrl_m,
---			--ex => id_ctrl_ex,
---			--jumps => id_ctrl_j,
---			--jr => id_ctrl_jr,
---			--beq => id_ctrl_beq,
---			--bne => id_ctrl_bne
---		);
+	controle_id : controle
+		PORT MAP (
+			opcode => id_instruction(31 downto 26),
+			funct	=> id_instruction(5 downto 0),
+			RegDst => id_ctrl_regdst,
+			ALUSrc => id_ctrl_alusrc,
+			MemtoReg => id_ctrl_memtoreg,
+			RegWrite => id_ctrl_regwrite,
+			Jump => id_ctrl_jump,
+			MemRead => id_ctrl_memread,
+			MemWrite => id_ctrl_memwrite,
+			Branch => id_ctrl_branch,
+			ALUOp => id_ctrl_aluop
+		);
 
 id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
 	somador_id : somador
@@ -371,8 +366,8 @@ reg_idex: id_ex
 	PORT MAP (
 		clk => clock,
 		in_pc4 => id_pc4,
-		in_wb => id_ctrl_wb,
-		in_m => id_ctrl_m,
+		in_wb => id_ctrl_memtoreg,
+		in_m => id_ctrl_memwrite,
 		in_ex => id_ctrl_ex,
 		in_reg1 => id_rs_data,
 		in_reg2 => id_rt_data, 
@@ -396,8 +391,6 @@ reg_idex: id_ex
 	);
 
 ---------------------------------------------Etapa EX----------------------------------------------
-
----- @TODO: Codar essa etapa também
 
 	ex_shamt_ext <= X"000000" & "000" & ex_shamt;
 	mux2_ex_A : mux2
