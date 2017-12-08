@@ -189,7 +189,7 @@ begin
 				Jr<='1';
 				
 			when LUI => 
-				RegDst <= "0"; 
+				RegDst <= "00"; 
 				ALUSrc <= '1'; 
 				MemtoReg <= '1'; 
 				RegWrite <='0';

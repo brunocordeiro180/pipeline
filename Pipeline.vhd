@@ -334,27 +334,27 @@ begin
 	);
 	
 	
-	controle_id : controle
-		PORT MAP (
-			opcode => id_instruction(31 downto 26),
-			funct	=> id_instruction(5 downto 0),
-			RegDst => 
-			ALUSrc
-			MemtoReg
-			RegWrite
-			Jump
-			MemRead
-			MemWrite
-			Branch
-			ALUOp
-			--wb	=> id_ctrl_wb,
-			--m => id_ctrl_m,
-			--ex => id_ctrl_ex,
-			--jumps => id_ctrl_j,
-			--jr => id_ctrl_jr,
-			--beq => id_ctrl_beq,
-			--bne => id_ctrl_bne
-		);
+--	controle_id : controle
+--		PORT MAP (
+--			opcode => id_instruction(31 downto 26),
+--			funct	=> id_instruction(5 downto 0),
+--			RegDst => 
+--			ALUSrc
+--			MemtoReg
+--			RegWrite
+--			Jump
+--			MemRead
+--			MemWrite
+--			Branch
+--			ALUOp
+--			--wb	=> id_ctrl_wb,
+--			--m => id_ctrl_m,
+--			--ex => id_ctrl_ex,
+--			--jumps => id_ctrl_j,
+--			--jr => id_ctrl_jr,
+--			--beq => id_ctrl_beq,
+--			--bne => id_ctrl_bne
+--		);
 
 id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
 	somador_id : somador
@@ -416,18 +416,17 @@ reg_idex: idex
 		Z => ex_mux_B
 	);
 
-	ula_ex : ula
+	ula_ex : ula_mips
 	PORT MAP (
 		opcode => ex_alu_op,
 		A => ex_mux_A,
 		B => ex_mux_B,
 		Z => ex_ula_result,
-		vai => ex_ula_vai,
 		ovfl => ex_ula_ovfl
 	);
 	
 	mux_ex_reg_dst : mux4
-	GENERIC MAP (WSIZE => 5)
+	GENERIC MAP (WSIZE :=> 5)
 	PORT MAP (
 		sel => ex_reg_dst,
 		in_0 => ex_rt, 
