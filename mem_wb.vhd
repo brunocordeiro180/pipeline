@@ -10,15 +10,15 @@ entity mem_wb is
 		memwb_in_pc4 			: in std_logic_vector(WSIZE-1 downto 0);
 		memwb_in_regwrite		: in std_logic;
 		memwb_in_memtoreg 	: in std_logic_vector(1 downto 0);
-		memwb_in_result_alu 	: in std_logic_vector(WSIZE-1 downto 0));
-		memwb_in_memdata		: in std_logic_vector(WSIZE-1 downto 0));
+		memwb_in_result_alu 	: in std_logic_vector(WSIZE-1 downto 0);
+		memwb_in_memdata		: in std_logic_vector(WSIZE-1 downto 0);
 		memwb_in_writedata		: in std_logic_vector(4 downto 0);
 		
 		memwb_out_pc4 			: out std_logic_vector(WSIZE-1 downto 0);
 		memwb_out_regwrite	: out std_logic;
 		memwb_out_memtoreg 	: out std_logic_vector(1 downto 0);
-		memwb_out_result_alu : out std_logic_vector(WSIZE-1 downto 0));
-		memwb_out_memdata		: out std_logic_vector(WSIZE-1 downto 0));
+		memwb_out_result_alu : out std_logic_vector(WSIZE-1 downto 0);
+		memwb_out_memdata		: out std_logic_vector(WSIZE-1 downto 0);
 		memwb_out_writedata	: out std_logic_vector(4 downto 0));
 		
 end mem_wb;
