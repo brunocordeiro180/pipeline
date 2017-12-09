@@ -7,17 +7,20 @@ entity mem_wb is
 	generic (WSIZE : natural := 32);
 	port (
 		clk						: in std_logic;
-		in_pc4 					: in std_logic_vector(WSIZE-1 downto 0);
-		in_read_data 			: in std_logic_vector(WSIZE-1 downto 0);
-		in_wb 					: in std_logic_vector(2 downto 0);
-		in_result_alu 			: in std_logic_vector(WSIZE-1 downto 0);
-		in_reg_dst 				: in std_logic_vector(4 downto 0);
-		out_pc4 					: out std_logic_vector(WSIZE-1 downto 0);
-		out_reg_write 			: out std_logic;
-		out_mem_2_reg 			: out std_logic_vector(1 downto 0);
-		out_reg_dst 			: out std_logic_vector(4 downto 0);
-		out_read_data 			: out std_logic_vector(WSIZE-1 downto 0);
-		out_result_alu 		: out std_logic_vector(WSIZE-1 downto 0));
+		memwb_in_pc4 			: in std_logic_vector(WSIZE-1 downto 0);
+		memwb_in_regwrite		: in std_logic;
+		memwb_in_memtoreg 	: in std_logic_vector(1 downto 0);
+		memwb_in_result_alu 	: in std_logic_vector(WSIZE-1 downto 0));
+		memwb_in_memdata		: in std_logic_vector(WSIZE-1 downto 0));
+		memwb_in_writedata		: in std_logic_vector(4 downto 0);
+		
+		memwb_out_pc4 			: out std_logic_vector(WSIZE-1 downto 0);
+		memwb_out_regwrite	: out std_logic;
+		memwb_out_memtoreg 	: out std_logic_vector(1 downto 0);
+		memwb_out_result_alu : out std_logic_vector(WSIZE-1 downto 0));
+		memwb_out_memdata		: out std_logic_vector(WSIZE-1 downto 0));
+		memwb_out_writedata	: out std_logic_vector(4 downto 0));
+		
 end mem_wb;
 
 architecture behavioral of mem_wb is	
@@ -25,12 +28,12 @@ begin
 proc_mem_wb: process(clk)
  begin
 	if (rising_edge(clk)) then
-		out_pc4 <= in_pc4;
-		out_read_data <= in_read_data;
-		out_result_alu <= in_result_alu;
-		out_reg_dst <= in_reg_dst;
-		out_reg_write <= in_wb(2);
-		out_mem_2_reg <= in_wb(1 downto 0);
+		memwb_out_pc4  		<= memwb_in_pc4; 			
+		memwb_out_regwrite 	<= memwb_in_regwrite;		
+		memwb_out_memtoreg 	<= memwb_in_memtoreg;	
+		memwb_out_result_alu <= memwb_in_result_alu;
+		memwb_out_memdata	 	<= memwb_in_memdata;	
+		memwb_out_writedata 	<= memwb_in_writedata;
 	end if;
  end process;
 end architecture behavioral;
