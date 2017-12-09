@@ -179,7 +179,7 @@ begin
 				RegDst <= "01"; 
 				ALUSrc <= '0'; 
 				MemtoReg <= "00"; 
-				RegWrite <="00";
+				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';
 				Jump <='1';
