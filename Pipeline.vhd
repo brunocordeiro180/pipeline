@@ -83,6 +83,7 @@ component ex_mem is
 		exmem_memwrite_in 			: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_memtoreg_in 			: in std_logic_vector(1 downto 0);
 		exmem_zero_in					: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_reg1_in 					: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_reg2_in 					: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_writereg_in				: in std_logic_vector(4 downto 0);	
 		exmem_out_pc4 		 			: out std_logic_vector(WSIZE-1 downto 0);
@@ -95,6 +96,7 @@ component ex_mem is
 		exmem_memwrite_out 			: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_memtoreg_out 			: out std_logic_vector(1 downto 0);
 		exmem_zero_out					: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_reg1_out 				: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_reg2_out 				: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_writereg_out			: out std_logic_vector(4 downto 0));
 
@@ -138,7 +140,7 @@ end component;
 
 --Controle
 component controle is
-	port ( opcode, funct	: in std_logic_vector(5 downto 0);
+	port ( opcode: in std_logic_vector(5 downto 0);
 		 	RegDst: out std_logic_vector(1 downto 0); 
 			ALUSrc: out std_logic; 
 			MemtoReg: out std_logic_vector(1 downto 0); 
@@ -149,7 +151,7 @@ component controle is
 			sig_beq: out std_logic;
 			sig_bne: out std_logic;
 			sig_jr: out std_logic;
-			ALUOp: out std_logic_vector(1 downto 0));
+			ALUOp: out std_logic_vector(2 downto 0));
 end component;
 
 
@@ -169,7 +171,14 @@ component minst is
 			q				: out std_logic_vector (31 downto 0)
 	);
 end component;
+----- SIgn extend
 
+component sign_extend is 
+	port(
+		imm16 : in std_logic_vector(15 downto 0);
+		imm32 : out std_logic_vector(31 downto 0)
+		);
+end component;
 --Banco de Registradores
 component bregmips is
 	port ( clk, wren 	: in std_logic;
@@ -229,90 +238,108 @@ signal conversor_in_6 :  std_logic_vector(3 downto 0);
 signal conversor_in_7 :  std_logic_vector(3 downto 0);
 signal saida_FPGA_32bits : std_logic_vector(WSIZE-1 downto 0);
 
-signal if_sel_mux : std_logic_vector(1 downto 0) := (others => '0');
-signal if_new_pc : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal if_pc : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal if_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal if_instruction : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
+---------------------------------------------Instruction Fetch Signals------------------------------------------------
+signal if_sel_mux : std_logic_vector(1 downto 0);
+signal if_new_pc : std_logic_vector(WSIZE-1 downto 0);
+signal if_pc : std_logic_vector(WSIZE-1 downto 0);
+signal if_pc4 : std_logic_vector(WSIZE-1 downto 0);
+signal if_instruction : std_logic_vector(WSIZE-1 downto 0);
 
-signal id_ctrl_alusrc : std_logic := '0';
-signal id_ctrl_beq : std_logic := '0';
-signal id_ctrl_bne : std_logic := '0';
-signal id_ctrl_jr : std_logic := '0';
-signal id_ctrl_aluop : std_logic_vector(2 downto 0) := (others => '0');
-signal id_ctrl_memtoreg : std_logic_vector(1 downto 0) := (others => '0');
-signal id_ctrl_regdst : std_logic_vector(1 downto 0) := (others => '0');
-signal id_ctrl_ex : std_logic_vector(7 downto 0) := (others => '0');
-signal id_ctrl_memread : std_logic := '0';
-signal id_ctrl_memwrite : std_logic := '0';
-signal id_ctrl_regwrite : std_logic := '0';
-signal id_ctrl_j : std_logic := '0';
-signal id_ctrl_branch : std_logic := '0';
-signal id_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal id_rs_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal id_rt_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal id_instruction : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal id_immediate_ext : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal id_equal : std_logic := '0';
-signal id_jump_pc : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 
-signal ex_pc4 :  std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_wb :  std_logic_vector(1 downto 0) := (others => '0');
-signal ex_mem_read :  std_logic;
-signal ex_mem_write: std_logic;
-signal ex_reg_dst :  std_logic_vector(1 downto 0) := (others => '0');
-signal ex_alu_op :  std_logic_vector(3 downto 0) := (others => '0');
-signal ex_alu_src :  std_logic := '0';
-signal ex_alu_src2 :  std_logic := '0';
-signal ex_rs_data :  std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_rt_data :  std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_immediate :  std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_rt :  std_logic_vector(4 downto 0) := (others => '0');
-signal ex_rd :  std_logic_vector(4 downto 0) := (others => '0');
-signal ex_shamt:  std_logic_vector(4 downto 0) := (others => '0');
-signal ex_ula_result: std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_ula_vai, ex_ula_ovfl : std_logic := '0';
-signal id_somador_result : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_mux_A : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_mux_B : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_mux_reg_dst : std_logic_vector(4 downto 0) := (others => '0');
-signal id_pc_offset : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_shamt_ext : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
+---------------------------------------- Instruction Decode Signals -------------------------------------------------
+signal id_pc4 : std_logic_vector(WSIZE-1 downto 0);
+signal id_instruction : std_logic_vector(WSIZE-1 downto 0);
+signal id_reg1 : std_logic_vector(WSIZE-1 downto 0);
+signal id_reg2 : std_logic_vector(WSIZE-1 downto 0);
+signal id_immediate_ext : std_logic_vector(WSIZE-1 downto 0);
 
-signal mem_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal mem_result_alu : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal mem_read_mem, mem_write_mem : std_logic := '0';
-signal mem_read_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal mem_wreg_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal mem_reg_dst : std_logic_vector(4 downto 0) := (others => '0');
-signal sig_mem_wb : std_logic_vector(1 downto 0) := (others => '0');
+---------------------------------------- Controle Signals (ID) -------------------------------------------------
+signal id_ctrl_jr : std_logic ;
+signal id_ctrl_j : std_logic ;
+signal id_ctrl_regwrite : std_logic;
+signal id_ctrl_memtoreg : std_logic_vector(1 downto 0);
+signal id_ctrl_beq : std_logic;
+signal id_ctrl_bne : std_logic;
+signal id_ctrl_memread : std_logic;
+signal id_ctrl_memwrite : std_logic;
+signal id_ctrl_regdst : std_logic_vector(1 downto 0);
+signal id_ctrl_aluop : std_logic_vector(2 downto 0);
+signal id_ctrl_alusrc : std_logic;
 
-signal wb_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal wb_result_alu : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal wb_reg_dst : std_logic_vector(4 downto 0) := (others => '0');
-signal wb_read_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal wb_write_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal wb_mem_2_reg : std_logic_vector(1 downto 0) := (others => '0');
-signal wb_reg_write : std_logic := '0';
 
+---------------------------------------- Execute Signals --------------------------------------------------------
+signal ex_pc4 			: std_logic_vector(WSIZE-1 downto 0);
+signal ex_reg1		: std_logic_vector(WSIZE-1 downto 0);
+signal ex_reg2		: std_logic_vector(WSIZE-1 downto 0);
+signal ex_ula2_in    : std_logic_vector(WSIZE-1 downto 0); 
+signal ex_imm			: std_logic_vector(5 downto 0);
+signal ex_rt 			: std_logic_vector(4 downto 0);
+signal ex_rd 			: std_logic_vector(4 downto 0);
+signal ex_somador_result : std_logic_vector(WSIZE-1 downto 0);
+signal ex_ula_result: std_logic_vector(WSIZE-1 downto 0);
+signal ex_write_reg		: std_logic_vector(4 downto 0);
+signal ex_zero_ula	: std_logic;
+
+
+signal ex_beq 			: std_logic;
+signal ex_bne			: std_logic;
+signal ex_memread		: std_logic;
+signal ex_memwrite	: std_logic;
+signal ex_regwrite	: std_logic;
+signal ex_mem_to_reg	: std_logic_vector(1 downto 0);
+signal ex_alu_opcode :  std_logic_vector(3 downto 0);
+signal ex_aluop		: std_logic_vector(2 downto 0);
+signal ex_reg_dst 	:  std_logic_vector(1 downto 0) ;
+signal ex_alu_src 	:  std_logic ;
+
+
+---------------------------------------- Memory Signals --------------------------------------------------------
+
+
+signal mem_pc4 : std_logic_vector(WSIZE-1 downto 0) ;
+signal mem_result_alu : std_logic_vector(WSIZE-1 downto 0) ;
+signal mem_zero_alu: std_logic;
+signal mem_writedata: std_logic_vector(WSIZE-1 downto 0);
+signal mem_readdata: std_logic_vector(WSIZE-1 downto 0);
+signal mem_write_reg :std_logic_vector(4 downto 0);
+
+signal mem_to_reg : std_logic_vector(1 downto 0);
+signal mem_regwrite : std_logic;
+signal mem_read_mem : std_logic;
+signal mem_write_mem : std_logic;
+signal mem_beq: std_logic;
+signal mem_bne : std_logic;
+
+
+---------------------------------------- WB Signals --------------------------------------------------------
+signal wb_pc4 : std_logic_vector(WSIZE-1 downto 0) ;
+signal wb_result_alu : std_logic_vector(WSIZE-1 downto 0);
+signal wb_write_reg : std_logic_vector(4 downto 0);
+signal wb_read_data : std_logic_vector(WSIZE-1 downto 0);
+signal wb_write_data : std_logic_vector(WSIZE-1 downto 0);
+signal wb_mem_2_reg : std_logic_vector(1 downto 0) ;
+signal wb_reg_write : std_logic;
+  
 begin
 	clk_l <= NOT(clock);
 	
 ---------------------------------------------Etapa IF----------------------------------------------
+	
+	if_sel_mux(0) <= (id_ctrl_beq AND mem_zero_alu) OR (id_ctrl_bne AND (NOT mem_zero_alu)) OR id_ctrl_jr;
+	if_sel_mux(1) <= id_ctrl_j OR id_ctrl_jr;
+
 	mux4_if : mux4
 	PORT MAP (
 		sel =>  if_sel_mux, 
 		in_0 => if_pc4, 
-		in_1 => id_somador_result, 
-		in_2 => id_jump_pc, 
-		in_3 => id_rs_data, 
+		in_1 => ex_somador_result, 
+		in_2 => id_pc4(31 downto 28) &  id_instruction(25 downto 0) & "00", 
+		in_3 => id_reg1, 
 		Z => if_new_pc
 	);
-	
-	if_sel_mux(0) <= (id_ctrl_beq AND id_equal) OR (id_ctrl_bne AND (NOT id_equal)) OR id_ctrl_jr;
-	if_sel_mux(1) <= id_ctrl_j OR id_ctrl_jr;
-	
-	pc_if : pc 
+
+
+	pc_reg: PC
 	PORT MAP (
 		clk => clock, 
 		in_pc => if_new_pc, 
@@ -325,15 +352,15 @@ begin
 		b => X"00000004", 
 		s => if_pc4		
 	);
-	
+--	
 	mi_if : minst
 	PORT MAP (
 		address => if_pc(9 downto 2), 
 		clock => clk_l, 
 		q => if_instruction
 	);
-	
------------------------------------------Transicao IF/ID------------------------------------------
+--	
+-------------------------------------------Transicao IF/ID------------------------------------------
 	reg_ifid: if_id
 	PORT MAP (
 		clk => clock,
@@ -343,35 +370,23 @@ begin
 		out_instruction => id_instruction
 	);
 
----------------------------------------------Etapa ID----------------------------------------------
-	id_immediate_ext(15 downto 0) <= id_instruction(15 downto 0);
-	id_immediate_ext(WSIZE-1 downto 16) <= (others => id_instruction(15));
-	id_jump_pc <= id_pc4(31 downto 28) & id_instruction(25 downto 0) & "00";
+-----------------------------------------------Etapa ID----------------------------------------------
 
-	breg_id : bregmips
+ breg_id : bregmips
 	PORT MAP (
 		clk => clk_l, 
 		wren => wb_reg_write,
 		radd1 => id_instruction(25 downto 21),
 		radd2 => id_instruction(20 downto 16),
-		wadd => wb_reg_dst,
+		wadd => wb_write_reg,
 		wdata => wb_write_data,
-		r1 => id_rs_data,
-		r2 => id_rt_data
+		r1 =>  id_reg1,
+		r2 =>  id_reg2
 	);
-	
-	comparador_id : comparador
-	PORT MAP (
-		A => id_rs_data,
-		B => id_rt_data,
-		eq => id_equal
-	);
-	
-	
+
 	controle_id : controle
 		PORT MAP (
 			opcode => id_instruction(31 downto 26),
-			funct	=> id_instruction(5 downto 0),
 			RegDst => id_ctrl_regdst,
 			ALUSrc => id_ctrl_alusrc,
 			MemtoReg => id_ctrl_memtoreg,
@@ -384,148 +399,156 @@ begin
 			sig_jr => id_ctrl_jr,
 			ALUOp => id_ctrl_aluop
 		);
+		
+	sign_extend_id : sign_extend
+		PORT MAP(
+			imm16 => id_instruction(15 downto 0),
+			imm32 => id_immediate_ext
+		
+		);		
+		
 
-id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
-	somador_id : somador
-	PORT MAP (
-		a => id_pc4, 
-		b => id_pc_offset, 
-		s => id_somador_result
-	);
-	
-
-----------------------------------------Transicao ID/EX-------------------------------------
-
-reg_idex: id_ex
-	PORT MAP (
-		clk => clock,
-		in_pc4 => id_pc4,
-		in_wb => id_ctrl_memtoreg,
-		in_mem_write => id_ctrl_memwrite,
-		in_mem_read => id_ctrl_memread,
-		in_ex => id_ctrl_ex,
-		in_reg1 => id_rs_data,
-		in_reg2 => id_rt_data, 
-		in_immediate => id_immediate_ext,
-		in_shamt => id_instruction(10 downto 6),
-		in_rt => id_instruction(20 downto 16),
-		in_rd => id_instruction(15 downto 11),
-		out_pc4 => ex_pc4,
-		out_wb => ex_wb,
-		out_mem_read => ex_mem_read,
-		out_mem_write => ex_mem_write,
-		out_reg_dst => ex_reg_dst,
-		out_alu_op => ex_alu_op,
-		out_alu_src => ex_alu_src,
-		out_alu_src2 => ex_alu_src2,
-		out_reg1 => ex_rs_data,
-		out_reg2 => ex_rt_data,
-		out_immediate => ex_immediate,
-		out_rt => ex_rt,
-		out_rd => ex_rd,
-		out_shamt => ex_shamt
-	);
-
----------------------------------------------Etapa EX----------------------------------------------
-
-	ex_shamt_ext <= X"000000" & "000" & ex_shamt;
-	mux2_ex_A : mux2
-	PORT MAP (
-		sel => ex_alu_src,
-		in_0 => ex_rs_data, 
-		in_1 => ex_shamt_ext,
-		Z => ex_mux_A
-	);
-	
-	mux2_ex_B : mux2
-	PORT MAP (
-		sel => ex_alu_src2,
-		in_0 => ex_rt_data, 
-		in_1 => ex_immediate,
-		Z => ex_mux_B
-	);
-
-	ula_ex : ula_mips
-	PORT MAP (
-		opcode => ex_alu_op,
-		A => ex_mux_A,
-		B => ex_mux_B,
-		Z => ex_ula_result,
-		ovfl => ex_ula_ovfl
-	);
-	
---	mux_ex_reg_dst : mux4
---	GENERIC MAP (WSIZE => 5)
+--id_pc_offset <= id_immediate_ext(29 downto 0) & "00";
+--	somador_id : somador
 --	PORT MAP (
---		sel => ex_reg_dst,
---		in_0 => ex_rt, 
---		in_1 => ex_rd,
---		in_2 => "11111",
---		in_3 => "00000",
---		Z => ex_mux_reg_dst
+--		a => id_pc4, 
+--		b => id_pc_offset, 
+--		s => id_somador_result
 --	);
-
-------------------------------------------Transicao EX/MEM-----------------------------------------
-	reg_exmem : ex_mem
-	PORT MAP (
-		 clk => clock, 
-		 in_pc4 => ex_pc4,
-		 in_wb => ex_wb, 
-		 in_mem_write => ex_mem_write,
-		 in_mem_read =>  ex_mem_read,
-		 in_result_alu => ex_ula_result, 
-		 in_data_reg => ex_rt_data, 
-		 in_reg_dst => ex_mux_reg_dst,
-		 out_pc4 => mem_pc4, 
-		 out_wb => sig_mem_wb, 
-		 out_mem_read => mem_read_mem, 
-		 out_mem_write => mem_write_mem, 
-		 out_result_alu => mem_result_alu, 
-		 out_data_reg => mem_wreg_data,
-		 out_reg_dst => mem_reg_dst
-	);
-
---------------------------------------------ETAPA MEM----------------------------------------------
-	md_mem : mdata
-	PORT MAP (
-		address => mem_result_alu(9 downto 2), 
-		clock	=> clk_l, 
-		data => mem_wreg_data, 
-		wren => mem_write_mem, 
-		q => mem_read_data 
-		--read enable nao usado
-	);
-
-------------------------------------------Transicao MEM/WB-----------------------------------------
-	reg_memwb : mem_wb
-	PORT MAP (
-		clk => clock, 
-		in_pc4 => mem_pc4,
-		in_read_data => mem_read_data,
-		in_wb => sig_mem_wb,
-		in_result_alu => mem_result_alu,
-		in_reg_dst => mem_reg_dst,
-		out_pc4 => wb_pc4,
-		out_reg_write => wb_reg_write,
-		out_mem_2_reg => wb_mem_2_reg,
-		out_reg_dst => wb_reg_dst,
-		out_read_data => wb_read_data,
-		out_result_alu => wb_result_alu
-	);
-	
-
----------------------------------------------ETAPA WB----------------------------------------------
-	mux4_wb : mux4 
-	PORT MAP (
-		sel => wb_mem_2_reg,
-		in_0 => wb_result_alu, 
-		in_1 => wb_read_data,
-		in_2 => wb_pc4,
-		in_3 => (others => '0'),
-		Z => wb_write_data
-	);
-
--- Precisa codar o display de 7 segmentos
+--	
+--
+------------------------------------------Transicao ID/EX-------------------------------------
+--
+--reg_idex: id_ex
+--	PORT MAP (
+--		clk => clock,
+--		in_pc4 => id_pc4,
+--		in_wb => id_ctrl_memtoreg,
+--		in_mem_write => id_ctrl_memwrite,
+--		in_mem_read => id_ctrl_memread,
+--		in_ex => id_ctrl_ex,
+--		in_reg1 => id_rs_data,
+--		in_reg2 => id_rt_data, 
+--		in_immediate => id_immediate_ext,
+--		in_shamt => id_instruction(10 downto 6),
+--		in_rt => id_instruction(20 downto 16),
+--		in_rd => id_instruction(15 downto 11),
+--		out_pc4 => ex_pc4,
+--		out_wb => ex_wb,
+--		out_mem_read => ex_mem_read,
+--		out_mem_write => ex_mem_write,
+--		out_reg_dst => ex_reg_dst,
+--		out_alu_op => ex_alu_op,
+--		out_alu_src => ex_alu_src,
+--		out_alu_src2 => ex_alu_src2,
+--		out_reg1 => ex_rs_data,
+--		out_reg2 => ex_rt_data,
+--		out_immediate => ex_immediate,
+--		out_rt => ex_rt,
+--		out_rd => ex_rd,
+--		out_shamt => ex_shamt
+--	);
+--
+-----------------------------------------------Etapa EX----------------------------------------------
+--
+--	ex_shamt_ext <= X"000000" & "000" & ex_shamt;
+--	mux2_ex_A : mux2
+--	PORT MAP (
+--		sel => ex_alu_src,
+--		in_0 => ex_rs_data, 
+--		in_1 => ex_shamt_ext,
+--		Z => ex_mux_A
+--	);
+--	
+--	mux2_ex_B : mux2
+--	PORT MAP (
+--		sel => ex_alu_src2,
+--		in_0 => ex_rt_data, 
+--		in_1 => ex_immediate,
+--		Z => ex_mux_B
+--	);
+--
+--	ula_ex : ula_mips
+--	PORT MAP (
+--		opcode => ex_alu_op,
+--		A => ex_mux_A,
+--		B => ex_mux_B,
+--		Z => ex_ula_result,
+--		ovfl => ex_ula_ovfl
+--	);
+--	
+----	mux_ex_reg_dst : mux4
+----	GENERIC MAP (WSIZE => 5)
+----	PORT MAP (
+----		sel => ex_reg_dst,
+----		in_0 => ex_rt, 
+----		in_1 => ex_rd,
+----		in_2 => "11111",
+----		in_3 => "00000",
+----		Z => ex_mux_reg_dst
+----	);
+--
+--------------------------------------------Transicao EX/MEM-----------------------------------------
+--	reg_exmem : ex_mem
+--	PORT MAP (
+--		 clk => clock, 
+--		 in_pc4 => ex_pc4,
+--		 in_wb => ex_wb, 
+--		 in_mem_write => ex_mem_write,
+--		 in_mem_read =>  ex_mem_read,
+--		 in_result_alu => ex_ula_result, 
+--		 in_data_reg => ex_rt_data, 
+--		 in_reg_dst => ex_mux_reg_dst,
+--		 out_pc4 => mem_pc4, 
+--		 out_wb => sig_mem_wb, 
+--		 out_mem_read => mem_read_mem, 
+--		 out_mem_write => mem_write_mem, 
+--		 out_result_alu => mem_result_alu, 
+--		 out_data_reg => mem_wreg_data,
+--		 out_reg_dst => mem_reg_dst
+--	);
+--
+----------------------------------------------ETAPA MEM----------------------------------------------
+--	md_mem : mdata
+--	PORT MAP (
+--		address => mem_result_alu(9 downto 2), 
+--		clock	=> clk_l, 
+--		data => mem_wreg_data, 
+--		wren => mem_write_mem, 
+--		q => mem_read_data 
+--		--read enable nao usado
+--	);
+--
+--------------------------------------------Transicao MEM/WB-----------------------------------------
+--	reg_memwb : mem_wb
+--	PORT MAP (
+--		clk => clock, 
+--		in_pc4 => mem_pc4,
+--		in_read_data => mem_read_data,
+--		in_wb => sig_mem_wb,
+--		in_result_alu => mem_result_alu,
+--		in_reg_dst => mem_reg_dst,
+--		out_pc4 => wb_pc4,
+--		out_reg_write => wb_reg_write,
+--		out_mem_2_reg => wb_mem_2_reg,
+--		out_reg_dst => wb_reg_dst,
+--		out_read_data => wb_read_data,
+--		out_result_alu => wb_result_alu
+--	);
+--	
+--
+-----------------------------------------------ETAPA WB----------------------------------------------
+--	mux4_wb : mux4 
+--	PORT MAP (
+--		sel => wb_mem_2_reg,
+--		in_0 => wb_result_alu, 
+--		in_1 => wb_read_data,
+--		in_2 => wb_pc4,
+--		in_3 => (others => '0'),
+--		Z => wb_write_data
+--	);
+--
+---- Precisa codar o display de 7 segmentos
 
 
 	

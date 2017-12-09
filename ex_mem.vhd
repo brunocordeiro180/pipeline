@@ -17,6 +17,7 @@ entity ex_mem is
 		exmem_memwrite_in 			: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_memtoreg_in 			: in std_logic_vector(1 downto 0);
 		exmem_zero_in					: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_reg1_in 					: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_reg2_in 					: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_writereg_in				: in std_logic_vector(4 downto 0);
 		
@@ -31,6 +32,7 @@ entity ex_mem is
 		exmem_memwrite_out 			: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_memtoreg_out 			: out std_logic_vector(1 downto 0);
 		exmem_zero_out					: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_reg1_out 				: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_reg2_out 				: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_writereg_out			: out std_logic_vector(4 downto 0));
 
@@ -52,6 +54,7 @@ proc_exmem: process(clk)
 		exmem_memwrite_out 		<= exmem_memwrite_in;
 		exmem_memtoreg_out		<=	exmem_memtoreg_in ;
 		exmem_zero_out				<=	exmem_zero_in;
+		exmem_reg1_out 			<=	exmem_reg1_in;
 		exmem_reg2_out 			<=	exmem_reg2_in;
 		exmem_writereg_out		<=	exmem_writereg_in;
 	end if;
