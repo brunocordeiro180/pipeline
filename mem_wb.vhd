@@ -9,7 +9,8 @@ entity mem_wb is
 		clk						: in std_logic;
 		in_pc4 					: in std_logic_vector(WSIZE-1 downto 0);
 		in_read_data 			: in std_logic_vector(WSIZE-1 downto 0);
-		in_wb 					: in std_logic_vector(2 downto 0);
+		in_wb 					: in std_logic_vector(1 downto 0);
+		in_mem_2_reg			: in std_logic_vector(1 downto 0);
 		in_result_alu 			: in std_logic_vector(WSIZE-1 downto 0);
 		in_reg_dst 				: in std_logic_vector(4 downto 0);
 		out_pc4 					: out std_logic_vector(WSIZE-1 downto 0);
@@ -30,7 +31,7 @@ proc_mem_wb: process(clk)
 		out_result_alu <= in_result_alu;
 		out_reg_dst <= in_reg_dst;
 		out_reg_write <= in_wb(2);
-		out_mem_2_reg <= in_wb(1 downto 0);
+		out_mem_2_reg <= in_mem_2_reg;
 	end if;
  end process;
 end architecture behavioral;

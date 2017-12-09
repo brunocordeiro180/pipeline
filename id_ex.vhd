@@ -8,8 +8,9 @@ entity id_ex is
 	port (
 		clk				: in std_logic;
 		in_pc4 			: in std_logic_vector(WSIZE-1 downto 0);
-		in_wb 			: in std_logic_vector(2 downto 0);
-		in_m 				: in std_logic_vector(1 downto 0);
+		in_wb 			: in std_logic_vector(1 downto 0);
+	   in_mem_read 	: in std_logic;
+		in_mem_write 	: in std_logic;
 		in_ex 			: in std_logic_vector(7 downto 0);
 		in_reg1 			: in std_logic_vector(WSIZE-1 downto 0);
 		in_reg2 			: in std_logic_vector(WSIZE-1 downto 0);
@@ -19,8 +20,9 @@ entity id_ex is
 		in_rd 			: in std_logic_vector(4 downto 0);
 		
 		out_pc4 			: out std_logic_vector(WSIZE-1 downto 0);
-		out_wb 			: out std_logic_vector(2 downto 0);
-		out_m 			: out std_logic_vector(1 downto 0);
+		out_wb 			: out std_logic_vector(1 downto 0);
+		out_mem_read 	: out std_logic;
+		out_mem_write 	: out std_logic;
 		out_reg_dst 	: out std_logic_vector(1 downto 0);
 		out_alu_op 		: out std_logic_vector(3 downto 0);
 		out_alu_src 	: out std_logic;
@@ -41,7 +43,8 @@ proc_id_ex: process(clk)
 	if (rising_edge(clk)) then
 		out_pc4 <= in_pc4;
 		out_wb <= in_wb;
-		out_m <= in_m;
+		out_mem_read <= in_mem_read;
+		out_mem_write <= in_mem_write;
 		out_reg_dst <= in_ex(7 downto 6);
 		out_alu_op <= in_ex(5 downto 2);
 		out_alu_src2 <= in_ex(1);

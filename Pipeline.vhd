@@ -36,8 +36,9 @@ end component;
 component id_ex is
 	port ( clk: in std_logic;
 			 in_pc4 : in std_logic_vector(WSIZE-1 downto 0);
-			 in_wb : in std_logic_vector(2 downto 0);
-			 in_m : in std_logic_vector(1 downto 0);
+			 in_wb : in std_logic_vector(1 downto 0);
+			 in_mem_read : in std_logic;
+			 in_mem_write : in std_logic;
 			 in_ex : in std_logic_vector(7 downto 0);
 			 in_reg1 : in std_logic_vector(WSIZE-1 downto 0);
 			 in_reg2 : in std_logic_vector(WSIZE-1 downto 0);
@@ -46,8 +47,9 @@ component id_ex is
 			 in_rt : in std_logic_vector(4 downto 0);
 			 in_rd : in std_logic_vector(4 downto 0);
 			 out_pc4 : out std_logic_vector(WSIZE-1 downto 0);
-			 out_wb : out std_logic_vector(2 downto 0);
-			 out_m : out std_logic_vector(1 downto 0);
+			 out_wb : out std_logic_vector(1 downto 0);
+			 out_mem_read : out std_logic;
+			 out_mem_write : out std_logic;
 			 out_reg_dst : out std_logic_vector(1 downto 0);
 			 out_alu_op : out std_logic_vector(3 downto 0);
 			 out_alu_src : out std_logic;
@@ -64,13 +66,14 @@ end component;
 component ex_mem is
 	port ( clk: in std_logic;
 			 in_pc4 : in std_logic_vector(WSIZE-1 downto 0);
-			 in_wb : in std_logic_vector(2 downto 0);
-			 in_m : in std_logic_vector(1 downto 0);
+			 in_wb : in std_logic_vector(1 downto 0);
+			 in_mem_read 		: in std_logic;
+			 in_mem_write 		: in std_logic;
 			 in_result_alu : in std_logic_vector(WSIZE-1 downto 0);
 			 in_data_reg : in std_logic_vector(WSIZE-1 downto 0);
 			 in_reg_dst : in std_logic_vector(4 downto 0);
 			 out_pc4 : out std_logic_vector(WSIZE-1 downto 0);
-			 out_wb : out std_logic_vector(2 downto 0);
+			 out_wb : out std_logic_vector(1 downto 0);
 			 out_mem_read : out std_logic;
 			 out_mem_write : out std_logic;
 			 out_result_alu : out std_logic_vector(WSIZE-1 downto 0);
@@ -83,7 +86,7 @@ component mem_wb is
 	port ( clk: in std_logic;
 			 in_pc4 : in std_logic_vector(WSIZE-1 downto 0);
 			 in_read_data : in std_logic_vector(WSIZE-1 downto 0);
-			 in_wb : in std_logic_vector(2 downto 0);
+			 in_wb : in std_logic_vector(1 downto 0);
 			 in_result_alu : in std_logic_vector(WSIZE-1 downto 0);
 			 in_reg_dst : in std_logic_vector(4 downto 0);
 			 out_pc4 : out std_logic_vector(WSIZE-1 downto 0);
@@ -114,15 +117,17 @@ end component;
 --Controle
 component controle is
 	port ( opcode, funct	: in std_logic_vector(5 downto 0);
-		 	RegDst: out std_logic; 
+		 	RegDst: out std_logic_vector(1 downto 0); 
 			ALUSrc: out std_logic; 
-			MemtoReg: out std_logic; 
+			MemtoReg: out std_logic_vector(1 downto 0); 
 			RegWrite: out std_logic; 
 			Jump		: out std_logic;
 			MemRead: out std_logic; 
-			MemWrite: out std_logic; 
-			Branch: out std_logic; 
-			ALUOp: out std_logic_vector(1 downto 0));
+			MemWrite: out std_logic;
+			sig_beq: out std_logic;
+			sig_bne: out std_logic;
+			sig_jr: out std_logic;
+			ALUOp: out std_logic_vector(2 downto 0));
 end component;
 
 
@@ -209,13 +214,17 @@ signal if_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal if_instruction : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 
 signal id_ctrl_alusrc : std_logic := '0';
+signal id_ctrl_beq : std_logic := '0';
+signal id_ctrl_bne : std_logic := '0';
+signal id_ctrl_jr : std_logic := '0';
 signal id_ctrl_aluop : std_logic_vector(2 downto 0) := (others => '0');
-signal id_ctrl_memtoreg : std_logic := '0';
+signal id_ctrl_memtoreg : std_logic_vector(1 downto 0) := (others => '0');
 signal id_ctrl_regdst : std_logic_vector(1 downto 0) := (others => '0');
+signal id_ctrl_ex : std_logic_vector(7 downto 0) := (others => '0');
 signal id_ctrl_memread : std_logic := '0';
 signal id_ctrl_memwrite : std_logic := '0';
 signal id_ctrl_regwrite : std_logic := '0';
-signal id_ctrl_jump : std_logic := '0';
+signal id_ctrl_j : std_logic := '0';
 signal id_ctrl_branch : std_logic := '0';
 signal id_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal id_rs_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
@@ -226,10 +235,11 @@ signal id_equal : std_logic := '0';
 signal id_jump_pc : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 
 signal ex_pc4 :  std_logic_vector(WSIZE-1 downto 0) := (others => '0');
-signal ex_wb :  std_logic_vector(2 downto 0) := (others => '0');
-signal ex_m :  std_logic_vector(1 downto 0) := (others => '0');
+signal ex_wb :  std_logic_vector(1 downto 0) := (others => '0');
+signal ex_mem_read :  std_logic;
+signal ex_mem_write: std_logic;
 signal ex_reg_dst :  std_logic_vector(1 downto 0) := (others => '0');
-signal ex_alu_op :  std_logic_vector(2 downto 0) := (others => '0');
+signal ex_alu_op :  std_logic_vector(3 downto 0) := (others => '0');
 signal ex_alu_src :  std_logic := '0';
 signal ex_alu_src2 :  std_logic := '0';
 signal ex_rs_data :  std_logic_vector(WSIZE-1 downto 0) := (others => '0');
@@ -253,7 +263,7 @@ signal mem_read_mem, mem_write_mem : std_logic := '0';
 signal mem_read_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal mem_wreg_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal mem_reg_dst : std_logic_vector(4 downto 0) := (others => '0');
-signal sig_mem_wb : std_logic_vector(2 downto 0) := (others => '0');
+signal sig_mem_wb : std_logic_vector(1 downto 0) := (others => '0');
 
 signal wb_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal wb_result_alu : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
@@ -344,10 +354,12 @@ begin
 			ALUSrc => id_ctrl_alusrc,
 			MemtoReg => id_ctrl_memtoreg,
 			RegWrite => id_ctrl_regwrite,
-			Jump => id_ctrl_jump,
+			Jump => id_ctrl_j,
 			MemRead => id_ctrl_memread,
 			MemWrite => id_ctrl_memwrite,
-			Branch => id_ctrl_branch,
+			sig_beq  => id_ctrl_beq,
+			sig_bne => id_ctrl_bne,
+			sig_jr => id_ctrl_jr,
 			ALUOp => id_ctrl_aluop
 		);
 
@@ -367,7 +379,8 @@ reg_idex: id_ex
 		clk => clock,
 		in_pc4 => id_pc4,
 		in_wb => id_ctrl_memtoreg,
-		in_m => id_ctrl_memwrite,
+		in_mem_write => id_ctrl_memwrite,
+		in_mem_read => id_ctrl_memread,
 		in_ex => id_ctrl_ex,
 		in_reg1 => id_rs_data,
 		in_reg2 => id_rt_data, 
@@ -377,7 +390,8 @@ reg_idex: id_ex
 		in_rd => id_instruction(15 downto 11),
 		out_pc4 => ex_pc4,
 		out_wb => ex_wb,
-		out_m => ex_m,
+		out_mem_read => ex_mem_read,
+		out_mem_write => ex_mem_write,
 		out_reg_dst => ex_reg_dst,
 		out_alu_op => ex_alu_op,
 		out_alu_src => ex_alu_src,
@@ -435,7 +449,8 @@ reg_idex: id_ex
 		 clk => clock, 
 		 in_pc4 => ex_pc4,
 		 in_wb => ex_wb, 
-		 in_m => ex_m, 
+		 in_mem_write => ex_mem_write,
+		 in_mem_read =>  ex_mem_read,
 		 in_result_alu => ex_ula_result, 
 		 in_data_reg => ex_rt_data, 
 		 in_reg_dst => ex_mux_reg_dst,
