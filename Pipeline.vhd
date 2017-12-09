@@ -114,14 +114,16 @@ end component;
 --Controle
 component controle is
 	port ( opcode, funct	: in std_logic_vector(5 downto 0);
-		 	RegDst: out std_logic; 
+		 	RegDst: out std_logic_vector(1 downto 0); 
 			ALUSrc: out std_logic; 
 			MemtoReg: out std_logic; 
 			RegWrite: out std_logic; 
 			Jump		: out std_logic;
 			MemRead: out std_logic; 
-			MemWrite: out std_logic; 
-			Branch: out std_logic; 
+			MemWrite: out std_logic;
+			sig_beq: out std_logic;
+			sig_bne: out std_logic;
+			sig_jr: out std_logic;
 			ALUOp: out std_logic_vector(1 downto 0));
 end component;
 
@@ -209,13 +211,16 @@ signal if_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal if_instruction : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 
 signal id_ctrl_alusrc : std_logic := '0';
+signal id_ctrl_beq : std_logic := '0';
+signal id_ctrl_bne : std_logic := '0';
+signal id_ctrl_jr : std_logic := '0';
 signal id_ctrl_aluop : std_logic_vector(2 downto 0) := (others => '0');
 signal id_ctrl_memtoreg : std_logic := '0';
 signal id_ctrl_regdst : std_logic_vector(1 downto 0) := (others => '0');
 signal id_ctrl_memread : std_logic := '0';
 signal id_ctrl_memwrite : std_logic := '0';
 signal id_ctrl_regwrite : std_logic := '0';
-signal id_ctrl_jump : std_logic := '0';
+signal id_ctrl_j : std_logic := '0';
 signal id_ctrl_branch : std_logic := '0';
 signal id_pc4 : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
 signal id_rs_data : std_logic_vector(WSIZE-1 downto 0) := (others => '0');
@@ -344,10 +349,12 @@ begin
 			ALUSrc => id_ctrl_alusrc,
 			MemtoReg => id_ctrl_memtoreg,
 			RegWrite => id_ctrl_regwrite,
-			Jump => id_ctrl_jump,
+			Jump => id_ctrl_j,
 			MemRead => id_ctrl_memread,
 			MemWrite => id_ctrl_memwrite,
-			Branch => id_ctrl_branch,
+			sig_beq  => id_ctrl_beq,
+			sig_bne => id_ctrl_bne,
+			sig_jr => id_ctrl_jr,
 			ALUOp => id_ctrl_aluop
 		);
 
