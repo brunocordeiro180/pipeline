@@ -7,7 +7,7 @@ entity controle is
 			opcode: in std_logic_vector(5 downto 0);
 		 	RegDst: out std_logic_vector(1 downto 0); 
 			ALUSrc: out std_logic; 
-			MemtoReg: out std_logic; 
+			MemtoReg: out std_logic_vector(1 downto 0); 
 			RegWrite: out std_logic; 
 			Jump		: out std_logic;
 			MemRead: out std_logic; 
@@ -45,7 +45,7 @@ begin
           	when R_FORMAT => 
 					RegDst <= "01"; 
 					ALUSrc <= '0'; 
-					MemtoReg <= '0'; 
+					MemtoReg <= "00"; 
 					RegWrite <='1'; 
 					MemRead<='0'; 
 					MemWrite<='0'; 
@@ -54,10 +54,12 @@ begin
 					sig_beq<='0';
 					sig_bne<='0';
 					sig_jr<='0';
+					
           	when LW => 
+				
 					RegDst <= "00"; 
 					ALUSrc <= '1'; 
-					MemtoReg <= '1';  					 
+					MemtoReg <= "01";  					 
 					RegWrite <='1'; 
 					MemRead<='1'; 
 					MemWrite<='0'; 					 
@@ -70,7 +72,7 @@ begin
 			when SW => 
 				RegDst <= "00"; 
 				ALUSrc <= '1'; 
-				MemtoReg <= '0';
+				MemtoReg <= "00";
 				RegWrite <='0'; 
 				MemRead<='0'; 
 				MemWrite<='1'; 				 
@@ -84,7 +86,7 @@ begin
 			when SLTI => 
 				RegDst <= "00"; 
 				ALUSrc <= '1'; 
-				MemtoReg <= '0'; 
+				MemtoReg <= "00"; 
 				RegWrite <='1';
 				MemRead<='0'; 
 				MemWrite<='0';				 
@@ -97,7 +99,7 @@ begin
 			when ADDI => 
 				RegDst <= "00"; 
 				ALUSrc <= '1'; 
-				MemtoReg <= '0'; 
+				MemtoReg <= "00"; 
 				RegWrite <='1';
 				MemRead<='0'; 
 				MemWrite<='0';
@@ -111,7 +113,7 @@ begin
 			when J => 
 				RegDst <= "00"; 
 				ALUSrc <= '0'; 
-				MemtoReg <= '0'; 
+				MemtoReg <= "00"; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';
@@ -124,7 +126,7 @@ begin
 			when BEQ => 
 				RegDst <= "00"; 
 				ALUSrc <= '0'; 
-				MemtoReg <= '0'; 
+				MemtoReg <= "00"; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';
@@ -137,7 +139,7 @@ begin
 			when BNE => 
 				RegDst <= "00"; 
 				ALUSrc <= '0'; 
-				MemtoReg <= 'X'; 
+				MemtoReg <= "00"; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';
@@ -150,7 +152,7 @@ begin
 			when JAL => 
 				RegDst <= "10"; 
 				ALUSrc <= '0'; 
-				MemtoReg <= 'X'; 
+				MemtoReg <= "10"; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';				 
@@ -163,7 +165,7 @@ begin
 			when JALR => 
 				RegDst <= "10"; 
 				ALUSrc <= '0'; 
-				MemtoReg <= 'X'; 
+				MemtoReg <= "10"; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';				 
@@ -176,8 +178,8 @@ begin
 			when JR => 
 				RegDst <= "01"; 
 				ALUSrc <= '0'; 
-				MemtoReg <= 'X'; 
-				RegWrite <='0';
+				MemtoReg <= "00"; 
+				RegWrite <="00";
 				MemRead<='0'; 
 				MemWrite<='0';
 				Jump <='1';
@@ -189,7 +191,7 @@ begin
 			when LUI => 
 				RegDst <= "00"; 
 				ALUSrc <= '1'; 
-				MemtoReg <= '1'; 
+				MemtoReg <= "00"; 
 				RegWrite <='0';
 				MemRead<='0'; 
 				MemWrite<='0';
@@ -202,8 +204,8 @@ begin
 		  when others => 
 				RegDst <= "00"; 
 				ALUSrc <= '0'; 
-				MemtoReg <= '0'; 
-				RegWrite <='1'; 
+				MemtoReg <= "00"; 
+				RegWrite <='0'; 
 				MemRead<='0'; 
 				MemWrite<='0'; 
 				ALUOp <= "000";
