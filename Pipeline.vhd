@@ -34,67 +34,89 @@ end component;
 
 --ID/EX
 component id_ex is
-	port ( clk: in std_logic;
-			 in_pc4 : in std_logic_vector(WSIZE-1 downto 0);
-			 in_wb : in std_logic_vector(1 downto 0);
-			 in_mem_read : in std_logic;
-			 in_mem_write : in std_logic;
-			 in_ex : in std_logic_vector(7 downto 0);
-			 in_reg1 : in std_logic_vector(WSIZE-1 downto 0);
-			 in_reg2 : in std_logic_vector(WSIZE-1 downto 0);
-			 in_immediate : in std_logic_vector(WSIZE-1 downto 0);
-			 in_shamt : in std_logic_vector(4 downto 0);
-			 in_rt : in std_logic_vector(4 downto 0);
-			 in_rd : in std_logic_vector(4 downto 0);
-			 out_pc4 : out std_logic_vector(WSIZE-1 downto 0);
-			 out_wb : out std_logic_vector(1 downto 0);
-			 out_mem_read : out std_logic;
-			 out_mem_write : out std_logic;
-			 out_reg_dst : out std_logic_vector(1 downto 0);
-			 out_alu_op : out std_logic_vector(3 downto 0);
-			 out_alu_src : out std_logic;
-			 out_alu_src2 : out std_logic;
-			 out_reg1 : out std_logic_vector(WSIZE-1 downto 0);
-			 out_reg2 : out std_logic_vector(WSIZE-1 downto 0);
-			 out_immediate : out std_logic_vector(WSIZE-1 downto 0);
-			 out_rt : out std_logic_vector(4 downto 0);
-			 out_rd : out std_logic_vector(4 downto 0);
-			 out_shamt: out std_logic_vector(4 downto 0));
+	port ( 
+		clk							: in std_logic;
+		idex_in_pc4 				: in std_logic_vector(WSIZE-1 downto 0);
+		idex_regdest_in 			: in std_logic_vector(1 downto 0);
+		idex_opalu_in  			: in std_logic_vector(2 downto 0);
+		idex_alusrc_in 			: in std_logic;
+		idex_beq_in					: in std_logic;
+		idex_bne_in 				: in std_logic;
+		idex_mem_read_in			: in std_logic;
+		idex_mem_write_in 		: in std_logic;
+		idex_regwrite_in 			: in std_logic;
+		idex_mem_to_reg_in		: in std_logic_vector(1 downto 0);
+		in_reg1 						: in std_logic_vector(WSIZE-1 downto 0);
+		in_reg2 						: in std_logic_vector(WSIZE-1 downto 0);
+		in_immediate 				: in std_logic_vector(WSIZE-1 downto 0);
+		idex_in_rt 					: in std_logic_vector(4 downto 0);
+		idex_in_rd 					: in std_logic_vector(4 downto 0);	
+		
+		idex_out_pc4 			: out std_logic_vector(WSIZE-1 downto 0);
+		idex_out_regdest 		: out std_logic_vector(1 downto 0);
+		idex_out_alu_op 		: out std_logic_vector(2 downto 0);
+		idex_out_alusrc 		: out std_logic;
+		idex_beq_out			: out std_logic;
+		idex_bne_out 			: out std_logic;
+		idex_mem_read_out		: out std_logic;
+		idex_mem_write_out 	: out std_logic;
+		idex_regwrite_out 	: out std_logic;
+		idex_mem_to_reg_out	: out std_logic_vector(1 downto 0);
+		idex_out_reg1 			: out std_logic_vector(WSIZE-1 downto 0);
+		idex_out_reg2 			: out std_logic_vector(WSIZE-1 downto 0);
+		idex_out_immediate 	: out std_logic_vector(WSIZE-1 downto 0);
+		idex_out_rt 			: out std_logic_vector(4 downto 0);
+		idex_out_rd 			: out std_logic_vector(4 downto 0));
 end component;
 
 --EX/MEM
 component ex_mem is
-	port ( clk: in std_logic;
-			 in_pc4 : in std_logic_vector(WSIZE-1 downto 0);
-			 in_wb : in std_logic_vector(1 downto 0);
-			 in_mem_read 		: in std_logic;
-			 in_mem_write 		: in std_logic;
-			 in_result_alu : in std_logic_vector(WSIZE-1 downto 0);
-			 in_data_reg : in std_logic_vector(WSIZE-1 downto 0);
-			 in_reg_dst : in std_logic_vector(4 downto 0);
-			 out_pc4 : out std_logic_vector(WSIZE-1 downto 0);
-			 out_wb : out std_logic_vector(1 downto 0);
-			 out_mem_read : out std_logic;
-			 out_mem_write : out std_logic;
-			 out_result_alu : out std_logic_vector(WSIZE-1 downto 0);
-			 out_data_reg : out std_logic_vector(WSIZE-1 downto 0);
-			 out_reg_dst : out std_logic_vector(4 downto 0));
+	port ( 		
+		clk					 			: in std_logic;
+		exmem_in_pc4 		 			: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_adderesult_in 			: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_aluresult_in 			: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_beq_in 		  			: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_bne_in					: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_memread_in 				: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_regwrite_in 			: in std_logic;
+		exmem_memwrite_in 			: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_memtoreg_in 			: in std_logic_vector(1 downto 0);
+		exmem_zero_in					: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_reg2_in 					: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_writereg_in				: in std_logic_vector(4 downto 0);	
+		exmem_out_pc4 		 			: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_adderesult_out 		: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_aluresult_out 			: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_beq_out 		  			: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_bne_out					: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_memread_out 			: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_regwrite_out			: out std_logic;
+		exmem_memwrite_out 			: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_memtoreg_out 			: out std_logic_vector(1 downto 0);
+		exmem_zero_out					: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_reg2_out 				: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_writereg_out			: out std_logic_vector(4 downto 0));
+
 end component;
 
 --MEM/WB
 component mem_wb is
-	port ( clk: in std_logic;
-			 in_pc4 : in std_logic_vector(WSIZE-1 downto 0);
-			 in_read_data : in std_logic_vector(WSIZE-1 downto 0);
-			 in_wb : in std_logic_vector(1 downto 0);
-			 in_result_alu : in std_logic_vector(WSIZE-1 downto 0);
-			 in_reg_dst : in std_logic_vector(4 downto 0);
-			 out_pc4 : out std_logic_vector(WSIZE-1 downto 0);
-			 out_reg_write : out std_logic;
-			 out_mem_2_reg : out std_logic_vector(1 downto 0);
-			 out_reg_dst : out std_logic_vector(4 downto 0);
-			 out_read_data : out std_logic_vector(WSIZE-1 downto 0);
-			 out_result_alu :out std_logic_vector(WSIZE-1 downto 0));
+	port ( 
+		clk						: in std_logic;
+		memwb_in_pc4 			: in std_logic_vector(WSIZE-1 downto 0);
+		memwb_in_regwrite		: in std_logic;
+		memwb_in_memtoreg 	: in std_logic_vector(1 downto 0);
+		memwb_in_result_alu 	: in std_logic_vector(WSIZE-1 downto 0);
+		memwb_in_memdata		: in std_logic_vector(WSIZE-1 downto 0);
+		memwb_in_writedata	: in std_logic_vector(4 downto 0);
+		
+		memwb_out_pc4 			: out std_logic_vector(WSIZE-1 downto 0);
+		memwb_out_regwrite	: out std_logic;
+		memwb_out_memtoreg 	: out std_logic_vector(1 downto 0);
+		memwb_out_result_alu : out std_logic_vector(WSIZE-1 downto 0);
+		memwb_out_memdata		: out std_logic_vector(WSIZE-1 downto 0);
+		memwb_out_writedata	: out std_logic_vector(4 downto 0));
 end component;
 
 ------------------------------Componentes da parte de controle-------------------------------------
@@ -127,7 +149,7 @@ component controle is
 			sig_beq: out std_logic;
 			sig_bne: out std_logic;
 			sig_jr: out std_logic;
-			ALUOp: out std_logic_vector(2 downto 0));
+			ALUOp: out std_logic_vector(1 downto 0));
 end component;
 
 
