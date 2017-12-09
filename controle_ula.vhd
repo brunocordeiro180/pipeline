@@ -48,8 +48,10 @@ begin
 					when "100110" => alu_ctr <= ULA_XOR;
 					when "101010" => alu_ctr <= ULA_SLT;
 					when "001000" => alu_ctr <= ULA_ADDI;
+					when others => alu_ctr <= "1100";
 				END CASE;
-			
+		
+		when others => alu_ctr <= "1100";
 
 	END CASE;
 	end process;		

@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="Pipeline">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Pipeline|mdata:md_mem|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_gec1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Pipeline|minst:mi_if|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_ht71.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

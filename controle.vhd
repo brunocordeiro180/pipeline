@@ -5,6 +5,7 @@ use ieee.numeric_std.all;
 entity controle is
 	port 	(
 			opcode: in std_logic_vector(5 downto 0);
+			funct: in std_logic_vector(5 downto 0);
 		 	RegDst: out std_logic_vector(1 downto 0); 
 			ALUSrc: out std_logic; 
 			MemtoReg: out std_logic_vector(1 downto 0); 
@@ -39,22 +40,64 @@ architecture arq_controle of controle is
 
 begin
    
-    process (opcode)
+    process (opcode, funct)
     begin
         case opcode is
-          	when R_FORMAT => 
-					RegDst <= "01"; 
-					ALUSrc <= '0'; 
-					MemtoReg <= "00"; 
-					RegWrite <='1'; 
-					MemRead<='0'; 
-					MemWrite<='0'; 
-					Jump <='0';
-					ALUOp <= "010"; -- R type
-					sig_beq<='0';
-					sig_bne<='0';
-					sig_jr<='0';
+			when R_FORMAT => 
+				case funct is
+				   when "001001" => 
+						RegDst <= "10"; 
+						ALUSrc <= '0'; 
+						MemtoReg <= "10"; 
+						RegWrite <='0';
+						MemRead<='0'; 
+						MemWrite<='0';				 
+						Jump <='1';
+						ALUOp <= "000"; -- JALR sinais de controle
+						sig_beq<='0';
+						sig_bne<='0';
+						sig_jr<='0';
+			
+					when "001000" =>
+						RegDst <= "01"; 
+						ALUSrc <= '0'; 
+						MemtoReg <= "00"; 
+						RegWrite <='0';
+						MemRead<='0'; 
+						MemWrite<='0';
+						Jump <='1';
+						ALUOp <= "000"; -- JR sinais de controle
+						sig_beq<='0';
+						sig_bne<='0';
+						sig_jr<='1';
+				
+					when "000000" =>
+						
+						RegDst <= "00"; 
+						ALUSrc <= '0'; 
+						MemtoReg <= "00"; 
+						RegWrite <='0';
+						MemRead<='0'; 
+						MemWrite<='0';
+						Jump <='0';
+						ALUOp <= "000"; -- JR sinais de controle
+						sig_beq<='0';
+						sig_bne<='0';
+						sig_jr<='0';
+					when others => 
 					
+						RegDst <= "01"; 
+						ALUSrc <= '0'; 
+						MemtoReg <= "00"; 
+						RegWrite <='1';
+						MemRead<='0'; 
+						MemWrite<='0';
+						Jump <='0';
+						ALUOp <= "010"; -- JR sinais de controle
+						sig_beq<='0';
+						sig_bne<='0';
+						sig_jr<='0';
+					end case;
           	when LW => 
 				
 					RegDst <= "00"; 
@@ -162,32 +205,9 @@ begin
 				sig_bne<='0';
 				sig_jr<='0';
 			
-			when JALR => 
-				RegDst <= "10"; 
-				ALUSrc <= '0'; 
-				MemtoReg <= "10"; 
-				RegWrite <='0';
-				MemRead<='0'; 
-				MemWrite<='0';				 
-				Jump <='1';
-				ALUOp <= "000"; -- JALR sinais de controle
-				sig_beq<='0';
-				sig_bne<='0';
-				sig_jr<='0';
-			
-			when JR => 
-				RegDst <= "01"; 
-				ALUSrc <= '0'; 
-				MemtoReg <= "00"; 
-				RegWrite <='0';
-				MemRead<='0'; 
-				MemWrite<='0';
-				Jump <='1';
-				ALUOp <= "000"; -- JR sinais de controle
-				sig_beq<='0';
-				sig_bne<='0';
-				sig_jr<='1';
-				
+
+
+
 			when LUI => 
 				RegDst <= "00"; 
 				ALUSrc <= '1'; 

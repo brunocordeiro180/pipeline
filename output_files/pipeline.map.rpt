@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pipeline
-Sat Dec 09 18:22:37 2017
+Sat Dec 09 19:31:52 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -18,20 +18,32 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
  12. Source assignments for minst:mi_if|altsyncram:altsyncram_component|altsyncram_ht71:auto_generated
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |Pipeline
- 14. Parameter Settings for User Entity Instance: mux4:mux4_if
- 15. Parameter Settings for User Entity Instance: pc:pc_reg
- 16. Parameter Settings for User Entity Instance: minst:mi_if|altsyncram:altsyncram_component
- 17. Parameter Settings for User Entity Instance: if_id:reg_ifid
- 18. Parameter Settings for User Entity Instance: bregmips:breg_id
- 19. altsyncram Parameter Settings by Entity Instance
- 20. Port Connectivity Checks: "controle:controle_id"
- 21. Port Connectivity Checks: "bregmips:breg_id"
- 22. Port Connectivity Checks: "if_id:reg_ifid"
- 23. Port Connectivity Checks: "somador:somador_if"
- 24. Port Connectivity Checks: "mux4:mux4_if"
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 13. Source assignments for mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |Pipeline
+ 15. Parameter Settings for User Entity Instance: mux4:mux4_if
+ 16. Parameter Settings for User Entity Instance: pc:pc_reg
+ 17. Parameter Settings for User Entity Instance: minst:mi_if|altsyncram:altsyncram_component
+ 18. Parameter Settings for User Entity Instance: if_id:reg_ifid
+ 19. Parameter Settings for User Entity Instance: bregmips:breg_id
+ 20. Parameter Settings for User Entity Instance: id_ex:reg_idex
+ 21. Parameter Settings for User Entity Instance: mux2:mux2_ex_B
+ 22. Parameter Settings for User Entity Instance: ula_mips:ula_ex
+ 23. Parameter Settings for User Entity Instance: mux_41:mux4_ex
+ 24. Parameter Settings for User Entity Instance: ex_mem:reg_exmem
+ 25. Parameter Settings for User Entity Instance: mdata:md_mem|altsyncram:altsyncram_component
+ 26. Parameter Settings for User Entity Instance: mem_wb:reg_memwb
+ 27. Parameter Settings for User Entity Instance: mux4:mux4_wb
+ 28. altsyncram Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "mux4:mux4_wb"
+ 30. Port Connectivity Checks: "mem_wb:reg_memwb"
+ 31. Port Connectivity Checks: "mdata:md_mem"
+ 32. Port Connectivity Checks: "ex_mem:reg_exmem"
+ 33. Port Connectivity Checks: "mux_41:mux4_ex"
+ 34. Port Connectivity Checks: "somador:ex_somador"
+ 35. Port Connectivity Checks: "somador:somador_if"
+ 36. Port Connectivity Checks: "mux4:mux4_if"
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
 
 
 
@@ -57,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 09 18:22:37 2017      ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec 09 19:31:52 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; Pipeline                                   ;
 ; Top-level Entity Name              ; Pipeline                                   ;
@@ -174,14 +186,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                         ; Library ;
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------+---------+
+; ula_mips.vhd                     ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd             ;         ;
 ; somador.vhd                      ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/somador.vhd              ;         ;
 ; pc.vhd                           ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/pc.vhd                   ;         ;
 ; bregmips.vhd                     ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/bregmips.vhd             ;         ;
 ; Pipeline.vhd                     ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline.vhd             ;         ;
 ; minst.vhd                        ; yes             ; User Wizard-Generated File             ; C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd                ;         ;
+; mdata.vhd                        ; yes             ; User Wizard-Generated File             ; C:/Users/bruno/Documents/TrabFinal/pipeline/mdata.vhd                ;         ;
+; controle_ula.vhd                 ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/controle_ula.vhd         ;         ;
 ; controle.vhd                     ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/controle.vhd             ;         ;
+; sign_extend.vhd                  ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/sign_extend.vhd          ;         ;
 ; if_id.vhd                        ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/if_id.vhd                ;         ;
+; id_ex.vhd                        ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/id_ex.vhd                ;         ;
+; ex_mem.vhd                       ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/ex_mem.vhd               ;         ;
+; mem_wb.vhd                       ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/mem_wb.vhd               ;         ;
+; conversor_7seg.vhd               ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/conversor_7seg.vhd       ;         ;
 ; mux4.vhd                         ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux4.vhd                 ;         ;
+; mux2.vhd                         ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux2.vhd                 ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
@@ -193,6 +214,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
 ; db/altsyncram_ht71.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_ht71.tdf   ;         ;
 ; meminstrucoes.mif                ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/bruno/Documents/TrabFinal/pipeline/meminstrucoes.mif        ;         ;
+; mux_41.vhd                       ; yes             ; Auto-Found VHDL File                   ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux_41.vhd               ;         ;
+; db/altsyncram_gec1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_gec1.tdf   ;         ;
+; memdados.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/bruno/Documents/TrabFinal/pipeline/memdados.mif             ;         ;
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------+---------+
 
 
@@ -231,37 +255,213 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                         ;
-+--------+--------------+---------+--------------+--------------+-----------------------+-------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance       ; IP Include File                                       ;
-+--------+--------------+---------+--------------+--------------+-----------------------+-------------------------------------------------------+
-; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|minst:mi_if ; C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd ;
-+--------+--------------+---------+--------------+--------------+-----------------------+-------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                          ;
++--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File                                       ;
++--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|mdata:md_mem ; C:/Users/bruno/Documents/TrabFinal/pipeline/mdata.vhd ;
+; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|minst:mi_if  ; C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd ;
++--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
 
 
-+-------------------------------------------------------------+
-; Registers Removed During Synthesis                          ;
-+----------------------------------------+--------------------+
-; Register name                          ; Reason for Removal ;
-+----------------------------------------+--------------------+
-; if_id:reg_ifid|out_instruction[0..31]  ; Lost fanout        ;
-; if_id:reg_ifid|out_pc4[28..31]         ; Lost fanout        ;
-; pc:pc_reg|out_pc[0..31]                ; Lost fanout        ;
-; Total Number of Removed Registers = 68 ;                    ;
-+----------------------------------------+--------------------+
++-------------------------------------------------------------------+
+; Registers Removed During Synthesis                                ;
++----------------------------------------------+--------------------+
+; Register name                                ; Reason for Removal ;
++----------------------------------------------+--------------------+
+; ex_mem:reg_exmem|exmem_reg2_out[0..30]       ; Lost fanout        ;
+; ex_mem:reg_exmem|exmem_memwrite_out          ; Lost fanout        ;
+; id_ex:reg_idex|idex_mem_write_out            ; Lost fanout        ;
+; ex_mem:reg_exmem|exmem_reg2_out[31]          ; Lost fanout        ;
+; mem_wb:reg_memwb|memwb_out_memdata[0..31]    ; Lost fanout        ;
+; mem_wb:reg_memwb|memwb_out_result_alu[0..31] ; Lost fanout        ;
+; mem_wb:reg_memwb|memwb_out_memtoreg[0,1]     ; Lost fanout        ;
+; mem_wb:reg_memwb|memwb_out_regwrite          ; Lost fanout        ;
+; mem_wb:reg_memwb|memwb_out_pc4[0..31]        ; Lost fanout        ;
+; ex_mem:reg_exmem|exmem_zero_out              ; Lost fanout        ;
+; ex_mem:reg_exmem|exmem_memtoreg_out[0,1]     ; Lost fanout        ;
+; ex_mem:reg_exmem|exmem_regwrite_out          ; Lost fanout        ;
+; ex_mem:reg_exmem|exmem_aluresult_out[0..31]  ; Lost fanout        ;
+; ex_mem:reg_exmem|exmem_adderesult_out[0..31] ; Lost fanout        ;
+; ex_mem:reg_exmem|exmem_out_pc4[0..31]        ; Lost fanout        ;
+; id_ex:reg_idex|idex_mem_to_reg_out[0,1]      ; Lost fanout        ;
+; id_ex:reg_idex|idex_regwrite_out             ; Lost fanout        ;
+; id_ex:reg_idex|idex_out_alusrc               ; Lost fanout        ;
+; id_ex:reg_idex|idex_out_alu_op[0..2]         ; Lost fanout        ;
+; id_ex:reg_idex|idex_out_immediate[0..31]     ; Lost fanout        ;
+; id_ex:reg_idex|idex_out_reg2[0..31]          ; Lost fanout        ;
+; id_ex:reg_idex|idex_out_reg1[0..31]          ; Lost fanout        ;
+; id_ex:reg_idex|idex_out_pc4[0..31]           ; Lost fanout        ;
+; if_id:reg_ifid|out_instruction[0..31]        ; Lost fanout        ;
+; if_id:reg_ifid|out_pc4[0..31]                ; Lost fanout        ;
+; pc:pc_reg|out_pc[0..31]                      ; Lost fanout        ;
+; Total Number of Removed Registers = 464      ;                    ;
++----------------------------------------------+--------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                      ;
-+-----------------------------------+--------------------+-----------------------------------------------------------------------------------------+
-; Register name                     ; Reason for Removal ; Registers Removed due to This Register                                                  ;
-+-----------------------------------+--------------------+-----------------------------------------------------------------------------------------+
-; if_id:reg_ifid|out_instruction[0] ; Lost Fanouts       ; pc:pc_reg|out_pc[2], pc:pc_reg|out_pc[3], pc:pc_reg|out_pc[4], pc:pc_reg|out_pc[5],     ;
-;                                   ;                    ; pc:pc_reg|out_pc[6], pc:pc_reg|out_pc[7], pc:pc_reg|out_pc[8], pc:pc_reg|out_pc[9]      ;
-; if_id:reg_ifid|out_pc4[28]        ; Lost Fanouts       ; pc:pc_reg|out_pc[24], pc:pc_reg|out_pc[25], pc:pc_reg|out_pc[26], pc:pc_reg|out_pc[27], ;
-;                                   ;                    ; pc:pc_reg|out_pc[28], pc:pc_reg|out_pc[29], pc:pc_reg|out_pc[30], pc:pc_reg|out_pc[31]  ;
-+-----------------------------------+--------------------+-----------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                              ;
++-------------------------------------------+--------------------+-----------------------------------------------------------------------------------------+
+; Register name                             ; Reason for Removal ; Registers Removed due to This Register                                                  ;
++-------------------------------------------+--------------------+-----------------------------------------------------------------------------------------+
+; ex_mem:reg_exmem|exmem_adderesult_out[0]  ; Lost Fanouts       ; id_ex:reg_idex|idex_out_pc4[24], id_ex:reg_idex|idex_out_pc4[25],                       ;
+;                                           ;                    ; id_ex:reg_idex|idex_out_pc4[26], id_ex:reg_idex|idex_out_pc4[27],                       ;
+;                                           ;                    ; id_ex:reg_idex|idex_out_pc4[28], id_ex:reg_idex|idex_out_pc4[29],                       ;
+;                                           ;                    ; id_ex:reg_idex|idex_out_pc4[30], id_ex:reg_idex|idex_out_pc4[31],                       ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[24], if_id:reg_ifid|out_pc4[25], if_id:reg_ifid|out_pc4[26],     ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[27], if_id:reg_ifid|out_pc4[28], if_id:reg_ifid|out_pc4[29],     ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[30], if_id:reg_ifid|out_pc4[31]                                  ;
+; mem_wb:reg_memwb|memwb_out_pc4[0]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[0], id_ex:reg_idex|idex_out_pc4[0],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[0], pc:pc_reg|out_pc[24], pc:pc_reg|out_pc[25],                  ;
+;                                           ;                    ; pc:pc_reg|out_pc[26], pc:pc_reg|out_pc[27], pc:pc_reg|out_pc[28], pc:pc_reg|out_pc[29], ;
+;                                           ;                    ; pc:pc_reg|out_pc[30], pc:pc_reg|out_pc[31]                                              ;
+; id_ex:reg_idex|idex_out_immediate[0]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[0], pc:pc_reg|out_pc[2], pc:pc_reg|out_pc[3],            ;
+;                                           ;                    ; pc:pc_reg|out_pc[4], pc:pc_reg|out_pc[5], pc:pc_reg|out_pc[6], pc:pc_reg|out_pc[7],     ;
+;                                           ;                    ; pc:pc_reg|out_pc[8], pc:pc_reg|out_pc[9]                                                ;
+; ex_mem:reg_exmem|exmem_reg2_out[0]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[0], if_id:reg_ifid|out_instruction[16],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_instruction[17], if_id:reg_ifid|out_instruction[18],                 ;
+;                                           ;                    ; if_id:reg_ifid|out_instruction[19], if_id:reg_ifid|out_instruction[20]                  ;
+; id_ex:reg_idex|idex_out_reg1[0]           ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[21], if_id:reg_ifid|out_instruction[22],                 ;
+;                                           ;                    ; if_id:reg_ifid|out_instruction[23], if_id:reg_ifid|out_instruction[24],                 ;
+;                                           ;                    ; if_id:reg_ifid|out_instruction[25]                                                      ;
+; mem_wb:reg_memwb|memwb_out_pc4[5]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[5], id_ex:reg_idex|idex_out_pc4[5],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[5]                                                               ;
+; mem_wb:reg_memwb|memwb_out_pc4[21]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[21], id_ex:reg_idex|idex_out_pc4[21],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[21]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[1]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[1], id_ex:reg_idex|idex_out_pc4[1],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[1]                                                               ;
+; mem_wb:reg_memwb|memwb_out_pc4[2]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[2], id_ex:reg_idex|idex_out_pc4[2],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[2]                                                               ;
+; mem_wb:reg_memwb|memwb_out_pc4[3]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[3], id_ex:reg_idex|idex_out_pc4[3],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[3]                                                               ;
+; mem_wb:reg_memwb|memwb_out_pc4[4]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[4], id_ex:reg_idex|idex_out_pc4[4],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[4]                                                               ;
+; mem_wb:reg_memwb|memwb_out_pc4[6]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[6], id_ex:reg_idex|idex_out_pc4[6],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[6]                                                               ;
+; mem_wb:reg_memwb|memwb_out_pc4[7]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[7], id_ex:reg_idex|idex_out_pc4[7],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[7]                                                               ;
+; mem_wb:reg_memwb|memwb_out_pc4[8]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[8], id_ex:reg_idex|idex_out_pc4[8],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[8]                                                               ;
+; mem_wb:reg_memwb|memwb_out_pc4[9]         ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[9], id_ex:reg_idex|idex_out_pc4[9],                      ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[9]                                                               ;
+; mem_wb:reg_memwb|memwb_out_pc4[10]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[10], id_ex:reg_idex|idex_out_pc4[10],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[10]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[11]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[11], id_ex:reg_idex|idex_out_pc4[11],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[11]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[12]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[12], id_ex:reg_idex|idex_out_pc4[12],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[12]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[13]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[13], id_ex:reg_idex|idex_out_pc4[13],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[13]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[14]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[14], id_ex:reg_idex|idex_out_pc4[14],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[14]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[15]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[15], id_ex:reg_idex|idex_out_pc4[15],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[15]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[16]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[16], id_ex:reg_idex|idex_out_pc4[16],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[16]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[17]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[17], id_ex:reg_idex|idex_out_pc4[17],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[17]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[18]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[18], id_ex:reg_idex|idex_out_pc4[18],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[18]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[19]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[19], id_ex:reg_idex|idex_out_pc4[19],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[19]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[20]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[20], id_ex:reg_idex|idex_out_pc4[20],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[20]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[22]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[22], id_ex:reg_idex|idex_out_pc4[22],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[22]                                                              ;
+; mem_wb:reg_memwb|memwb_out_pc4[23]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[23], id_ex:reg_idex|idex_out_pc4[23],                    ;
+;                                           ;                    ; if_id:reg_ifid|out_pc4[23]                                                              ;
+; mem_wb:reg_memwb|memwb_out_memtoreg[0]    ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_memtoreg_out[0], id_ex:reg_idex|idex_mem_to_reg_out[0]           ;
+; mem_wb:reg_memwb|memwb_out_memtoreg[1]    ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_memtoreg_out[1], id_ex:reg_idex|idex_mem_to_reg_out[1]           ;
+; mem_wb:reg_memwb|memwb_out_regwrite       ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_regwrite_out, id_ex:reg_idex|idex_regwrite_out                   ;
+; ex_mem:reg_exmem|exmem_reg2_out[30]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[30]                                                        ;
+; ex_mem:reg_exmem|exmem_memwrite_out       ; Lost Fanouts       ; id_ex:reg_idex|idex_mem_write_out                                                       ;
+; ex_mem:reg_exmem|exmem_reg2_out[31]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[31]                                                        ;
+; mem_wb:reg_memwb|memwb_out_result_alu[0]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[0]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[1]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[1]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[2]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[2]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[3]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[3]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[4]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[4]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[5]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[5]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[6]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[6]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[7]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[7]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[8]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[8]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[9]  ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[9]                                                 ;
+; mem_wb:reg_memwb|memwb_out_result_alu[10] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[10]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[11] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[11]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[13] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[13]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[14] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[14]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[15] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[15]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[16] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[16]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[17] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[17]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[18] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[18]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[19] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[19]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[20] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[20]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[21] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[21]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[22] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[22]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[23] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[23]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[24] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[24]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[25] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[25]                                                ;
+; ex_mem:reg_exmem|exmem_reg2_out[14]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[14]                                                        ;
+; mem_wb:reg_memwb|memwb_out_result_alu[27] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[27]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[28] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[28]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[29] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[29]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[30] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[30]                                                ;
+; mem_wb:reg_memwb|memwb_out_result_alu[31] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[31]                                                ;
+; ex_mem:reg_exmem|exmem_reg2_out[1]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[1]                                                         ;
+; ex_mem:reg_exmem|exmem_reg2_out[2]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[2]                                                         ;
+; ex_mem:reg_exmem|exmem_reg2_out[3]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[3]                                                         ;
+; ex_mem:reg_exmem|exmem_reg2_out[4]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[4]                                                         ;
+; ex_mem:reg_exmem|exmem_reg2_out[5]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[5]                                                         ;
+; ex_mem:reg_exmem|exmem_reg2_out[6]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[6]                                                         ;
+; ex_mem:reg_exmem|exmem_reg2_out[7]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[7]                                                         ;
+; ex_mem:reg_exmem|exmem_reg2_out[8]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[8]                                                         ;
+; mem_wb:reg_memwb|memwb_out_result_alu[26] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[26]                                                ;
+; ex_mem:reg_exmem|exmem_reg2_out[9]        ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[9]                                                         ;
+; ex_mem:reg_exmem|exmem_reg2_out[10]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[10]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[11]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[11]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[12]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[12]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[13]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[13]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[15]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[15]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[16]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[16]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[17]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[17]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[18]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[18]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[19]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[19]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[20]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[20]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[21]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[21]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[22]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[22]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[23]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[23]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[24]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[24]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[25]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[25]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[26]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[26]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[27]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[27]                                                        ;
+; mem_wb:reg_memwb|memwb_out_pc4[24]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[24]                                                      ;
+; mem_wb:reg_memwb|memwb_out_pc4[25]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[25]                                                      ;
+; mem_wb:reg_memwb|memwb_out_pc4[26]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[26]                                                      ;
+; mem_wb:reg_memwb|memwb_out_pc4[27]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[27]                                                      ;
+; mem_wb:reg_memwb|memwb_out_pc4[28]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[28]                                                      ;
+; mem_wb:reg_memwb|memwb_out_pc4[29]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[29]                                                      ;
+; mem_wb:reg_memwb|memwb_out_pc4[30]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[30]                                                      ;
+; mem_wb:reg_memwb|memwb_out_pc4[31]        ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_out_pc4[31]                                                      ;
+; ex_mem:reg_exmem|exmem_reg2_out[28]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[28]                                                        ;
+; ex_mem:reg_exmem|exmem_reg2_out[29]       ; Lost Fanouts       ; id_ex:reg_idex|idex_out_reg2[29]                                                        ;
+; id_ex:reg_idex|idex_out_immediate[1]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[1]                                                       ;
+; mem_wb:reg_memwb|memwb_out_result_alu[12] ; Lost Fanouts       ; ex_mem:reg_exmem|exmem_aluresult_out[12]                                                ;
+; id_ex:reg_idex|idex_out_immediate[3]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[3]                                                       ;
+; id_ex:reg_idex|idex_out_immediate[4]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[4]                                                       ;
+; id_ex:reg_idex|idex_out_immediate[5]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[5]                                                       ;
+; id_ex:reg_idex|idex_out_immediate[6]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[6]                                                       ;
+; id_ex:reg_idex|idex_out_immediate[7]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[7]                                                       ;
+; id_ex:reg_idex|idex_out_immediate[8]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[8]                                                       ;
+; id_ex:reg_idex|idex_out_immediate[9]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[9]                                                       ;
+; id_ex:reg_idex|idex_out_immediate[10]     ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[10]                                                      ;
+; id_ex:reg_idex|idex_out_immediate[11]     ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[11]                                                      ;
+; id_ex:reg_idex|idex_out_immediate[12]     ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[12]                                                      ;
+; id_ex:reg_idex|idex_out_immediate[13]     ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[13]                                                      ;
+; id_ex:reg_idex|idex_out_immediate[14]     ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[14]                                                      ;
+; id_ex:reg_idex|idex_out_immediate[15]     ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[15]                                                      ;
+; id_ex:reg_idex|idex_out_immediate[2]      ; Lost Fanouts       ; if_id:reg_ifid|out_instruction[2]                                                       ;
++-------------------------------------------+--------------------+-----------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -286,6 +486,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+--------------------+------+-------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                   ;
 +---------------------------------+--------------------+------+-------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Source assignments for mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------+
+; Assignment                      ; Value              ; From ; To                                   ;
++---------------------------------+--------------------+------+--------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                    ;
++---------------------------------+--------------------+------+--------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -399,59 +608,224 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                        ;
-+-------------------------------------------+---------------------------------------------+
-; Name                                      ; Value                                       ;
-+-------------------------------------------+---------------------------------------------+
-; Number of entity instances                ; 1                                           ;
-; Entity Instance                           ; minst:mi_if|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; ROM                                         ;
-;     -- WIDTH_A                            ; 32                                          ;
-;     -- NUMWORDS_A                         ; 256                                         ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                      ;
-;     -- WIDTH_B                            ; 1                                           ;
-;     -- NUMWORDS_B                         ; 1                                           ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                      ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                        ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                   ;
-+-------------------------------------------+---------------------------------------------+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: id_ex:reg_idex ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; WSIZE          ; 32    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "controle:controle_id"                                                                   ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; regdst   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; alusrc   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; memtoreg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; regwrite ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; memread  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; memwrite ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; sig_beq  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; sig_bne  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; aluop    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:mux2_ex_B ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; WSIZE          ; 32    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ula_mips:ula_ex ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; WISE           ; 32    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_41:mux4_ex ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; WSIZE          ; 32    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ex_mem:reg_exmem ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; WSIZE          ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mdata:md_mem|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-------------------------------+
+; Parameter Name                     ; Value                ; Type                          ;
++------------------------------------+----------------------+-------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                       ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                       ;
+; WIDTH_A                            ; 32                   ; Signed Integer                ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                       ;
+; WIDTH_B                            ; 1                    ; Untyped                       ;
+; WIDTHAD_B                          ; 1                    ; Untyped                       ;
+; NUMWORDS_B                         ; 1                    ; Untyped                       ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                       ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                       ;
+; BYTE_SIZE                          ; 8                    ; Untyped                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                       ;
+; INIT_FILE                          ; memDados.mif         ; Untyped                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                       ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                       ;
+; CBXI_PARAMETER                     ; altsyncram_gec1      ; Untyped                       ;
++------------------------------------+----------------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mem_wb:reg_memwb ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; WSIZE          ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux4:mux4_wb ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WSIZE          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                         ;
++-------------------------------------------+----------------------------------------------+
+; Name                                      ; Value                                        ;
++-------------------------------------------+----------------------------------------------+
+; Number of entity instances                ; 2                                            ;
+; Entity Instance                           ; minst:mi_if|altsyncram:altsyncram_component  ;
+;     -- OPERATION_MODE                     ; ROM                                          ;
+;     -- WIDTH_A                            ; 32                                           ;
+;     -- NUMWORDS_A                         ; 256                                          ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                       ;
+;     -- WIDTH_B                            ; 1                                            ;
+;     -- NUMWORDS_B                         ; 1                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                    ;
+; Entity Instance                           ; mdata:md_mem|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                  ;
+;     -- WIDTH_A                            ; 32                                           ;
+;     -- NUMWORDS_A                         ; 256                                          ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                       ;
+;     -- WIDTH_B                            ; 1                                            ;
+;     -- NUMWORDS_B                         ; 1                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                    ;
++-------------------------------------------+----------------------------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "mux4:mux4_wb" ;
++------+-------+----------+----------------+
+; Port ; Type  ; Severity ; Details        ;
++------+-------+----------+----------------+
+; in_3 ; Input ; Info     ; Stuck at GND   ;
++------+-------+----------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mem_wb:reg_memwb"                                                                                  ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; memwb_out_writedata ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "bregmips:breg_id"                                                                   ;
+; Port Connectivity Checks: "mdata:md_mem"                                                                       ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-; r2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "if_id:reg_ifid"                                                                               ;
-+----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port           ; Type   ; Severity ; Details                                                                             ;
-+----------------+--------+----------+-------------------------------------------------------------------------------------+
-; out_pc4[27..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ex_mem:reg_exmem"                                                                                 ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; exmem_beq_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; exmem_bne_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; exmem_memread_out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; exmem_writereg_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "mux_41:mux4_ex" ;
++------+-------+----------+------------------+
+; Port ; Type  ; Severity ; Details          ;
++------+-------+----------+------------------+
+; in_2 ; Input ; Info     ; Stuck at VCC     ;
+; in_3 ; Input ; Info     ; Stuck at GND     ;
++------+-------+----------+------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "somador:ex_somador" ;
++---------+-------+----------+-------------------+
+; Port    ; Type  ; Severity ; Details           ;
++---------+-------+----------+-------------------+
+; b[1..0] ; Input ; Info     ; Stuck at GND      ;
++---------+-------+----------+-------------------+
 
 
 +------------------------------------------------+
@@ -489,7 +863,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 09 18:22:35 2017
+    Info: Processing started: Sat Dec 09 19:31:50 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipeline -c Pipeline
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ula_mips.vhd
@@ -544,28 +918,19 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux4.vh
 Info (12021): Found 2 design units, including 1 entities, in source file comparador.vhd
     Info (12022): Found design unit 1: comparador-behavior
     Info (12023): Found entity 1: comparador
+Info (12021): Found 2 design units, including 1 entities, in source file mux2.vhd
+    Info (12022): Found design unit 1: mux2-behavioral
+    Info (12023): Found entity 1: mux2
+Warning (12019): Can't analyze file -- file mux41.vhd is missing
 Info (12127): Elaborating entity "Pipeline" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(11): used implicit default value for signal "Saida_FPGA_7seg_0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(12): used implicit default value for signal "Saida_FPGA_7seg_1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(13): used implicit default value for signal "Saida_FPGA_7seg_2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(14): used implicit default value for signal "Saida_FPGA_7seg_3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(15): used implicit default value for signal "Saida_FPGA_7seg_4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(16): used implicit default value for signal "Saida_FPGA_7seg_5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(17): used implicit default value for signal "Saida_FPGA_7seg_6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(18): used implicit default value for signal "Saida_FPGA_7seg_7" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(253): object "id_reg2" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(259): object "id_ctrl_regwrite" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(260): object "id_ctrl_memtoreg" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(263): object "id_ctrl_memread" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(264): object "id_ctrl_memwrite" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(265): object "id_ctrl_regdst" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(266): object "id_ctrl_aluop" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(267): object "id_ctrl_alusrc" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(278): used implicit default value for signal "ex_somador_result" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(301): used implicit default value for signal "mem_zero_alu" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(317): used implicit default value for signal "wb_write_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(319): used implicit default value for signal "wb_write_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(321): used implicit default value for signal "wb_reg_write" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(255): used implicit default value for signal "saida_FPGA_32bits" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(318): object "mem_readdata" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(319): object "mem_write_reg" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(324): used implicit default value for signal "mem_read_mem" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(326): object "mem_read_sig" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(327): object "mem_beq" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(328): object "mem_bne" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(334): used implicit default value for signal "wb_write_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "mux4" for hierarchy "mux4:mux4_if"
 Info (12128): Elaborating entity "pc" for hierarchy "pc:pc_reg"
 Info (12128): Elaborating entity "somador" for hierarchy "somador:somador_if"
@@ -592,8 +957,42 @@ Info (12128): Elaborating entity "altsyncram_ht71" for hierarchy "minst:mi_if|al
 Info (12128): Elaborating entity "if_id" for hierarchy "if_id:reg_ifid"
 Info (12128): Elaborating entity "bregmips" for hierarchy "bregmips:breg_id"
 Info (12128): Elaborating entity "controle" for hierarchy "controle:controle_id"
-Warning (10631): VHDL Process Statement warning at controle.vhd(42): inferring latch(es) for signal or variable "Jump", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "Jump" at controle.vhd(42)
+Warning (10631): VHDL Process Statement warning at controle.vhd(43): inferring latch(es) for signal or variable "Jump", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Jump" at controle.vhd(43)
+Info (12128): Elaborating entity "sign_extend" for hierarchy "sign_extend:sign_extend_id"
+Info (12128): Elaborating entity "id_ex" for hierarchy "id_ex:reg_idex"
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux2_ex_B"
+Info (12128): Elaborating entity "ula_mips" for hierarchy "ula_mips:ula_ex"
+Warning (10492): VHDL Process Statement warning at ula_mips.vhd(35): signal "opcode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "controle_ula" for hierarchy "controle_ula:ula_control"
+Warning (12125): Using design file mux_41.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: mux_41-behavioral
+    Info (12023): Found entity 1: mux_41
+Info (12128): Elaborating entity "mux_41" for hierarchy "mux_41:mux4_ex"
+Info (12128): Elaborating entity "ex_mem" for hierarchy "ex_mem:reg_exmem"
+Info (12128): Elaborating entity "mdata" for hierarchy "mdata:md_mem"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "mdata:md_mem|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "mdata:md_mem|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "mdata:md_mem|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "memDados.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_gec1.tdf
+    Info (12023): Found entity 1: altsyncram_gec1
+Info (12128): Elaborating entity "altsyncram_gec1" for hierarchy "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated"
+Info (12128): Elaborating entity "mem_wb" for hierarchy "mem_wb:reg_memwb"
+Info (12128): Elaborating entity "conversor_7seg" for hierarchy "conversor_7seg:conversor_7"
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "minst:mi_if|altsyncram:altsyncram_component|altsyncram_ht71:auto_generated|q_a[0]"
@@ -628,64 +1027,98 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "minst:mi_if|altsyncram:altsyncram_component|altsyncram_ht71:auto_generated|q_a[29]"
         Warning (14320): Synthesized away node "minst:mi_if|altsyncram:altsyncram_component|altsyncram_ht71:auto_generated|q_a[30]"
         Warning (14320): Synthesized away node "minst:mi_if|altsyncram:altsyncram_component|altsyncram_ht71:auto_generated|q_a[31]"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[8]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[9]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[10]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[11]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[12]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[13]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[14]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[15]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[16]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[17]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[18]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[19]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[20]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[21]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[22]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[23]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[24]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[25]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[26]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[27]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[28]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[29]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[30]"
+        Warning (14320): Synthesized away node "mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated|q_a[31]"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Saida_FPGA_7seg_0[6]" is stuck at GND
+    Warning (13410): Pin "Saida_FPGA_7seg_0[6]" is stuck at VCC
     Warning (13410): Pin "Saida_FPGA_7seg_0[5]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_0[4]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_0[3]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_0[2]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_0[1]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_0[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_1[6]" is stuck at GND
+    Warning (13410): Pin "Saida_FPGA_7seg_1[6]" is stuck at VCC
     Warning (13410): Pin "Saida_FPGA_7seg_1[5]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_1[4]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_1[3]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_1[2]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_1[1]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_1[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_2[6]" is stuck at GND
+    Warning (13410): Pin "Saida_FPGA_7seg_2[6]" is stuck at VCC
     Warning (13410): Pin "Saida_FPGA_7seg_2[5]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_2[4]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_2[3]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_2[2]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_2[1]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_2[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_3[6]" is stuck at GND
+    Warning (13410): Pin "Saida_FPGA_7seg_3[6]" is stuck at VCC
     Warning (13410): Pin "Saida_FPGA_7seg_3[5]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_3[4]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_3[3]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_3[2]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_3[1]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_3[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_4[6]" is stuck at GND
+    Warning (13410): Pin "Saida_FPGA_7seg_4[6]" is stuck at VCC
     Warning (13410): Pin "Saida_FPGA_7seg_4[5]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_4[4]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_4[3]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_4[2]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_4[1]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_4[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_5[6]" is stuck at GND
+    Warning (13410): Pin "Saida_FPGA_7seg_5[6]" is stuck at VCC
     Warning (13410): Pin "Saida_FPGA_7seg_5[5]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_5[4]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_5[3]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_5[2]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_5[1]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_5[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_6[6]" is stuck at GND
+    Warning (13410): Pin "Saida_FPGA_7seg_6[6]" is stuck at VCC
     Warning (13410): Pin "Saida_FPGA_7seg_6[5]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_6[4]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_6[3]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_6[2]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_6[1]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_6[0]" is stuck at GND
-    Warning (13410): Pin "Saida_FPGA_7seg_7[6]" is stuck at GND
+    Warning (13410): Pin "Saida_FPGA_7seg_7[6]" is stuck at VCC
     Warning (13410): Pin "Saida_FPGA_7seg_7[5]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_7[4]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_7[3]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_7[2]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_7[1]" is stuck at GND
     Warning (13410): Pin "Saida_FPGA_7seg_7[0]" is stuck at GND
-Info (17049): 68 registers lost all their fanouts during netlist optimizations.
+Info (17049): 464 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
@@ -695,10 +1128,10 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
 Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 56 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 119 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 143 warnings
     Info: Peak virtual memory: 531 megabytes
-    Info: Processing ended: Sat Dec 09 18:22:37 2017
+    Info: Processing ended: Sat Dec 09 19:31:52 2017
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

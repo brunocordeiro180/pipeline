@@ -15,7 +15,7 @@ entity ula_mips is
 		A	   : in std_logic_vector(WISE-1 downto 0);
 		B	   : in std_logic_vector(WISE-1 downto 0);
 		Z     : out std_logic_vector(WISE-1 downto 0);
-		zero, ovfl : out std_logic
+		zero : out std_logic
 	);
 
 end entity;
@@ -45,7 +45,5 @@ architecture rt1 of ula_mips is
 
 	end process;
 	
-	ovfl <= (A(31) xnor B(31)) and (a32(31) xor A(31)) when opcode = "0010" else 
-		(A(31) xor B(31)) and (a32(31) xor A(31)) when opcode = "0100" else '0';
 
 end architecture rt1;
