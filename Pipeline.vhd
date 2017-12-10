@@ -243,7 +243,7 @@ component conversor_7seg is
 end component;
 
 ---------------------------------------------Sinais------------------------------------------------
-signal clk_l : std_logic;
+signal clk_fpga : std_logic;
 signal conversor_in_0 :  std_logic_vector(3 downto 0);
 signal conversor_in_1 :  std_logic_vector(3 downto 0);
 signal conversor_in_2 :  std_logic_vector(3 downto 0);
@@ -336,9 +336,11 @@ signal wb_read_data : std_logic_vector(WSIZE-1 downto 0);
 signal wb_write_data : std_logic_vector(WSIZE-1 downto 0);
 signal wb_mem_2_reg : std_logic_vector(1 downto 0) ;
 signal wb_reg_write : std_logic;
+
   
 begin
-	clk_l <= NOT(clock);
+
+	clk_fpga <= NOT(clock);
 	
 ---------------------------------------------Etapa IF----------------------------------------------
 	
@@ -358,7 +360,7 @@ begin
 
 	pc_reg: PC
 	PORT MAP (
-		clk => clock, 
+		clk => clk_fpga, 
 		in_pc => if_new_pc, 
 		out_pc => if_pc
 	);
@@ -373,14 +375,14 @@ begin
 	mi_if : minst
 	PORT MAP (
 		address => if_pc(9 downto 2), 
-		clock => clk_l, 
+		clock => clk_fpga, 
 		q => if_instruction
 	);
 --	
 -------------------------------------------Transicao IF/ID------------------------------------------
 	reg_ifid: if_id
 	PORT MAP (
-		clk => clock,
+		clk => clk_fpga,
 		ent_pc4 => if_pc4,
 		in_instruction => if_instruction,
 		out_pc4 => id_pc4,
@@ -391,7 +393,7 @@ begin
 
  breg_id : bregmips
 	PORT MAP (
-		clk => clk_l, 
+		clk => clk_fpga, 
 		wren => wb_reg_write,
 		radd1 => id_instruction(25 downto 21),
 		radd2 => id_instruction(20 downto 16),
@@ -431,7 +433,7 @@ begin
 
 reg_idex: id_ex
 	PORT MAP (
-		clk => clock,
+		clk => clk_fpga,
 		idex_in_pc4 => id_pc4 ,
 		idex_in_rt  => id_instruction(20 downto 16), 					
 		idex_in_rd 	=> id_instruction(25 downto 21),
@@ -515,7 +517,7 @@ reg_idex: id_ex
 --------------------------------------------Transicao EX/MEM-----------------------------------------
 	reg_exmem : ex_mem
 	PORT MAP (
-		clk => clock, 
+		clk => clk_fpga, 
 		exmem_in_pc4 => ex_pc4,		 		
 		exmem_adderesult_in 	=> ex_somador_result,		
 		exmem_aluresult_in 	=> ex_ula_result,	
@@ -549,7 +551,7 @@ reg_idex: id_ex
 	md_mem : mdata
 	PORT MAP (
 		address => mem_result_alu(9 downto 2), 
-		clock	=> clk_l, 
+		clock	=> clk_fpga, 
 		data => mem_writedata, 
 		wren => mem_write_mem, 
 		q => mem_readdata 
@@ -558,7 +560,7 @@ reg_idex: id_ex
 --------------------------------------------Transicao MEM/WB-----------------------------------------
 	reg_memwb : mem_wb
 	PORT MAP (
-		clk => clock, 
+		clk => clk_fpga, 
 		memwb_in_pc4 	      => mem_pc4,	
 		memwb_in_regwrite	   => mem_regwrite,	
 		memwb_in_memtoreg 	=> mem_to_reg,

@@ -1,12 +1,12 @@
 |Pipeline
 clock => pc:pc_reg.clk
+clock => minst:mi_if.clock
 clock => if_id:reg_ifid.clk
+clock => bregmips:breg_id.clk
 clock => id_ex:reg_idex.clk
 clock => ex_mem:reg_exmem.clk
-clock => mem_wb:reg_memwb.clk
-clock => minst:mi_if.clock
-clock => bregmips:breg_id.clk
 clock => mdata:md_mem.clock
+clock => mem_wb:reg_memwb.clk
 Sel_Saida_FPGA[0] => ~NO_FANOUT~
 Sel_Saida_FPGA[1] => ~NO_FANOUT~
 Saida_FPGA_7seg_0[6] <= conversor_7seg:conversor_0.saida[6]

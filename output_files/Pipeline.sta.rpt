@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Pipeline
-Sat Dec 09 16:50:01 2017
+Sat Dec 09 20:08:34 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 ; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name      ; Pipeline                                           ;
 ; Device Family      ; Cyclone II                                         ;
-; Device Name        ; EP2C5T144C6                                        ;
+; Device Name        ; EP2C35F672C6                                       ;
 ; Timing Models      ; Final                                              ;
 ; Delay Model        ; Combined                                           ;
 ; Rise/Fall Delays   ; Unavailable                                        ;
@@ -207,10 +207,12 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 09 16:50:00 2017
+    Info: Processing started: Sat Dec 09 20:08:33 2017
 Info: Command: quartus_sta pipeline -c Pipeline
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Pipeline.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
@@ -238,8 +240,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 417 megabytes
-    Info: Processing ended: Sat Dec 09 16:50:01 2017
+    Info: Peak virtual memory: 422 megabytes
+    Info: Processing ended: Sat Dec 09 20:08:34 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
