@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pipeline
-Sat Dec 09 20:08:23 2017
+Sun Dec 10 16:13:08 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 09 20:08:23 2017      ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 10 16:13:08 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; Pipeline                                   ;
 ; Top-level Entity Name              ; Pipeline                                   ;
@@ -187,6 +187,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                         ; Library ;
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------+---------+
+; mux_41.vhd                       ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux_41.vhd               ;         ;
 ; ula_mips.vhd                     ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd             ;         ;
 ; somador.vhd                      ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/somador.vhd              ;         ;
 ; pc.vhd                           ; yes             ; User VHDL File                         ; C:/Users/bruno/Documents/TrabFinal/pipeline/pc.vhd                   ;         ;
@@ -214,10 +215,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc            ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
 ; db/altsyncram_ht71.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_ht71.tdf   ;         ;
-; memInstrucoes.mif                ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/bruno/Documents/TrabFinal/pipeline/memInstrucoes.mif        ;         ;
-; mux_41.vhd                       ; yes             ; Auto-Found VHDL File                   ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux_41.vhd               ;         ;
+; meminstrucoes.mif                ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/bruno/Documents/TrabFinal/pipeline/meminstrucoes.mif        ;         ;
 ; db/altsyncram_gec1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_gec1.tdf   ;         ;
-; memDados.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/bruno/Documents/TrabFinal/pipeline/memDados.mif             ;         ;
+; memdados.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/bruno/Documents/TrabFinal/pipeline/memdados.mif             ;         ;
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------+---------+
 
 
@@ -864,9 +864,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 09 20:08:20 2017
+    Info: Processing started: Sun Dec 10 16:13:04 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipeline -c Pipeline
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file mux_41.vhd
+    Info (12022): Found design unit 1: mux_41-behavioral
+    Info (12023): Found entity 1: mux_41
 Info (12021): Found 2 design units, including 1 entities, in source file ula_mips.vhd
     Info (12022): Found design unit 1: ula_mips-rt1
     Info (12023): Found entity 1: ula_mips
@@ -882,7 +885,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file bregmip
 Info (12021): Found 2 design units, including 1 entities, in source file pipeline.vhd
     Info (12022): Found design unit 1: Pipeline-behavior
     Info (12023): Found entity 1: Pipeline
-Warning (12019): Can't analyze file -- file mux.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file minst.vhd
     Info (12022): Found design unit 1: minst-SYN
     Info (12023): Found entity 1: minst
@@ -922,7 +924,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file compara
 Info (12021): Found 2 design units, including 1 entities, in source file mux2.vhd
     Info (12022): Found design unit 1: mux2-behavioral
     Info (12023): Found entity 1: mux2
-Warning (12019): Can't analyze file -- file mux41.vhd is missing
 Info (12127): Elaborating entity "Pipeline" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(255): used implicit default value for signal "saida_FPGA_32bits" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(318): object "mem_readdata" assigned a value but never read
@@ -966,9 +967,6 @@ Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux2_ex_B"
 Info (12128): Elaborating entity "ula_mips" for hierarchy "ula_mips:ula_ex"
 Warning (10492): VHDL Process Statement warning at ula_mips.vhd(35): signal "opcode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "controle_ula" for hierarchy "controle_ula:ula_control"
-Warning (12125): Using design file mux_41.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: mux_41-behavioral
-    Info (12023): Found entity 1: mux_41
 Info (12128): Elaborating entity "mux_41" for hierarchy "mux_41:mux4_ex"
 Info (12128): Elaborating entity "ex_mem" for hierarchy "ex_mem:reg_exmem"
 Info (12128): Elaborating entity "mdata" for hierarchy "mdata:md_mem"
@@ -1129,10 +1127,10 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
 Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 56 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 143 warnings
-    Info: Peak virtual memory: 528 megabytes
-    Info: Processing ended: Sat Dec 09 20:08:23 2017
-    Info: Elapsed time: 00:00:03
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 140 warnings
+    Info: Peak virtual memory: 529 megabytes
+    Info: Processing ended: Sun Dec 10 16:13:08 2017
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 
