@@ -565,7 +565,7 @@ reg_idex: id_ex
 		memwb_in_regwrite	   => mem_regwrite,	
 		memwb_in_memtoreg 	=> mem_to_reg,
 		memwb_in_result_alu 	=> mem_result_alu,
-		memwb_in_memdata		=> mem_read_mem,
+		memwb_in_memdata		=> mem_readdata,
 		memwb_in_writedata	=> mem_writedata,	
 		memwb_out_pc4 			=> wb_pc4,
 		memwb_out_regwrite	=> wb_reg_write,
@@ -586,6 +586,16 @@ reg_idex: id_ex
 		Z => wb_write_data
 	);
 
+	
+	mux4_saida_FPGA : mux4 
+	PORT MAP (
+		sel => Sel_Saida_FPGA,
+		in_0 => if_pc, 
+		in_1 => if_instruction,
+		in_2 => mem_readdata,
+		in_3 => ex_ula_result,
+		Z => saida_FPGA_32bits
+	);
 ---- Display 7 segmentos
 
 	conversor_in_7 <= saida_FPGA_32bits(31 downto 28);

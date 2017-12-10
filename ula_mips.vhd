@@ -26,7 +26,7 @@ architecture rt1 of ula_mips is
 	begin 
 		Z <= a32;
 
-	process(A, B, a32) begin
+	process(A, B, a32, opcode) begin
 		if(a32 = X"00000000")
 			then zero <= '1';
 		else
