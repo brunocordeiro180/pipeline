@@ -28,12 +28,12 @@ architecture arq_controle of controle is
 
 
 	constant SLTI			: std_logic_vector(5 downto 0) := "001010"; --I-TYPE
-	constant ADDI			: std_logic_vector(5 downto 0) := "001100"; --I-TYPE
+	constant ADDI			: std_logic_vector(5 downto 0) := "001000"; --I-TYPE
 
 	constant J				: std_logic_vector(5 downto 0) := "000010"; 
 	constant JAL			: std_logic_vector(5 downto 0) := "000011";
 	constant JALR			: std_logic_vector(5 downto 0) := "001001";
-	constant JR			   : std_logic_vector(5 downto 0) := "001000"; 	
+	--constant JR			   : std_logic_vector(5 downto 0) := "001000"; 	
 	constant BEQ			: std_logic_vector(5 downto 0) := "000100"; 
 	constant BNE			: std_logic_vector(5 downto 0) := "000101"; 
 	constant LUI			: std_logic_vector(5 downto 0) := "001111"; 
@@ -84,6 +84,35 @@ begin
 						sig_beq<='0';
 						sig_bne<='0';
 						sig_jr<='0';
+						
+					when "100010" => 
+					
+						RegDst <= "01"; 
+						ALUSrc <= '0'; 
+						MemtoReg <= "00"; 
+						RegWrite <='1';
+						MemRead<='0'; 
+						MemWrite<='0';
+						Jump <='0';
+						ALUOp <= "001"; -- SUB sinais de controle
+						sig_beq<='0';
+						sig_bne<='0';
+						sig_jr<='0';
+						
+					when "100000" => 
+					
+						RegDst <= "01"; 
+						ALUSrc <= '0'; 
+						MemtoReg <= "00"; 
+						RegWrite <='1';
+						MemRead<='0'; 
+						MemWrite<='0';
+						Jump <='0';
+						ALUOp <= "000"; -- ADD sinais de controle
+						sig_beq<='0';
+						sig_bne<='0';
+						sig_jr<='0';
+
 					when others => 
 					
 						RegDst <= "01"; 
@@ -226,6 +255,7 @@ begin
 				ALUSrc <= '0'; 
 				MemtoReg <= "00"; 
 				RegWrite <='0'; 
+				Jump <= '0';
 				MemRead<='0'; 
 				MemWrite<='0'; 
 				ALUOp <= "000";

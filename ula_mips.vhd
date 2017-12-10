@@ -36,10 +36,10 @@ architecture rt1 of ula_mips is
 			when "0000" => a32 <= A and B; --and
 			when "0001" => a32 <= A or B; --or
 			when "0010" => a32 <= std_logic_vector(signed(A) + signed(B)); --add
-			when "0100" => a32 <= std_logic_vector(signed(A) - signed(B)); --sub
-			when "0101" => a32 <= (0 => std_logic_vector(unsigned(A) - unsigned(B))(31), others => '0'); --slt
-			when "0111" => a32 <= A nor B;
-			when "1000" => a32 <= A xor B;
+			when "0011" => a32 <= std_logic_vector(signed(A) - signed(B)); --sub
+			when "0100" => a32 <= (0 => std_logic_vector(unsigned(A) - unsigned(B))(31), others => '0'); --slt
+			when "0101" => a32 <= A nor B;
+			when "0110" => a32 <= A xor B;
 			when others => a32 <= (others => '0');
 		end case;
 

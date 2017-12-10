@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Pipeline
-Sun Dec 10 16:37:13 2017
+Sun Dec 10 21:12:07 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -15,43 +15,42 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Registers Added for RAM Pass-Through Logic
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for minst:mi_if|altsyncram:altsyncram_component|altsyncram_ht71:auto_generated
- 17. Source assignments for mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated
- 18. Source assignments for bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated
- 19. Source assignments for bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated
- 20. Parameter Settings for User Entity Instance: Top-level Entity: |Pipeline
- 21. Parameter Settings for User Entity Instance: mux4:mux4_if
- 22. Parameter Settings for User Entity Instance: pc:pc_reg
- 23. Parameter Settings for User Entity Instance: minst:mi_if|altsyncram:altsyncram_component
- 24. Parameter Settings for User Entity Instance: if_id:reg_ifid
- 25. Parameter Settings for User Entity Instance: bregmips:breg_id
- 26. Parameter Settings for User Entity Instance: id_ex:reg_idex
- 27. Parameter Settings for User Entity Instance: mux2:mux2_ex_B
- 28. Parameter Settings for User Entity Instance: ula_mips:ula_ex
- 29. Parameter Settings for User Entity Instance: mux_41:mux4_ex
- 30. Parameter Settings for User Entity Instance: ex_mem:reg_exmem
- 31. Parameter Settings for User Entity Instance: mdata:md_mem|altsyncram:altsyncram_component
- 32. Parameter Settings for User Entity Instance: mem_wb:reg_memwb
- 33. Parameter Settings for User Entity Instance: mux4:mux4_wb
- 34. Parameter Settings for User Entity Instance: mux4:mux4_saida_FPGA
- 35. Parameter Settings for Inferred Entity Instance: bregmips:breg_id|altsyncram:regs_rtl_0
- 36. Parameter Settings for Inferred Entity Instance: bregmips:breg_id|altsyncram:regs_rtl_1
- 37. altsyncram Parameter Settings by Entity Instance
- 38. Port Connectivity Checks: "mux4:mux4_wb"
- 39. Port Connectivity Checks: "mem_wb:reg_memwb"
- 40. Port Connectivity Checks: "ex_mem:reg_exmem"
- 41. Port Connectivity Checks: "mux_41:mux4_ex"
- 42. Port Connectivity Checks: "somador:ex_somador"
- 43. Port Connectivity Checks: "somador:somador_if"
- 44. Port Connectivity Checks: "mux4:mux4_if"
- 45. Elapsed Time Per Partition
- 46. Analysis & Synthesis Messages
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Added for RAM Pass-Through Logic
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for minst:mi_if|altsyncram:altsyncram_component|altsyncram_ht71:auto_generated
+ 16. Source assignments for mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated
+ 17. Source assignments for bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated
+ 18. Source assignments for bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated
+ 19. Parameter Settings for User Entity Instance: Top-level Entity: |Pipeline
+ 20. Parameter Settings for User Entity Instance: mux4:mux4_if
+ 21. Parameter Settings for User Entity Instance: pc:pc_reg
+ 22. Parameter Settings for User Entity Instance: minst:mi_if|altsyncram:altsyncram_component
+ 23. Parameter Settings for User Entity Instance: if_id:reg_ifid
+ 24. Parameter Settings for User Entity Instance: bregmips:breg_id
+ 25. Parameter Settings for User Entity Instance: id_ex:reg_idex
+ 26. Parameter Settings for User Entity Instance: mux2:mux2_ex_B
+ 27. Parameter Settings for User Entity Instance: ula_mips:ula_ex
+ 28. Parameter Settings for User Entity Instance: mux_41:mux4_ex
+ 29. Parameter Settings for User Entity Instance: ex_mem:reg_exmem
+ 30. Parameter Settings for User Entity Instance: mdata:md_mem|altsyncram:altsyncram_component
+ 31. Parameter Settings for User Entity Instance: mem_wb:reg_memwb
+ 32. Parameter Settings for User Entity Instance: mux4:mux4_wb
+ 33. Parameter Settings for User Entity Instance: mux4:mux4_saida_FPGA
+ 34. Parameter Settings for Inferred Entity Instance: bregmips:breg_id|altsyncram:regs_rtl_0
+ 35. Parameter Settings for Inferred Entity Instance: bregmips:breg_id|altsyncram:regs_rtl_1
+ 36. altsyncram Parameter Settings by Entity Instance
+ 37. Port Connectivity Checks: "mux4:mux4_wb"
+ 38. Port Connectivity Checks: "mem_wb:reg_memwb"
+ 39. Port Connectivity Checks: "ex_mem:reg_exmem"
+ 40. Port Connectivity Checks: "mux_41:mux4_ex"
+ 41. Port Connectivity Checks: "somador:ex_somador"
+ 42. Port Connectivity Checks: "somador:somador_if"
+ 43. Port Connectivity Checks: "mux4:mux4_if"
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
 
 
 
@@ -77,15 +76,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 10 16:37:13 2017      ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 10 21:12:07 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; Pipeline                                   ;
 ; Top-level Entity Name              ; Pipeline                                   ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 953                                        ;
-;     Total combinational functions  ; 702                                        ;
-;     Dedicated logic registers      ; 480                                        ;
-; Total registers                    ; 480                                        ;
+; Total logic elements               ; 986                                        ;
+;     Total combinational functions  ; 714                                        ;
+;     Dedicated logic registers      ; 510                                        ;
+; Total registers                    ; 510                                        ;
 ; Total pins                         ; 59                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 18,432                                     ;
@@ -195,6 +194,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                           ; Library ;
 +--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
+; memInstrucoes.mif                          ; yes             ; User Memory Initialization File                       ; C:/Users/bruno/Documents/TrabFinal/pipeline/memInstrucoes.mif                          ;         ;
 ; mux_41.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux_41.vhd                                 ;         ;
 ; ula_mips.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd                               ;         ;
 ; somador.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/somador.vhd                                ;         ;
@@ -223,7 +223,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; altram.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                              ;         ;
 ; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
 ; db/altsyncram_ht71.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_ht71.tdf                     ;         ;
-; meminstrucoes.mif                          ; yes             ; Auto-Found Memory Initialization File                 ; C:/Users/bruno/Documents/TrabFinal/pipeline/meminstrucoes.mif                          ;         ;
 ; db/altsyncram_gec1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_gec1.tdf                     ;         ;
 ; memdados.mif                               ; yes             ; Auto-Found Memory Initialization File                 ; C:/Users/bruno/Documents/TrabFinal/pipeline/memdados.mif                               ;         ;
 ; db/altsyncram_u5h1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_u5h1.tdf                     ;         ;
@@ -236,29 +235,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 953   ;
+; Estimated Total logic elements              ; 986   ;
 ;                                             ;       ;
-; Total combinational functions               ; 702   ;
+; Total combinational functions               ; 714   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 469   ;
-;     -- 3 input functions                    ; 173   ;
-;     -- <=2 input functions                  ; 60    ;
+;     -- 4 input functions                    ; 472   ;
+;     -- 3 input functions                    ; 201   ;
+;     -- <=2 input functions                  ; 41    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 582   ;
+;     -- normal mode                          ; 594   ;
 ;     -- arithmetic mode                      ; 120   ;
 ;                                             ;       ;
-; Total registers                             ; 480   ;
-;     -- Dedicated logic registers            ; 480   ;
+; Total registers                             ; 510   ;
+;     -- Dedicated logic registers            ; 510   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 59    ;
 ; Total memory bits                           ; 18432 ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 608   ;
-; Total fan-out                               ; 4745  ;
-; Average fan-out                             ; 3.47  ;
+; Maximum fan-out                             ; 638   ;
+; Total fan-out                               ; 5130  ;
+; Average fan-out                             ; 3.64  ;
 +---------------------------------------------+-------+
 
 
@@ -267,13 +266,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
-; |Pipeline                                 ; 702 (5)           ; 480 (0)      ; 18432       ; 0            ; 0       ; 0         ; 59   ; 0            ; |Pipeline                                                                             ;              ;
-;    |bregmips:breg_id|                     ; 71 (71)           ; 44 (44)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id                                                            ;              ;
+; |Pipeline                                 ; 714 (3)           ; 510 (0)      ; 18432       ; 0            ; 0       ; 0         ; 59   ; 0            ; |Pipeline                                                                             ;              ;
+;    |bregmips:breg_id|                     ; 79 (79)           ; 49 (49)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id                                                            ;              ;
 ;       |altsyncram:regs_rtl_0|             ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0                                      ;              ;
 ;          |altsyncram_u5h1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated       ;              ;
 ;       |altsyncram:regs_rtl_1|             ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1                                      ;              ;
 ;          |altsyncram_u5h1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated       ;              ;
-;    |controle:controle_id|                 ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle:controle_id                                                        ;              ;
+;    |controle:controle_id|                 ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle:controle_id                                                        ;              ;
 ;    |controle_ula:ula_control|             ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle_ula:ula_control                                                    ;              ;
 ;    |conversor_7seg:conversor_0|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_0                                                  ;              ;
 ;    |conversor_7seg:conversor_1|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_1                                                  ;              ;
@@ -283,13 +282,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |conversor_7seg:conversor_5|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_5                                                  ;              ;
 ;    |conversor_7seg:conversor_6|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_6                                                  ;              ;
 ;    |conversor_7seg:conversor_7|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_7                                                  ;              ;
-;    |ex_mem:reg_exmem|                     ; 30 (30)           ; 131 (131)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ex_mem:reg_exmem                                                            ;              ;
-;    |id_ex:reg_idex|                       ; 0 (0)             ; 120 (120)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex                                                              ;              ;
+;    |ex_mem:reg_exmem|                     ; 35 (35)           ; 138 (138)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ex_mem:reg_exmem                                                            ;              ;
+;    |id_ex:reg_idex|                       ; 1 (1)             ; 133 (133)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex                                                              ;              ;
 ;    |if_id:reg_ifid|                       ; 0 (0)             ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|if_id:reg_ifid                                                              ;              ;
 ;    |mdata:md_mem|                         ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem                                                                ;              ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component                                ;              ;
 ;          |altsyncram_gec1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component|altsyncram_gec1:auto_generated ;              ;
-;    |mem_wb:reg_memwb|                     ; 0 (0)             ; 99 (99)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mem_wb:reg_memwb                                                            ;              ;
+;    |mem_wb:reg_memwb|                     ; 0 (0)             ; 104 (104)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mem_wb:reg_memwb                                                            ;              ;
 ;    |minst:mi_if|                          ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if                                                                 ;              ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component                                 ;              ;
 ;          |altsyncram_ht71:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component|altsyncram_ht71:auto_generated  ;              ;
@@ -299,7 +298,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |mux4:mux4_wb|                         ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_wb                                                                ;              ;
 ;    |pc:pc_reg|                            ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|pc:pc_reg                                                                   ;              ;
 ;    |somador:somador_if|                   ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|somador:somador_if                                                          ;              ;
-;    |ula_mips:ula_ex|                      ; 245 (245)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ula_mips:ula_ex                                                             ;              ;
+;    |ula_mips:ula_ex|                      ; 239 (239)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ula_mips:ula_ex                                                             ;              ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -326,135 +325,128 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                      ;
-+----------------------------------------------------+----------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal        ; Free of Timing Hazards ;
-+----------------------------------------------------+----------------------------+------------------------+
-; controle:controle_id|Jump                          ; controle:controle_id|Mux20 ; yes                    ;
-; Number of user-specified and inferred latches = 1  ;                            ;                        ;
-+----------------------------------------------------+----------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                   ;
-+-----------------------------------------------+------------------------------------------------------+
-; Register name                                 ; Reason for Removal                                   ;
-+-----------------------------------------------+------------------------------------------------------+
-; ex_mem:reg_exmem|exmem_out_pc4[0]             ; Merged with ex_mem:reg_exmem|exmem_adderesult_out[0] ;
-; ex_mem:reg_exmem|exmem_out_pc4[1]             ; Merged with ex_mem:reg_exmem|exmem_adderesult_out[1] ;
-; id_ex:reg_idex|idex_out_immediate[16..31]     ; Merged with id_ex:reg_idex|idex_out_immediate[15]    ;
-; bregmips:breg_id|regs_rtl_0_bypass[1,3,5,7,9] ; Stuck at GND due to stuck port data_in               ;
-; bregmips:breg_id|regs_rtl_1_bypass[1,3,5,7,9] ; Stuck at GND due to stuck port data_in               ;
-; bregmips:breg_id|regs_rtl_1_bypass[12]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[14]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[14]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[16]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[16]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[20]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[20]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[22]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[22]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[24]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[24]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[26]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[26]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[28]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[28]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[30]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[30]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[32]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[32]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[34]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[34]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[36]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[36]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[38]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[38]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[40]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[40]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[42]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[42]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[44]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[44]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[46]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[46]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[48]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[48]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[50]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[50]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[52]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[52]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[54]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[54]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[56]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[56]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[58]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[58]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[60]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[60]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[62]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[62]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[64]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[64]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[66]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[66]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[68]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[68]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[70]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[70]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[72]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[72]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[74]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[74]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[12]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[12]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[14]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[14]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[16]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[16]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[20]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[20]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[22]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[22]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[24]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[24]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[26]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[26]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[28]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[28]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[30]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[30]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[32]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[32]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[34]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[34]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[36]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[36]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[38]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[38]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[40]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[40]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[42]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[42]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[44]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[44]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[46]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[46]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[48]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[48]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[50]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[50]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[52]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[52]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[54]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[54]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[56]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[56]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[58]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[58]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[60]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[60]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[62]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[62]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[64]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[64]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[66]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[66]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[68]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[68]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[70]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[70]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[72]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[72]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[74]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[74]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[18]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[18]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[18]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[17]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[17]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[0]         ; Merged with bregmips:breg_id|regs_rtl_0_bypass[0]    ;
-; if_id:reg_ifid|out_instruction[21]            ; Merged with bregmips:breg_id|regs_rtl_0_bypass[2]    ;
-; if_id:reg_ifid|out_instruction[22]            ; Merged with bregmips:breg_id|regs_rtl_0_bypass[4]    ;
-; if_id:reg_ifid|out_instruction[23]            ; Merged with bregmips:breg_id|regs_rtl_0_bypass[6]    ;
-; if_id:reg_ifid|out_instruction[24]            ; Merged with bregmips:breg_id|regs_rtl_0_bypass[8]    ;
-; if_id:reg_ifid|out_instruction[25]            ; Merged with bregmips:breg_id|regs_rtl_0_bypass[10]   ;
-; if_id:reg_ifid|out_instruction[16]            ; Merged with bregmips:breg_id|regs_rtl_1_bypass[2]    ;
-; if_id:reg_ifid|out_instruction[17]            ; Merged with bregmips:breg_id|regs_rtl_1_bypass[4]    ;
-; if_id:reg_ifid|out_instruction[18]            ; Merged with bregmips:breg_id|regs_rtl_1_bypass[6]    ;
-; if_id:reg_ifid|out_instruction[19]            ; Merged with bregmips:breg_id|regs_rtl_1_bypass[8]    ;
-; if_id:reg_ifid|out_instruction[20]            ; Merged with bregmips:breg_id|regs_rtl_1_bypass[10]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[73]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[73]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[71]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[71]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[69]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[69]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[67]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[67]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[65]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[65]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[63]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[63]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[61]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[61]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[59]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[59]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[57]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[57]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[55]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[55]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[53]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[53]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[51]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[51]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[49]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[49]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[47]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[47]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[45]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[45]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[43]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[43]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[41]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[41]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[39]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[39]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[37]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[37]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[35]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[35]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[33]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[33]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[31]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[31]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[29]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[29]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[27]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[27]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[25]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[25]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[23]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[23]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[21]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[21]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[19]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[19]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[15]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[15]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[13]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[13]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[11]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[11]   ;
-; Total Number of Removed Registers = 134       ;                                                      ;
-+-----------------------------------------------+------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                               ;
++-------------------------------------------+------------------------------------------------------+
+; Register name                             ; Reason for Removal                                   ;
++-------------------------------------------+------------------------------------------------------+
+; ex_mem:reg_exmem|exmem_out_pc4[0]         ; Merged with ex_mem:reg_exmem|exmem_adderesult_out[0] ;
+; ex_mem:reg_exmem|exmem_out_pc4[1]         ; Merged with ex_mem:reg_exmem|exmem_adderesult_out[1] ;
+; id_ex:reg_idex|idex_out_immediate[16..31] ; Merged with id_ex:reg_idex|idex_out_immediate[15]    ;
+; id_ex:reg_idex|idex_out_regdest[1]        ; Merged with id_ex:reg_idex|idex_mem_to_reg_out[1]    ;
+; bregmips:breg_id|regs_rtl_0_bypass[12]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[14]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[14]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[16]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[16]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[20]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[20]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[22]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[22]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[24]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[24]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[26]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[26]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[28]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[28]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[30]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[30]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[32]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[32]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[34]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[34]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[36]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[36]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[38]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[38]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[40]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[40]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[42]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[42]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[44]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[44]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[46]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[46]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[48]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[48]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[50]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[50]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[52]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[52]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[54]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[54]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[56]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[56]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[58]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[58]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[60]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[60]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[62]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[62]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[64]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[64]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[66]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[66]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[68]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[68]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[70]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[70]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[72]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[72]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[74]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[74]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[12]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[12]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[14]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[14]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[16]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[16]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[20]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[20]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[22]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[22]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[24]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[24]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[26]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[26]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[28]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[28]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[30]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[30]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[32]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[32]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[34]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[34]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[36]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[36]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[38]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[38]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[40]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[40]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[42]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[42]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[44]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[44]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[46]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[46]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[48]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[48]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[50]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[50]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[52]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[52]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[54]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[54]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[56]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[56]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[58]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[58]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[60]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[60]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[62]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[62]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[64]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[64]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[66]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[66]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[68]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[68]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[70]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[70]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[72]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[72]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[74]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[74]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[18]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[18]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[18]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[17]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[17]   ;
+; bregmips:breg_id|regs_rtl_1_bypass[0]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[0]    ;
+; bregmips:breg_id|regs_rtl_1_bypass[1]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[1]    ;
+; if_id:reg_ifid|out_instruction[21]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[2]    ;
+; bregmips:breg_id|regs_rtl_1_bypass[3]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[3]    ;
+; if_id:reg_ifid|out_instruction[22]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[4]    ;
+; bregmips:breg_id|regs_rtl_1_bypass[5]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[5]    ;
+; if_id:reg_ifid|out_instruction[23]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[6]    ;
+; bregmips:breg_id|regs_rtl_1_bypass[7]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[7]    ;
+; if_id:reg_ifid|out_instruction[24]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[8]    ;
+; bregmips:breg_id|regs_rtl_1_bypass[9]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[9]    ;
+; if_id:reg_ifid|out_instruction[25]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[10]   ;
+; if_id:reg_ifid|out_instruction[16]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[2]    ;
+; if_id:reg_ifid|out_instruction[17]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[4]    ;
+; if_id:reg_ifid|out_instruction[18]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[6]    ;
+; if_id:reg_ifid|out_instruction[19]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[8]    ;
+; if_id:reg_ifid|out_instruction[20]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[10]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[73]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[73]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[71]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[71]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[69]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[69]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[67]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[67]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[65]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[65]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[63]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[63]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[61]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[61]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[59]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[59]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[57]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[57]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[55]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[55]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[53]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[53]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[51]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[51]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[49]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[49]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[47]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[47]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[45]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[45]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[43]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[43]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[41]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[41]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[39]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[39]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[37]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[37]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[35]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[35]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[33]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[33]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[31]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[31]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[29]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[29]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[27]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[27]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[25]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[25]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[23]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[23]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[21]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[21]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[19]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[19]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[15]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[15]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[13]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[13]   ;
+; bregmips:breg_id|regs_rtl_0_bypass[11]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[11]   ;
+; Total Number of Removed Registers = 130   ;                                                      ;
++-------------------------------------------+------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -462,9 +454,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 480   ;
+; Total registers                              ; 510   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 2     ;
@@ -640,18 +632,20 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+-----------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Pipeline|pc:pc_reg|out_pc[0]           ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |Pipeline|pc:pc_reg|out_pc[15]          ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipeline|mux4:mux4_saida_FPGA|Mux28    ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipeline|mux4:mux4_wb|Mux27            ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Pipeline|controle_ula:ula_control|Mux5 ;
-; 16:1               ; 30 bits   ; 300 LEs       ; 180 LEs              ; 120 LEs                ; No         ; |Pipeline|ula_mips:ula_ex|Mux2          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Pipeline|pc:pc_reg|out_pc[0]                    ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |Pipeline|pc:pc_reg|out_pc[11]                   ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Pipeline|ex_mem:reg_exmem|exmem_writereg_out[3] ;
+; 64:1               ; 4 bits    ; 168 LEs       ; 40 LEs               ; 128 LEs                ; Yes        ; |Pipeline|id_ex:reg_idex|idex_out_alu_op[0]      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipeline|mux4:mux4_saida_FPGA|Mux28             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipeline|mux4:mux4_wb|Mux24                     ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Pipeline|controle_ula:ula_control|Mux7          ;
+; 16:1               ; 30 bits   ; 300 LEs       ; 180 LEs              ; 120 LEs                ; No         ; |Pipeline|ula_mips:ula_ex|Mux2                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -1135,16 +1129,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ex_mem:reg_exmem"                                                                                 ;
-+--------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port               ; Type   ; Severity ; Details                                                                             ;
-+--------------------+--------+----------+-------------------------------------------------------------------------------------+
-; exmem_beq_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; exmem_bne_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; exmem_memread_out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; exmem_writereg_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ex_mem:reg_exmem"                                                                                ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; exmem_memread_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------+
@@ -1201,7 +1192,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sun Dec 10 16:37:08 2017
+    Info: Processing started: Sun Dec 10 21:12:02 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipeline -c Pipeline
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file mux_41.vhd
@@ -1262,11 +1253,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux2.vh
     Info (12022): Found design unit 1: mux2-behavioral
     Info (12023): Found entity 1: mux2
 Info (12127): Elaborating entity "Pipeline" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(319): object "mem_write_reg" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(326): object "mem_read_sig" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(327): object "mem_beq" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(328): object "mem_bne" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at Pipeline.vhd(334): used implicit default value for signal "wb_write_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "mux4" for hierarchy "mux4:mux4_if"
 Info (12128): Elaborating entity "pc" for hierarchy "pc:pc_reg"
 Info (12128): Elaborating entity "somador" for hierarchy "somador:somador_if"
@@ -1293,8 +1280,6 @@ Info (12128): Elaborating entity "altsyncram_ht71" for hierarchy "minst:mi_if|al
 Info (12128): Elaborating entity "if_id" for hierarchy "if_id:reg_ifid"
 Info (12128): Elaborating entity "bregmips" for hierarchy "bregmips:breg_id"
 Info (12128): Elaborating entity "controle" for hierarchy "controle:controle_id"
-Warning (10631): VHDL Process Statement warning at controle.vhd(43): inferring latch(es) for signal or variable "Jump", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "Jump" at controle.vhd(43)
 Info (12128): Elaborating entity "sign_extend" for hierarchy "sign_extend:sign_extend_id"
 Info (12128): Elaborating entity "id_ex" for hierarchy "id_ex:reg_idex"
 Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux2_ex_B"
@@ -1379,19 +1364,17 @@ Info (12133): Instantiated megafunction "bregmips:breg_id|altsyncram:regs_rtl_0"
     Info (12134): Parameter "INIT_FILE" = "db/pipeline.ram0_bregmips_f08f7cce.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_u5h1.tdf
     Info (12023): Found entity 1: altsyncram_u5h1
-Warning (13012): Latch controle:controle_id|Jump has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal if_id:reg_ifid|out_instruction[28]
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1266 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1298 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 1079 logic cells
+    Info (21061): Implemented 1111 logic cells
     Info (21064): Implemented 128 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 540 megabytes
-    Info: Processing ended: Sun Dec 10 16:37:13 2017
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 548 megabytes
+    Info: Processing ended: Sun Dec 10 21:12:07 2017
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Total CPU time (on all processors): 00:00:05
 
 

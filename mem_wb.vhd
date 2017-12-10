@@ -12,15 +12,15 @@ entity mem_wb is
 		memwb_in_memtoreg 	: in std_logic_vector(1 downto 0);
 		memwb_in_result_alu 	: in std_logic_vector(WSIZE-1 downto 0);
 		memwb_in_memdata		: in std_logic_vector(WSIZE-1 downto 0);
-		memwb_in_writedata		: in std_logic_vector(31 downto 0);
-		
+		memwb_in_writedata	: in std_logic_vector(31 downto 0);
+		memwb_in_writereg    : in std_logic_vector(4 downto 0);
 		memwb_out_pc4 			: out std_logic_vector(WSIZE-1 downto 0);
 		memwb_out_regwrite	: out std_logic;
 		memwb_out_memtoreg 	: out std_logic_vector(1 downto 0);
 		memwb_out_result_alu : out std_logic_vector(WSIZE-1 downto 0);
 		memwb_out_memdata		: out std_logic_vector(WSIZE-1 downto 0);
-		memwb_out_writedata	: out std_logic_vector(31 downto 0));
-		
+		memwb_out_writedata	: out std_logic_vector(31 downto 0);
+		memwb_out_writereg   : out std_logic_vector(4 downto 0));
 end mem_wb;
 
 architecture behavioral of mem_wb is	
@@ -34,6 +34,7 @@ proc_mem_wb: process(clk)
 		memwb_out_result_alu <= memwb_in_result_alu;
 		memwb_out_memdata	 	<= memwb_in_memdata;	
 		memwb_out_writedata 	<= memwb_in_writedata;
+		memwb_out_writereg   <= memwb_in_writereg;
 	end if;
  end process;
 end architecture behavioral;

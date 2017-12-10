@@ -13,13 +13,15 @@ end entity;
 
 architecture  behav of controle_ula is
 
+	
+	constant ULA_AND		: std_logic_vector(3 downto 0) := "0000"; 
+	constant ULA_OR		: std_logic_vector(3 downto 0) := "0001";
 	constant ULA_ADD		: std_logic_vector(3 downto 0) := "0010"; 
 	constant ULA_SUB		: std_logic_vector(3 downto 0) := "0011";
-	constant ULA_AND		: std_logic_vector(3 downto 0) := "0000"; 
-	constant ULA_OR		: std_logic_vector(3 downto 0) := "0001"; 
-	constant ULA_XOR		: std_logic_vector(3 downto 0) := "0110";
-	constant ULA_NOP		: std_logic_vector(3 downto 0) := "1111"; 
+	
+	constant ULA_XOR		: std_logic_vector(3 downto 0) := "0110"; 
 	constant ULA_NOR		: std_logic_vector(3 downto 0) := "0101";
+	constant ULA_NOP		: std_logic_vector(3 downto 0) := "1111";
 	constant ULA_SLT		: std_logic_vector(3 downto 0) := "0100";
 	constant ULA_LUI		: std_logic_vector(3 downto 0) := "1000";
 	constant ULA_ADDI		: std_logic_vector(3 downto 0) := "0111";

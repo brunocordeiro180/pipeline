@@ -110,13 +110,14 @@ component mem_wb is
 		memwb_in_result_alu 	: in std_logic_vector(WSIZE-1 downto 0);
 		memwb_in_memdata		: in std_logic_vector(WSIZE-1 downto 0);
 		memwb_in_writedata	: in std_logic_vector(31 downto 0);
-		
+		memwb_in_writereg    : in std_logic_vector(4 downto 0);
 		memwb_out_pc4 			: out std_logic_vector(WSIZE-1 downto 0);
 		memwb_out_regwrite	: out std_logic;
 		memwb_out_memtoreg 	: out std_logic_vector(1 downto 0);
 		memwb_out_result_alu : out std_logic_vector(WSIZE-1 downto 0);
 		memwb_out_memdata		: out std_logic_vector(WSIZE-1 downto 0);
-		memwb_out_writedata	: out std_logic_vector(31 downto 0));
+		memwb_out_writedata	: out std_logic_vector(31 downto 0);
+		memwb_out_writereg    : out std_logic_vector(4 downto 0));
 end component;
 
 ------------------------------Componentes da parte de controle-------------------------------------
@@ -235,7 +236,6 @@ component comparador is
 			 eq			: out std_logic);		
 end component;
 
-
 --------------------------------------------- Display de 7 segmentos --------------------------------------
 component conversor_7seg is
 	port( DADO  : in STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -340,11 +340,11 @@ signal wb_reg_write : std_logic;
   
 begin
 
-	clk_fpga <= NOT(clock);
+	clk_fpga <= clock;
 	
 ---------------------------------------------Etapa IF----------------------------------------------
 	
-	if_sel_mux(0) <= (id_ctrl_beq AND mem_zero_alu) OR (id_ctrl_bne AND (NOT mem_zero_alu)) OR id_ctrl_jr;
+	if_sel_mux(0) <= (mem_beq AND mem_zero_alu) OR (mem_bne AND (NOT mem_zero_alu)) OR id_ctrl_jr;
 	if_sel_mux(1) <= id_ctrl_j OR id_ctrl_jr;
 
 	mux4_if : mux4
@@ -566,12 +566,16 @@ reg_idex: id_ex
 		memwb_in_memtoreg 	=> mem_to_reg,
 		memwb_in_result_alu 	=> mem_result_alu,
 		memwb_in_memdata		=> mem_readdata,
-		memwb_in_writedata	=> mem_writedata,	
+		memwb_in_writedata	=> mem_writedata,
+		memwb_in_writereg    => mem_write_reg,
+		
 		memwb_out_pc4 			=> wb_pc4,
 		memwb_out_regwrite	=> wb_reg_write,
 		memwb_out_memtoreg 	=> wb_mem_2_reg,
 		memwb_out_result_alu => wb_result_alu,
-		memwb_out_memdata   =>  wb_read_data
+		memwb_out_memdata   =>  wb_read_data,
+		memwb_out_writereg  =>  wb_write_reg
+		
 
 	);
 	
@@ -596,6 +600,18 @@ reg_idex: id_ex
 		in_3 => ex_ula_result,
 		Z => saida_FPGA_32bits
 	);
+	
+
+--	mux4_saida_FPGA : mux4 
+--	PORT MAP (
+--		sel => Sel_Saida_FPGA,
+--		in_0 => if_pc, 
+--		in_1 => if_instruction,
+--		in_2 => "0000000000000000000000000000000" & ex_alu_src,
+--		in_3 => ex_ula2_in,
+--		Z => saida_FPGA_32bits
+--	);
+
 ---- Display 7 segmentos
 
 	conversor_in_7 <= saida_FPGA_32bits(31 downto 28);
