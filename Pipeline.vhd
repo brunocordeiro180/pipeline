@@ -15,7 +15,12 @@ entity Pipeline is
 			Saida_FPGA_7seg_4 : out std_logic_vector(0 to 6);
 			Saida_FPGA_7seg_5 : out std_logic_vector(0 to 6);
 			Saida_FPGA_7seg_6 : out std_logic_vector(0 to 6);
-			Saida_FPGA_7seg_7 : out std_logic_vector(0 to 6)
+			Saida_FPGA_7seg_7 : out std_logic_vector(0 to 6);
+			
+			FPGA_ula : out std_logic_vector(WSIZE-1 downto 0);
+			FPGA_mem : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
+			FPGA_inst : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
+			FPGA_pc : out std_LOGIC_VECTOR(WSIZE-1 downto 0)
 
 		);
 			
@@ -289,6 +294,7 @@ signal ex_reg1		: std_logic_vector(WSIZE-1 downto 0);
 signal ex_reg2		: std_logic_vector(WSIZE-1 downto 0);
 signal ex_ula2_in    : std_logic_vector(WSIZE-1 downto 0); 
 signal ex_imm			: std_logic_vector(WSIZE-1 downto 0);
+signal ex_imm_aux			: std_logic_vector(WSIZE-1 downto 0);
 signal ex_rt 			: std_logic_vector(4 downto 0);
 signal ex_rd 			: std_logic_vector(4 downto 0);
 signal ex_ula_result: std_logic_vector(WSIZE-1 downto 0);
@@ -337,6 +343,8 @@ signal wb_write_data : std_logic_vector(WSIZE-1 downto 0);
 signal wb_mem_2_reg : std_logic_vector(1 downto 0) ;
 signal wb_reg_write : std_logic;
 
+
+signal jump_aux : std_logic_vector(31 downto 0);
   
 begin
 
@@ -346,13 +354,15 @@ begin
 	
 	if_sel_mux(0) <= (mem_beq AND mem_zero_alu) OR (mem_bne AND (NOT mem_zero_alu)) OR id_ctrl_jr;
 	if_sel_mux(1) <= id_ctrl_j OR id_ctrl_jr;
+	
+	jump_aux <= id_pc4(31 downto 28) &  id_instruction(25 downto 0) & "00";
 
 	mux4_if : mux4
 	PORT MAP (
 		sel =>  if_sel_mux, 
 		in_0 => if_pc4, 
 		in_1 => mem_somador_result, 
-		in_2 => id_pc4(31 downto 28) &  id_instruction(25 downto 0) & "00", 
+		in_2 => jump_aux, 
 		in_3 => id_reg1, 
 		Z => if_new_pc
 	);
@@ -468,12 +478,13 @@ reg_idex: id_ex
 			
 		
 	);
-
 -----------------------------------------------Etapa EX--------------------------------------------
+	ex_imm_aux <= ex_imm(31 downto 2) & "00";
+	
 	ex_somador: somador
 	PORT MAP(
 		a => ex_pc4,
-		b => ex_imm(31 downto 2) & "00",
+		b => ex_imm_aux,
 		s => ex_somador_result
 	);
 	
@@ -670,6 +681,11 @@ reg_idex: id_ex
 		DADO => conversor_in_0,
 		saida => saida_FPGA_7seg_0
 	);
+	
+	FPGA_inst <= if_instruction;
+	FPGA_mem <= mem_readdata;
+	FPGA_pc <= if_pc;
+	FPGA_ula <= ex_ula_result;
 
 
 	
