@@ -177,8 +177,8 @@ END SYN;
 -- Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 32 0 @q_a 0 0 32 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL mdata.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL mdata.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL mdata.inc TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL mdata.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL mdata.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL mdata_inst.vhd FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL mdata.bsf TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL mdata_inst.vhd TRUE
 -- Retrieval info: LIB_FILE: altera_mf

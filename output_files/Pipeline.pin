@@ -83,13 +83,13 @@ GND+                         : A13       :        :                   :         
 GND*                         : A14       :        :                   :         : 4         :                
 GND                          : A15       : gnd    :                   :         :           :                
 VCCIO4                       : A16       : power  :                   : 3.3V    : 4         :                
-GND*                         : A17       :        :                   :         : 4         :                
-GND*                         : A18       :        :                   :         : 4         :                
-GND*                         : A19       :        :                   :         : 4         :                
-GND*                         : A20       :        :                   :         : 4         :                
-GND*                         : A21       :        :                   :         : 4         :                
-GND*                         : A22       :        :                   :         : 4         :                
-GND*                         : A23       :        :                   :         : 4         :                
+FPGA_mem[16]                 : A17       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_mem[29]                 : A18       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_ula[1]                  : A19       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_ula[20]                 : A20       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_ula[12]                 : A21       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_ula[9]                  : A22       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[2]                 : A23       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : A24       : power  :                   : 3.3V    : 4         :                
 GND                          : A25       : gnd    :                   :         :           :                
 GND*                         : AA1       :        :                   :         : 1         :                
@@ -263,14 +263,14 @@ GND*                         : B14       :        :                   :         
 GND*                         : B15       :        :                   :         : 4         :                
 GND*                         : B16       :        :                   :         : 4         :                
 GND*                         : B17       :        :                   :         : 4         :                
-GND*                         : B18       :        :                   :         : 4         :                
-GND*                         : B19       :        :                   :         : 4         :                
-GND*                         : B20       :        :                   :         : 4         :                
-GND*                         : B21       :        :                   :         : 4         :                
-GND*                         : B22       :        :                   :         : 4         :                
-GND*                         : B23       :        :                   :         : 4         :                
-GND*                         : B24       :        :                   :         : 5         :                
-GND*                         : B25       :        :                   :         : 5         :                
+FPGA_mem[21]                 : B18       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[26]                : B19       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_ula[27]                 : B20       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[7]                 : B21       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[28]                : B22       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[3]                 : B23       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_pc[1]                   : B24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[14]                  : B25       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : B26       : gnd    :                   :         :           :                
 VCCIO2                       : C1        : power  :                   : 3.3V    : 2         :                
 GND*                         : C2        :        :                   :         : 2         :                
@@ -288,15 +288,15 @@ GND+                         : C13       :        :                   :         
 GND                          : C14       : gnd    :                   :         :           :                
 GND*                         : C15       :        :                   :         : 4         :                
 GND*                         : C16       :        :                   :         : 4         :                
-GND*                         : C17       :        :                   :         : 4         :                
+FPGA_mem[24]                 : C17       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : C18       : gnd    :                   :         :           :                
-GND*                         : C19       :        :                   :         : 4         :                
+FPGA_inst[27]                : C19       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : C20       : power  :                   : 3.3V    : 4         :                
-GND*                         : C21       :        :                   :         : 4         :                
-GND*                         : C22       :        :                   :         : 4         :                
-GND*                         : C23       :        :                   :         : 4         :                
-GND*                         : C24       :        :                   :         : 5         :                
-GND*                         : C25       :        :                   :         : 5         :                
+FPGA_pc[0]                   : C21       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[29]                : C22       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_pc[10]                  : C23       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[12]                : C24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[15]                  : C25       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO5                       : C26       : power  :                   : 3.3V    : 5         :                
 GND*                         : D1        :        :                   :         : 2         :                
 GND*                         : D2        :        :                   :         : 2         :                
@@ -314,16 +314,16 @@ GND+                         : D13       :        :                   :         
 GND*                         : D14       :        :                   :         : 4         :                
 GND*                         : D15       :        :                   :         : 4         :                
 GND*                         : D16       :        :                   :         : 4         :                
-GND*                         : D17       :        :                   :         : 4         :                
-GND*                         : D18       :        :                   :         : 4         :                
-GND*                         : D19       :        :                   :         : 4         :                
-GND*                         : D20       :        :                   :         : 4         :                
-GND*                         : D21       :        :                   :         : 4         :                
+FPGA_mem[23]                 : D17       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_ula[0]                  : D18       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[20]                : D19       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[25]                : D20       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[1]                 : D21       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : D22       : power  :                   : 3.3V    : 4         :                
-GND*                         : D23       :        :                   :         : 5         :                
+FPGA_mem[0]                  : D23       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : D24       : gnd    :                   :         :           :                
-GND*                         : D25       :        :                   :         : 5         :                
-GND*                         : D26       :        :                   :         : 5         :                
+FPGA_inst[14]                : D25       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_ula[4]                  : D26       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : E1        :        :                   :         : 2         :                
 GND*                         : E2        :        :                   :         : 2         :                
 ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : E3        : input  : 3.3-V LVTTL       :         : 2         : N              
@@ -341,15 +341,15 @@ VCCIO4                       : E14       : power  :                   : 3.3V    
 GND*                         : E15       :        :                   :         : 4         :                
 GND                          : E16       : gnd    :                   :         :           :                
 VCCIO4                       : E17       : power  :                   : 3.3V    : 4         :                
-GND*                         : E18       :        :                   :         : 4         :                
+FPGA_inst[30]                : E18       : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : E19       : gnd    :                   :         :           :                
-GND*                         : E20       :        :                   :         : 4         :                
+FPGA_ula[29]                 : E20       : output : 3.3-V LVTTL       :         : 4         : N              
 GND_PLL2                     : E21       : gnd    :                   :         :           :                
-GND*                         : E22       :        :                   :         : 5         :                
-GND*                         : E23       :        :                   :         : 5         :                
-GND*                         : E24       :        :                   :         : 5         :                
-GND*                         : E25       :        :                   :         : 5         :                
-GND*                         : E26       :        :                   :         : 5         :                
+FPGA_inst[11]                : E22       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_inst[13]                : E23       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_ula[28]                 : E24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_inst[6]                 : E25       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_ula[10]                 : E26       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : F1        :        :                   :         : 2         :                
 GND*                         : F2        :        :                   :         : 2         :                
 GND*                         : F3        :        :                   :         : 2         :                
@@ -364,18 +364,18 @@ GND*                         : F11       :        :                   :         
 GND*                         : F12       :        :                   :         : 3         :                
 GND*                         : F13       :        :                   :         : 4         :                
 GND*                         : F14       :        :                   :         : 4         :                
-GND*                         : F15       :        :                   :         : 4         :                
-GND*                         : F16       :        :                   :         : 4         :                
-GND*                         : F17       :        :                   :         : 4         :                
-GND*                         : F18       :        :                   :         : 4         :                
+FPGA_mem[26]                 : F15       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_mem[25]                 : F16       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[9]                 : F17       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_mem[30]                 : F18       : output : 3.3-V LVTTL       :         : 4         : N              
 GNDA_PLL2                    : F19       : gnd    :                   :         :           :                
-GND*                         : F20       :        :                   :         : 5         :                
-GND*                         : F21       :        :                   :         : 5         :                
+FPGA_inst[8]                 : F20       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_mem[9]                  : F21       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO5                       : F22       : power  :                   : 3.3V    : 5         :                
-GND*                         : F23       :        :                   :         : 5         :                
-GND*                         : F24       :        :                   :         : 5         :                
-GND*                         : F25       :        :                   :         : 5         :                
-GND*                         : F26       :        :                   :         : 5         :                
+FPGA_ula[8]                  : F23       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_inst[16]                : F24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[5]                   : F25       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[7]                   : F26       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : G1        :        :                   :         : 2         :                
 GND*                         : G2        :        :                   :         : 2         :                
 GND*                         : G3        :        :                   :         : 2         :                
@@ -390,17 +390,17 @@ GND*                         : G11       :        :                   :         
 GND*                         : G12       :        :                   :         : 3         :                
 GND*                         : G13       :        :                   :         : 4         :                
 GND*                         : G14       :        :                   :         : 4         :                
-GND*                         : G15       :        :                   :         : 4         :                
-GND*                         : G16       :        :                   :         : 4         :                
-GND*                         : G17       :        :                   :         : 4         :                
-GND*                         : G18       :        :                   :         : 4         :                
+FPGA_mem[2]                  : G15       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_mem[3]                  : G16       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_mem[15]                 : G17       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_mem[27]                 : G18       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCA_PLL2                    : G19       : power  :                   : 1.2V    :           :                
 GND_PLL2                     : G20       : gnd    :                   :         :           :                
-GND*                         : G21       :        :                   :         : 5         :                
-GND*                         : G22       :        :                   :         : 5         :                
-GND*                         : G23       :        :                   :         : 5         :                
-GND*                         : G24       :        :                   :         : 5         :                
-GND*                         : G25       :        :                   :         : 5         :                
+FPGA_pc[12]                  : G21       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_inst[10]                : G22       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[8]                   : G23       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[11]                  : G24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[28]                  : G25       : output : 3.3-V LVTTL       :         : 5         : N              
 clock                        : G26       : input  : 3.3-V LVTTL       :         : 5         : Y              
 GND*                         : H1        :        :                   :         : 2         :                
 GND*                         : H2        :        :                   :         : 2         :                
@@ -417,17 +417,17 @@ GND*                         : H12       :        :                   :         
 GND                          : H13       : gnd    :                   :         :           :                
 GND                          : H14       : gnd    :                   :         :           :                
 GND*                         : H15       :        :                   :         : 4         :                
-GND*                         : H16       :        :                   :         : 4         :                
-GND*                         : H17       :        :                   :         : 4         :                
+FPGA_inst[0]                 : H16       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[15]                : H17       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : H18       : power  :                   : 3.3V    : 4         :                
-GND*                         : H19       :        :                   :         : 5         :                
+FPGA_ula[25]                 : H19       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCD_PLL2                    : H20       : power  :                   : 1.2V    :           :                
-GND*                         : H21       :        :                   :         : 5         :                
+FPGA_ula[11]                 : H21       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : H22       : gnd    :                   :         :           :                
-GND*                         : H23       :        :                   :         : 5         :                
-GND*                         : H24       :        :                   :         : 5         :                
-GND*                         : H25       :        :                   :         : 5         :                
-GND*                         : H26       :        :                   :         : 5         :                
+FPGA_ula[16]                 : H23       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_mem[28]                 : H24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[13]                  : H25       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_mem[12]                 : H26       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : J1        :        :                   :         : 2         :                
 GND*                         : J2        :        :                   :         : 2         :                
 GND*                         : J3        :        :                   :         : 2         :                
@@ -443,17 +443,17 @@ VCCIO3                       : J12       : power  :                   : 3.3V    
 GND*                         : J13       :        :                   :         : 3         :                
 GND*                         : J14       :        :                   :         : 3         :                
 VCCIO4                       : J15       : power  :                   : 3.3V    : 4         :                
-GND*                         : J16       :        :                   :         : 4         :                
-GND*                         : J17       :        :                   :         : 4         :                
-GND*                         : J18       :        :                   :         : 4         :                
+FPGA_ula[3]                  : J16       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_inst[31]                : J17       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_ula[2]                  : J18       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO5                       : J19       : power  :                   : 3.3V    : 5         :                
-GND*                         : J20       :        :                   :         : 5         :                
-GND*                         : J21       :        :                   :         : 5         :                
-GND*                         : J22       :        :                   :         : 5         :                
-GND*                         : J23       :        :                   :         : 5         :                
-GND*                         : J24       :        :                   :         : 5         :                
-GND*                         : J25       :        :                   :         : 5         :                
-GND*                         : J26       :        :                   :         : 5         :                
+FPGA_mem[11]                 : J20       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_mem[1]                  : J21       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_inst[5]                 : J22       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_mem[10]                 : J23       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_ula[15]                 : J24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[29]                  : J25       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[26]                  : J26       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : K1        :        :                   :         : 2         :                
 GND*                         : K2        :        :                   :         : 2         :                
 GND*                         : K3        :        :                   :         : 2         :                
@@ -469,17 +469,17 @@ VCCINT                       : K12       : power  :                   : 1.2V    
 VCCINT                       : K13       : power  :                   : 1.2V    :           :                
 VCCINT                       : K14       : power  :                   : 1.2V    :           :                
 VCCINT                       : K15       : power  :                   : 1.2V    :           :                
-GND*                         : K16       :        :                   :         : 4         :                
-GND*                         : K17       :        :                   :         : 4         :                
-GND*                         : K18       :        :                   :         : 5         :                
-GND*                         : K19       :        :                   :         : 5         :                
+FPGA_ula[24]                 : K16       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_ula[26]                 : K17       : output : 3.3-V LVTTL       :         : 4         : N              
+FPGA_ula[7]                  : K18       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_mem[13]                 : K19       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : K20       : gnd    :                   :         :           :                
-GND*                         : K21       :        :                   :         : 5         :                
-GND*                         : K22       :        :                   :         : 5         :                
-GND*                         : K23       :        :                   :         : 5         :                
-GND*                         : K24       :        :                   :         : 5         :                
-GND*                         : K25       :        :                   :         : 5         :                
-GND*                         : K26       :        :                   :         : 5         :                
+FPGA_pc[16]                  : K21       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[9]                   : K22       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_inst[24]                : K23       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_mem[8]                  : K24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_mem[4]                  : K25       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_mem[5]                  : K26       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO2                       : L1        : power  :                   : 3.3V    : 2         :                
 Saida_FPGA_7seg_7[1]         : L2        : output : 3.3-V LVTTL       :         : 2         : Y              
 Saida_FPGA_7seg_7[0]         : L3        : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -498,13 +498,13 @@ GND                          : L15       : gnd    :                   :         
 VCCINT                       : L16       : power  :                   : 1.2V    :           :                
 VCCINT                       : L17       : power  :                   : 1.2V    :           :                
 VCCINT                       : L18       : power  :                   : 1.2V    :           :                
-GND*                         : L19       :        :                   :         : 5         :                
-GND*                         : L20       :        :                   :         : 5         :                
-GND*                         : L21       :        :                   :         : 5         :                
+FPGA_inst[23]                : L19       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[30]                  : L20       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[25]                  : L21       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : L22       : gnd    :                   :         :           :                
-GND*                         : L23       :        :                   :         : 5         :                
-GND*                         : L24       :        :                   :         : 5         :                
-GND*                         : L25       :        :                   :         : 5         :                
+FPGA_pc[4]                   : L23       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_inst[22]                : L24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[6]                   : L25       : output : 3.3-V LVTTL       :         : 5         : N              
 VCCIO5                       : L26       : power  :                   : 3.3V    : 5         :                
 GND                          : M1        : gnd    :                   :         :           :                
 Saida_FPGA_7seg_6[3]         : M2        : output : 3.3-V LVTTL       :         : 2         : Y              
@@ -524,13 +524,13 @@ GND                          : M15       : gnd    :                   :         
 VCCINT                       : M16       : power  :                   : 1.2V    :           :                
 VCCINT                       : M17       : power  :                   : 1.2V    :           :                
 VCCIO5                       : M18       : power  :                   : 3.3V    : 5         :                
-GND*                         : M19       :        :                   :         : 5         :                
-GND*                         : M20       :        :                   :         : 5         :                
-GND*                         : M21       :        :                   :         : 5         :                
-GND*                         : M22       :        :                   :         : 5         :                
-GND*                         : M23       :        :                   :         : 5         :                
-GND*                         : M24       :        :                   :         : 5         :                
-GND*                         : M25       :        :                   :         : 5         :                
+FPGA_ula[19]                 : M19       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_inst[19]                : M20       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[23]                  : M21       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_inst[21]                : M22       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_ula[30]                 : M23       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[21]                  : M24       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_pc[20]                  : M25       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : M26       : gnd    :                   :         :           :                
 GND+                         : N1        :        :                   :         : 2         :                
 GND+                         : N2        :        :                   :         : 2         :                
@@ -549,13 +549,13 @@ GND                          : N14       : gnd    :                   :         
 GND                          : N15       : gnd    :                   :         :           :                
 GND                          : N16       : gnd    :                   :         :           :                
 VCCINT                       : N17       : power  :                   : 1.2V    :           :                
-GND*                         : N18       :        :                   :         : 5         :                
+FPGA_pc[3]                   : N18       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : N19       : gnd    :                   :         :           :                
-GND*                         : N20       :        :                   :         : 5         :                
+FPGA_inst[17]                : N20       : output : 3.3-V LVTTL       :         : 5         : N              
 NC                           : N21       :        :                   :         :           :                
 VCCIO5                       : N22       : power  :                   : 3.3V    : 5         :                
-GND*                         : N23       :        :                   :         : 5         :                
-GND*                         : N24       :        :                   :         : 5         :                
+FPGA_mem[20]                 : N23       : output : 3.3-V LVTTL       :         : 5         : N              
+FPGA_ula[18]                 : N24       : output : 3.3-V LVTTL       :         : 5         : N              
 Sel_Saida_FPGA[0]            : N25       : input  : 3.3-V LVTTL       :         : 5         : Y              
 Sel_Saida_FPGA[1]            : N26       : input  : 3.3-V LVTTL       :         : 5         : Y              
 GND+                         : P1        :        :                   :         : 1         :                
@@ -574,14 +574,14 @@ GND                          : P13       : gnd    :                   :         
 GND                          : P14       : gnd    :                   :         :           :                
 GND                          : P15       : gnd    :                   :         :           :                
 GND                          : P16       : gnd    :                   :         :           :                
-GND*                         : P17       :        :                   :         : 6         :                
-GND*                         : P18       :        :                   :         : 5         :                
+FPGA_pc[27]                  : P17       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_pc[2]                   : P18       : output : 3.3-V LVTTL       :         : 5         : N              
 GND                          : P19       : gnd    :                   :         :           :                
 MSEL0                        : P20       :        :                   :         : 6         :                
 MSEL1                        : P21       :        :                   :         : 6         :                
 VCCIO6                       : P22       : power  :                   : 3.3V    : 6         :                
-GND*                         : P23       :        :                   :         : 6         :                
-GND*                         : P24       :        :                   :         : 6         :                
+FPGA_inst[18]                : P23       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_mem[14]                 : P24       : output : 3.3-V LVTTL       :         : 6         : N              
 GND+                         : P25       :        :                   :         : 6         :                
 GND+                         : P26       :        :                   :         : 6         :                
 GND                          : R1        : gnd    :                   :         :           :                
@@ -600,15 +600,15 @@ GND                          : R13       : gnd    :                   :         
 GND                          : R14       : gnd    :                   :         :           :                
 GND                          : R15       : gnd    :                   :         :           :                
 VCCINT                       : R16       : power  :                   : 1.2V    :           :                
-GND*                         : R17       :        :                   :         : 6         :                
+FPGA_mem[19]                 : R17       : output : 3.3-V LVTTL       :         : 6         : N              
 VCCIO6                       : R18       : power  :                   : 3.3V    : 6         :                
-GND*                         : R19       :        :                   :         : 6         :                
-GND*                         : R20       :        :                   :         : 6         :                
+FPGA_mem[17]                 : R19       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_pc[22]                  : R20       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : R21       : gnd    :                   :         :           :                
 nSTATUS                      : R22       :        :                   :         : 6         :                
 CONF_DONE                    : R23       :        :                   :         : 6         :                
-GND*                         : R24       :        :                   :         : 6         :                
-GND*                         : R25       :        :                   :         : 6         :                
+FPGA_pc[18]                  : R24       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_mem[31]                 : R25       : output : 3.3-V LVTTL       :         : 6         : N              
 GND                          : R26       : gnd    :                   :         :           :                
 VCCIO1                       : T1        : power  :                   : 3.3V    : 1         :                
 Saida_FPGA_7seg_5[0]         : T2        : output : 3.3-V LVTTL       :         : 1         : Y              
@@ -626,15 +626,15 @@ GND                          : T13       : gnd    :                   :         
 GND                          : T14       : gnd    :                   :         :           :                
 GND                          : T15       : gnd    :                   :         :           :                
 VCCINT                       : T16       : power  :                   : 1.2V    :           :                
-GND*                         : T17       :        :                   :         : 6         :                
-GND*                         : T18       :        :                   :         : 6         :                
-GND*                         : T19       :        :                   :         : 6         :                
-GND*                         : T20       :        :                   :         : 6         :                
-GND*                         : T21       :        :                   :         : 6         :                
-GND*                         : T22       :        :                   :         : 6         :                
-GND*                         : T23       :        :                   :         : 6         :                
-GND*                         : T24       :        :                   :         : 6         :                
-GND*                         : T25       :        :                   :         : 6         :                
+FPGA_ula[23]                 : T17       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_ula[22]                 : T18       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_mem[6]                  : T19       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_ula[31]                 : T20       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_ula[21]                 : T21       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_mem[22]                 : T22       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_pc[31]                  : T23       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_ula[17]                 : T24       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_inst[4]                 : T25       : output : 3.3-V LVTTL       :         : 6         : N              
 VCCIO6                       : T26       : power  :                   : 3.3V    : 6         :                
 Saida_FPGA_7seg_4[1]         : U1        : output : 3.3-V LVTTL       :         : 1         : Y              
 Saida_FPGA_7seg_4[2]         : U2        : output : 3.3-V LVTTL       :         : 1         : Y              
@@ -655,13 +655,13 @@ VCCINT                       : U16       : power  :                   : 1.2V    
 GND*                         : U17       :        :                   :         : 7         :                
 GND*                         : U18       :        :                   :         : 7         :                
 GND                          : U19       : gnd    :                   :         :           :                
-GND*                         : U20       :        :                   :         : 6         :                
-GND*                         : U21       :        :                   :         : 6         :                
+FPGA_mem[7]                  : U20       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_ula[14]                 : U21       : output : 3.3-V LVTTL       :         : 6         : N              
 Saida_FPGA_7seg_3[5]         : U22       : output : 3.3-V LVTTL       :         : 6         : Y              
-GND*                         : U23       :        :                   :         : 6         :                
-GND*                         : U24       :        :                   :         : 6         :                
-GND*                         : U25       :        :                   :         : 6         :                
-GND*                         : U26       :        :                   :         : 6         :                
+FPGA_pc[19]                  : U23       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_mem[18]                 : U24       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_pc[24]                  : U25       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_pc[17]                  : U26       : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : V1        :        :                   :         : 1         :                
 GND*                         : V2        :        :                   :         : 1         :                
 GND*                         : V3        :        :                   :         : 1         :                
@@ -685,9 +685,9 @@ Saida_FPGA_7seg_1[0]         : V20       : output : 3.3-V LVTTL       :         
 Saida_FPGA_7seg_1[1]         : V21       : output : 3.3-V LVTTL       :         : 6         : Y              
 Saida_FPGA_7seg_2[1]         : V22       : output : 3.3-V LVTTL       :         : 6         : Y              
 GND*                         : V23       :        :                   :         : 6         :                
-GND*                         : V24       :        :                   :         : 6         :                
-GND*                         : V25       :        :                   :         : 6         :                
-GND*                         : V26       :        :                   :         : 6         :                
+FPGA_ula[5]                  : V24       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_ula[6]                  : V25       : output : 3.3-V LVTTL       :         : 6         : N              
+FPGA_ula[13]                 : V26       : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : W1        :        :                   :         : 1         :                
 GND*                         : W2        :        :                   :         : 1         :                
 GND*                         : W3        :        :                   :         : 1         :                
