@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Pipeline
-Mon Dec 11 17:03:41 2017
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Mon Dec 11 15:17:52 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -73,24 +73,24 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
-+------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 11 17:03:41 2017      ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
-; Revision Name                      ; Pipeline                                   ;
-; Top-level Entity Name              ; Pipeline                                   ;
-; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 1,027                                      ;
-;     Total combinational functions  ; 755                                        ;
-;     Dedicated logic registers      ; 510                                        ;
-; Total registers                    ; 510                                        ;
-; Total pins                         ; 59                                         ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 18,432                                     ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Dec 11 15:17:52 2017           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Pipeline                                        ;
+; Top-level Entity Name              ; Pipeline                                        ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 1,023                                           ;
+;     Total combinational functions  ; 753                                             ;
+;     Dedicated logic registers      ; 506                                             ;
+; Total registers                    ; 506                                             ;
+; Total pins                         ; 59                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 18,432                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -194,39 +194,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                           ; Library ;
 +--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
-; memInstrucoes.mif                          ; yes             ; User Memory Initialization File                       ; C:/Users/bruno/Documents/TrabFinal/pipeline/memInstrucoes.mif                          ;         ;
-; mux_41.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux_41.vhd                                 ;         ;
-; ula_mips.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd                               ;         ;
-; somador.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/somador.vhd                                ;         ;
-; pc.vhd                                     ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/pc.vhd                                     ;         ;
-; bregmips.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/bregmips.vhd                               ;         ;
-; Pipeline.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline.vhd                               ;         ;
-; minst.vhd                                  ; yes             ; User Wizard-Generated File                            ; C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd                                  ;         ;
-; mdata.vhd                                  ; yes             ; User Wizard-Generated File                            ; C:/Users/bruno/Documents/TrabFinal/pipeline/mdata.vhd                                  ;         ;
-; controle_ula.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/controle_ula.vhd                           ;         ;
-; controle.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/controle.vhd                               ;         ;
-; sign_extend.vhd                            ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/sign_extend.vhd                            ;         ;
-; if_id.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/if_id.vhd                                  ;         ;
-; id_ex.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/id_ex.vhd                                  ;         ;
-; ex_mem.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/ex_mem.vhd                                 ;         ;
-; mem_wb.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/mem_wb.vhd                                 ;         ;
-; conversor_7seg.vhd                         ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/conversor_7seg.vhd                         ;         ;
-; mux4.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux4.vhd                                   ;         ;
-; mux2.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux2.vhd                                   ;         ;
-; altsyncram.tdf                             ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
-; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
-; lpm_mux.inc                                ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
-; lpm_decode.inc                             ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
-; aglobal130.inc                             ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                          ;         ;
-; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
-; altrom.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc                              ;         ;
-; altram.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                              ;         ;
-; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
-; db/altsyncram_ho81.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_ho81.tdf                     ;         ;
-; db/altsyncram_55d1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_55d1.tdf                     ;         ;
-; memdados.mif                               ; yes             ; Auto-Found Memory Initialization File                 ; C:/Users/bruno/Documents/TrabFinal/pipeline/memdados.mif                               ;         ;
-; db/altsyncram_u5h1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_u5h1.tdf                     ;         ;
-; db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ;         ;
+; memInstrucoes.mif                          ; yes             ; User Memory Initialization File                       ; C:/Users/bjpra/OneDrive/Documentos/pipeline/memInstrucoes.mif                          ;         ;
+; mux_41.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mux_41.vhd                                 ;         ;
+; ula_mips.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/ula_mips.vhd                               ;         ;
+; somador.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/somador.vhd                                ;         ;
+; pc.vhd                                     ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/pc.vhd                                     ;         ;
+; bregmips.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/bregmips.vhd                               ;         ;
+; Pipeline.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/Pipeline.vhd                               ;         ;
+; minst.vhd                                  ; yes             ; User Wizard-Generated File                            ; C:/Users/bjpra/OneDrive/Documentos/pipeline/minst.vhd                                  ;         ;
+; mdata.vhd                                  ; yes             ; User Wizard-Generated File                            ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mdata.vhd                                  ;         ;
+; controle_ula.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/controle_ula.vhd                           ;         ;
+; controle.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/controle.vhd                               ;         ;
+; sign_extend.vhd                            ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/sign_extend.vhd                            ;         ;
+; if_id.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/if_id.vhd                                  ;         ;
+; id_ex.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/id_ex.vhd                                  ;         ;
+; ex_mem.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/ex_mem.vhd                                 ;         ;
+; mem_wb.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mem_wb.vhd                                 ;         ;
+; conversor_7seg.vhd                         ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/conversor_7seg.vhd                         ;         ;
+; mux4.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mux4.vhd                                   ;         ;
+; mux2.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mux2.vhd                                   ;         ;
+; altsyncram.tdf                             ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                       ;         ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                ;         ;
+; lpm_mux.inc                                ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                          ;         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                       ;         ;
+; aglobal130.inc                             ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                       ;         ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                        ;         ;
+; altrom.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                           ;         ;
+; altram.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                           ;         ;
+; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                         ;         ;
+; db/altsyncram_ho81.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bjpra/OneDrive/Documentos/pipeline/db/altsyncram_ho81.tdf                     ;         ;
+; db/altsyncram_55d1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bjpra/OneDrive/Documentos/pipeline/db/altsyncram_55d1.tdf                     ;         ;
+; memDados.mif                               ; yes             ; Auto-Found Memory Initialization File                 ; C:/Users/bjpra/OneDrive/Documentos/pipeline/memDados.mif                               ;         ;
+; db/altsyncram_u5h1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bjpra/OneDrive/Documentos/pipeline/db/altsyncram_u5h1.tdf                     ;         ;
+; db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/bjpra/OneDrive/Documentos/pipeline/db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ;         ;
 +--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
 
 
@@ -235,28 +235,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,027 ;
+; Estimated Total logic elements              ; 1,023 ;
 ;                                             ;       ;
-; Total combinational functions               ; 755   ;
+; Total combinational functions               ; 753   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 542   ;
-;     -- 3 input functions                    ; 171   ;
-;     -- <=2 input functions                  ; 42    ;
+;     -- 4 input functions                    ; 538   ;
+;     -- 3 input functions                    ; 169   ;
+;     -- <=2 input functions                  ; 46    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 635   ;
+;     -- normal mode                          ; 633   ;
 ;     -- arithmetic mode                      ; 120   ;
 ;                                             ;       ;
-; Total registers                             ; 510   ;
-;     -- Dedicated logic registers            ; 510   ;
+; Total registers                             ; 506   ;
+;     -- Dedicated logic registers            ; 506   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 59    ;
 ; Total memory bits                           ; 18432 ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 638   ;
-; Total fan-out                               ; 5322  ;
+; Maximum fan-out                             ; 634   ;
+; Total fan-out                               ; 5300  ;
 ; Average fan-out                             ; 3.67  ;
 +---------------------------------------------+-------+
 
@@ -266,39 +266,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
-; |Pipeline                                 ; 755 (3)           ; 510 (0)      ; 18432       ; 0            ; 0       ; 0         ; 59   ; 0            ; |Pipeline                                                                             ;              ;
-;    |bregmips:breg_id|                     ; 79 (79)           ; 49 (49)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id                                                            ;              ;
-;       |altsyncram:regs_rtl_0|             ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0                                      ;              ;
-;          |altsyncram_u5h1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated       ;              ;
-;       |altsyncram:regs_rtl_1|             ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1                                      ;              ;
-;          |altsyncram_u5h1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated       ;              ;
-;    |controle:controle_id|                 ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle:controle_id                                                        ;              ;
-;    |controle_ula:ula_control|             ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle_ula:ula_control                                                    ;              ;
-;    |conversor_7seg:conversor_0|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_0                                                  ;              ;
-;    |conversor_7seg:conversor_1|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_1                                                  ;              ;
-;    |conversor_7seg:conversor_2|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_2                                                  ;              ;
-;    |conversor_7seg:conversor_3|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_3                                                  ;              ;
-;    |conversor_7seg:conversor_4|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_4                                                  ;              ;
-;    |conversor_7seg:conversor_5|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_5                                                  ;              ;
-;    |conversor_7seg:conversor_6|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_6                                                  ;              ;
-;    |conversor_7seg:conversor_7|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_7                                                  ;              ;
-;    |ex_mem:reg_exmem|                     ; 35 (35)           ; 138 (138)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ex_mem:reg_exmem                                                            ;              ;
-;    |id_ex:reg_idex|                       ; 1 (1)             ; 133 (133)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex                                                              ;              ;
-;    |if_id:reg_ifid|                       ; 0 (0)             ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|if_id:reg_ifid                                                              ;              ;
-;    |mdata:md_mem|                         ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem                                                                ;              ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component                                ;              ;
-;          |altsyncram_55d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component|altsyncram_55d1:auto_generated ;              ;
-;    |mem_wb:reg_memwb|                     ; 0 (0)             ; 104 (104)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mem_wb:reg_memwb                                                            ;              ;
-;    |minst:mi_if|                          ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if                                                                 ;              ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component                                 ;              ;
-;          |altsyncram_ho81:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component|altsyncram_ho81:auto_generated  ;              ;
-;    |mux2:mux2_ex_B|                       ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux2:mux2_ex_B                                                              ;              ;
-;    |mux4:mux4_if|                         ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_if                                                                ;              ;
-;    |mux4:mux4_saida_FPGA|                 ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_saida_FPGA                                                        ;              ;
-;    |mux4:mux4_wb|                         ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_wb                                                                ;              ;
-;    |pc:pc_reg|                            ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|pc:pc_reg                                                                   ;              ;
-;    |somador:somador_if|                   ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|somador:somador_if                                                          ;              ;
-;    |ula_mips:ula_ex|                      ; 280 (280)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ula_mips:ula_ex                                                             ;              ;
+; |Pipeline                                 ; 753 (4)           ; 506 (0)      ; 18432       ; 0            ; 0       ; 0         ; 59   ; 0            ; |Pipeline                                                                             ; work         ;
+;    |bregmips:breg_id|                     ; 79 (79)           ; 49 (49)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id                                                            ; work         ;
+;       |altsyncram:regs_rtl_0|             ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0                                      ; work         ;
+;          |altsyncram_u5h1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated       ; work         ;
+;       |altsyncram:regs_rtl_1|             ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1                                      ; work         ;
+;          |altsyncram_u5h1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated       ; work         ;
+;    |controle:controle_id|                 ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle:controle_id                                                        ; work         ;
+;    |controle_ula:ula_control|             ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle_ula:ula_control                                                    ; work         ;
+;    |conversor_7seg:conversor_0|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_0                                                  ; work         ;
+;    |conversor_7seg:conversor_1|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_1                                                  ; work         ;
+;    |conversor_7seg:conversor_2|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_2                                                  ; work         ;
+;    |conversor_7seg:conversor_3|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_3                                                  ; work         ;
+;    |conversor_7seg:conversor_4|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_4                                                  ; work         ;
+;    |conversor_7seg:conversor_5|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_5                                                  ; work         ;
+;    |conversor_7seg:conversor_6|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_6                                                  ; work         ;
+;    |conversor_7seg:conversor_7|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_7                                                  ; work         ;
+;    |ex_mem:reg_exmem|                     ; 35 (35)           ; 136 (136)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ex_mem:reg_exmem                                                            ; work         ;
+;    |id_ex:reg_idex|                       ; 1 (1)             ; 131 (131)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex                                                              ; work         ;
+;    |if_id:reg_ifid|                       ; 0 (0)             ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|if_id:reg_ifid                                                              ; work         ;
+;    |mdata:md_mem|                         ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem                                                                ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component                                ; work         ;
+;          |altsyncram_55d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component|altsyncram_55d1:auto_generated ; work         ;
+;    |mem_wb:reg_memwb|                     ; 0 (0)             ; 104 (104)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mem_wb:reg_memwb                                                            ; work         ;
+;    |minst:mi_if|                          ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if                                                                 ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component                                 ; work         ;
+;          |altsyncram_ho81:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component|altsyncram_ho81:auto_generated  ; work         ;
+;    |mux2:mux2_ex_B|                       ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux2:mux2_ex_B                                                              ; work         ;
+;    |mux4:mux4_if|                         ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_if                                                                ; work         ;
+;    |mux4:mux4_saida_FPGA|                 ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_saida_FPGA                                                        ; work         ;
+;    |mux4:mux4_wb|                         ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_wb                                                                ; work         ;
+;    |pc:pc_reg|                            ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|pc:pc_reg                                                                   ; work         ;
+;    |somador:somador_if|                   ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|somador:somador_if                                                          ; work         ;
+;    |ula_mips:ula_ex|                      ; 280 (280)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ula_mips:ula_ex                                                             ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -320,8 +320,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File                                       ;
 +--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
-; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|mdata:md_mem ; C:/Users/bruno/Documents/TrabFinal/pipeline/mdata.vhd ;
-; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|minst:mi_if  ; C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd ;
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|mdata:md_mem ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mdata.vhd ;
+; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|minst:mi_if  ; C:/Users/bjpra/OneDrive/Documentos/pipeline/minst.vhd ;
 +--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
 
 
@@ -454,7 +454,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 510   ;
+; Total registers                              ; 506   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -1183,7 +1183,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -1192,8 +1192,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Mon Dec 11 17:03:36 2017
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Dec 11 15:17:35 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipeline -c Pipeline
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file mux_41.vhd
@@ -1254,7 +1254,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux2.vh
     Info (12022): Found design unit 1: mux2-behavioral
     Info (12023): Found entity 1: mux2
 Info (12127): Elaborating entity "Pipeline" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(332): object "mem_read_sig" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(323): object "mem_read_sig" assigned a value but never read
 Info (12128): Elaborating entity "mux4" for hierarchy "mux4:mux4_if"
 Info (12128): Elaborating entity "pc" for hierarchy "pc:pc_reg"
 Info (12128): Elaborating entity "somador" for hierarchy "somador:somador_if"
@@ -1367,15 +1367,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_u5h1
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1339 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1335 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 1152 logic cells
+    Info (21061): Implemented 1148 logic cells
     Info (21064): Implemented 128 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 546 megabytes
-    Info: Processing ended: Mon Dec 11 17:03:41 2017
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 550 megabytes
+    Info: Processing ended: Mon Dec 11 15:17:52 2017
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:07
 
 

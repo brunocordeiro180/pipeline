@@ -1,6 +1,6 @@
 Flow report for Pipeline
-Mon Dec 11 17:04:01 2017
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Mon Dec 11 15:18:30 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -37,26 +37,26 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Flow Summary                                                                    ;
-+------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Mon Dec 11 17:04:01 2017      ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
-; Revision Name                      ; Pipeline                                   ;
-; Top-level Entity Name              ; Pipeline                                   ;
-; Family                             ; Cyclone II                                 ;
-; Device                             ; EP2C35F672C6                               ;
-; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 979 / 33,216 ( 3 % )                       ;
-;     Total combinational functions  ; 756 / 33,216 ( 2 % )                       ;
-;     Dedicated logic registers      ; 510 / 33,216 ( 2 % )                       ;
-; Total registers                    ; 510                                        ;
-; Total pins                         ; 59 / 475 ( 12 % )                          ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 18,432 / 483,840 ( 4 % )                   ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Mon Dec 11 15:18:30 2017           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Pipeline                                        ;
+; Top-level Entity Name              ; Pipeline                                        ;
+; Family                             ; Cyclone II                                      ;
+; Device                             ; EP2C35F672C6                                    ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 958 / 33,216 ( 3 % )                            ;
+;     Total combinational functions  ; 754 / 33,216 ( 2 % )                            ;
+;     Dedicated logic registers      ; 506 / 33,216 ( 2 % )                            ;
+; Total registers                    ; 506                                             ;
+; Total pins                         ; 59 / 475 ( 12 % )                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 18,432 / 483,840 ( 4 % )                        ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
++------------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/11/2017 17:03:36 ;
+; Start date & time ; 12/11/2017 15:17:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pipeline            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +--------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 104220930749527.151301901605100       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 264390078924843.151301265607340       ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; DUT                                   ; --            ; --          ; Pipeline_tb    ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; Pipeline_tb                           ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                  ; --            ; --          ; eda_simulation ;
@@ -107,12 +107,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 546 MB              ; 00:00:05                           ;
-; Fitter                    ; 00:00:12     ; 1.0                     ; 779 MB              ; 00:00:12                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 460 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 454 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 414 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 550 MB              ; 00:00:07                           ;
+; Fitter                    ; 00:00:23     ; 1.0                     ; 784 MB              ; 00:00:16                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 448 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 459 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 421 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:45     ; --                      ; --                  ; 00:00:28                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -121,11 +121,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-P00P36S  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-P00P36S  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-P00P36S  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-P00P36S  ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; DESKTOP-P00P36S  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; Bruno            ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; Bruno            ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; Bruno            ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Bruno            ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; Bruno            ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
