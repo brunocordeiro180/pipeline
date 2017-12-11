@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Pipeline
-Mon Dec 11 15:17:52 2017
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Mon Dec 11 20:45:29 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -19,38 +19,47 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  11. General Register Statistics
  12. Inverted Register Statistics
  13. Registers Added for RAM Pass-Through Logic
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for minst:mi_if|altsyncram:altsyncram_component|altsyncram_ho81:auto_generated
- 16. Source assignments for mdata:md_mem|altsyncram:altsyncram_component|altsyncram_55d1:auto_generated
- 17. Source assignments for bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated
- 18. Source assignments for bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated
- 19. Parameter Settings for User Entity Instance: Top-level Entity: |Pipeline
- 20. Parameter Settings for User Entity Instance: mux4:mux4_if
- 21. Parameter Settings for User Entity Instance: pc:pc_reg
- 22. Parameter Settings for User Entity Instance: minst:mi_if|altsyncram:altsyncram_component
- 23. Parameter Settings for User Entity Instance: if_id:reg_ifid
- 24. Parameter Settings for User Entity Instance: bregmips:breg_id
- 25. Parameter Settings for User Entity Instance: id_ex:reg_idex
- 26. Parameter Settings for User Entity Instance: mux2:mux2_ex_B
- 27. Parameter Settings for User Entity Instance: ula_mips:ula_ex
- 28. Parameter Settings for User Entity Instance: mux_41:mux4_ex
- 29. Parameter Settings for User Entity Instance: ex_mem:reg_exmem
- 30. Parameter Settings for User Entity Instance: mdata:md_mem|altsyncram:altsyncram_component
- 31. Parameter Settings for User Entity Instance: mem_wb:reg_memwb
- 32. Parameter Settings for User Entity Instance: mux4:mux4_wb
- 33. Parameter Settings for User Entity Instance: mux4:mux4_saida_FPGA
- 34. Parameter Settings for Inferred Entity Instance: bregmips:breg_id|altsyncram:regs_rtl_0
- 35. Parameter Settings for Inferred Entity Instance: bregmips:breg_id|altsyncram:regs_rtl_1
- 36. altsyncram Parameter Settings by Entity Instance
- 37. Port Connectivity Checks: "mux4:mux4_wb"
- 38. Port Connectivity Checks: "mem_wb:reg_memwb"
- 39. Port Connectivity Checks: "ex_mem:reg_exmem"
- 40. Port Connectivity Checks: "mux_41:mux4_ex"
- 41. Port Connectivity Checks: "somador:ex_somador"
- 42. Port Connectivity Checks: "somador:somador_if"
- 43. Port Connectivity Checks: "mux4:mux4_if"
- 44. Elapsed Time Per Partition
- 45. Analysis & Synthesis Messages
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for minst:mi_if|altsyncram:altsyncram_component|altsyncram_ho81:auto_generated
+ 17. Source assignments for mdata:md_mem|altsyncram:altsyncram_component|altsyncram_55d1:auto_generated
+ 18. Source assignments for bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated
+ 19. Source assignments for bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated
+ 20. Source assignments for id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0|shift_taps_q1m:auto_generated|altsyncram_hg31:altsyncram4
+ 21. Parameter Settings for User Entity Instance: Top-level Entity: |Pipeline
+ 22. Parameter Settings for User Entity Instance: mux4:mux4_if
+ 23. Parameter Settings for User Entity Instance: pc:pc_reg
+ 24. Parameter Settings for User Entity Instance: somador:somador_if
+ 25. Parameter Settings for User Entity Instance: minst:mi_if|altsyncram:altsyncram_component
+ 26. Parameter Settings for User Entity Instance: if_id:reg_ifid
+ 27. Parameter Settings for User Entity Instance: bregmips:breg_id
+ 28. Parameter Settings for User Entity Instance: comparador:comparador_id
+ 29. Parameter Settings for User Entity Instance: somador:somador_id
+ 30. Parameter Settings for User Entity Instance: id_ex:reg_idex
+ 31. Parameter Settings for User Entity Instance: somador:ex_somador
+ 32. Parameter Settings for User Entity Instance: mux2:mux2_ex_B
+ 33. Parameter Settings for User Entity Instance: ula_mips:ula_ex
+ 34. Parameter Settings for User Entity Instance: mux_41:mux4_ex
+ 35. Parameter Settings for User Entity Instance: ex_mem:reg_exmem
+ 36. Parameter Settings for User Entity Instance: mdata:md_mem|altsyncram:altsyncram_component
+ 37. Parameter Settings for User Entity Instance: mem_wb:reg_memwb
+ 38. Parameter Settings for User Entity Instance: mux4:mux4_wb
+ 39. Parameter Settings for User Entity Instance: mux4:mux4_saida_FPGA
+ 40. Parameter Settings for Inferred Entity Instance: bregmips:breg_id|altsyncram:regs_rtl_0
+ 41. Parameter Settings for Inferred Entity Instance: bregmips:breg_id|altsyncram:regs_rtl_1
+ 42. Parameter Settings for Inferred Entity Instance: id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0
+ 43. altsyncram Parameter Settings by Entity Instance
+ 44. altshift_taps Parameter Settings by Entity Instance
+ 45. Port Connectivity Checks: "mux4:mux4_wb"
+ 46. Port Connectivity Checks: "mem_wb:reg_memwb"
+ 47. Port Connectivity Checks: "ex_mem:reg_exmem"
+ 48. Port Connectivity Checks: "mux_41:mux4_ex"
+ 49. Port Connectivity Checks: "somador:ex_somador"
+ 50. Port Connectivity Checks: "somador:somador_id"
+ 51. Port Connectivity Checks: "somador:somador_if"
+ 52. Port Connectivity Checks: "mux4:mux4_if"
+ 53. Elapsed Time Per Partition
+ 54. Analysis & Synthesis Messages
 
 
 
@@ -73,24 +82,24 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec 11 15:17:52 2017           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; Pipeline                                        ;
-; Top-level Entity Name              ; Pipeline                                        ;
-; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 1,023                                           ;
-;     Total combinational functions  ; 753                                             ;
-;     Dedicated logic registers      ; 506                                             ;
-; Total registers                    ; 506                                             ;
-; Total pins                         ; 59                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 18,432                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Dec 11 20:45:29 2017      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; Pipeline                                   ;
+; Top-level Entity Name              ; Pipeline                                   ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; 941                                        ;
+;     Total combinational functions  ; 770                                        ;
+;     Dedicated logic registers      ; 377                                        ;
+; Total registers                    ; 377                                        ;
+; Total pins                         ; 59                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 18,534                                     ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -194,39 +203,49 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                           ; Library ;
 +--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
-; memInstrucoes.mif                          ; yes             ; User Memory Initialization File                       ; C:/Users/bjpra/OneDrive/Documentos/pipeline/memInstrucoes.mif                          ;         ;
-; mux_41.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mux_41.vhd                                 ;         ;
-; ula_mips.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/ula_mips.vhd                               ;         ;
-; somador.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/somador.vhd                                ;         ;
-; pc.vhd                                     ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/pc.vhd                                     ;         ;
-; bregmips.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/bregmips.vhd                               ;         ;
-; Pipeline.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/Pipeline.vhd                               ;         ;
-; minst.vhd                                  ; yes             ; User Wizard-Generated File                            ; C:/Users/bjpra/OneDrive/Documentos/pipeline/minst.vhd                                  ;         ;
-; mdata.vhd                                  ; yes             ; User Wizard-Generated File                            ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mdata.vhd                                  ;         ;
-; controle_ula.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/controle_ula.vhd                           ;         ;
-; controle.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/controle.vhd                               ;         ;
-; sign_extend.vhd                            ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/sign_extend.vhd                            ;         ;
-; if_id.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/if_id.vhd                                  ;         ;
-; id_ex.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/id_ex.vhd                                  ;         ;
-; ex_mem.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/ex_mem.vhd                                 ;         ;
-; mem_wb.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mem_wb.vhd                                 ;         ;
-; conversor_7seg.vhd                         ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/conversor_7seg.vhd                         ;         ;
-; mux4.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mux4.vhd                                   ;         ;
-; mux2.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mux2.vhd                                   ;         ;
-; altsyncram.tdf                             ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                       ;         ;
-; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                ;         ;
-; lpm_mux.inc                                ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                          ;         ;
-; lpm_decode.inc                             ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                       ;         ;
-; aglobal130.inc                             ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                       ;         ;
-; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                        ;         ;
-; altrom.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                           ;         ;
-; altram.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                           ;         ;
-; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                         ;         ;
-; db/altsyncram_ho81.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bjpra/OneDrive/Documentos/pipeline/db/altsyncram_ho81.tdf                     ;         ;
-; db/altsyncram_55d1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bjpra/OneDrive/Documentos/pipeline/db/altsyncram_55d1.tdf                     ;         ;
-; memDados.mif                               ; yes             ; Auto-Found Memory Initialization File                 ; C:/Users/bjpra/OneDrive/Documentos/pipeline/memDados.mif                               ;         ;
-; db/altsyncram_u5h1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bjpra/OneDrive/Documentos/pipeline/db/altsyncram_u5h1.tdf                     ;         ;
-; db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/bjpra/OneDrive/Documentos/pipeline/db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ;         ;
+; memInstrucoes.mif                          ; yes             ; User Memory Initialization File                       ; C:/Users/bruno/Documents/TrabFinal/pipeline/memInstrucoes.mif                          ;         ;
+; mux_41.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux_41.vhd                                 ;         ;
+; ula_mips.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd                               ;         ;
+; somador.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/somador.vhd                                ;         ;
+; pc.vhd                                     ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/pc.vhd                                     ;         ;
+; bregmips.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/bregmips.vhd                               ;         ;
+; Pipeline.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline.vhd                               ;         ;
+; minst.vhd                                  ; yes             ; User Wizard-Generated File                            ; C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd                                  ;         ;
+; mdata.vhd                                  ; yes             ; User Wizard-Generated File                            ; C:/Users/bruno/Documents/TrabFinal/pipeline/mdata.vhd                                  ;         ;
+; controle_ula.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/controle_ula.vhd                           ;         ;
+; controle.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/controle.vhd                               ;         ;
+; sign_extend.vhd                            ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/sign_extend.vhd                            ;         ;
+; if_id.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/if_id.vhd                                  ;         ;
+; id_ex.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/id_ex.vhd                                  ;         ;
+; ex_mem.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/ex_mem.vhd                                 ;         ;
+; mem_wb.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/mem_wb.vhd                                 ;         ;
+; conversor_7seg.vhd                         ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/conversor_7seg.vhd                         ;         ;
+; mux4.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux4.vhd                                   ;         ;
+; comparador.vhd                             ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/comparador.vhd                             ;         ;
+; mux2.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/bruno/Documents/TrabFinal/pipeline/mux2.vhd                                   ;         ;
+; altsyncram.tdf                             ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
+; lpm_mux.inc                                ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
+; aglobal130.inc                             ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                          ;         ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
+; altrom.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc                              ;         ;
+; altram.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                              ;         ;
+; altdpram.inc                               ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
+; db/altsyncram_ho81.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_ho81.tdf                     ;         ;
+; db/altsyncram_55d1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_55d1.tdf                     ;         ;
+; memdados.mif                               ; yes             ; Auto-Found Memory Initialization File                 ; C:/Users/bruno/Documents/TrabFinal/pipeline/memdados.mif                               ;         ;
+; db/altsyncram_u5h1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_u5h1.tdf                     ;         ;
+; db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ;         ;
+; altshift_taps.tdf                          ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/altshift_taps.tdf                       ;         ;
+; lpm_counter.inc                            ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_counter.inc                         ;         ;
+; lpm_compare.inc                            ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_compare.inc                         ;         ;
+; lpm_constant.inc                           ; yes             ; Megafunction                                          ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_constant.inc                        ;         ;
+; db/shift_taps_q1m.tdf                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/shift_taps_q1m.tdf                      ;         ;
+; db/altsyncram_hg31.tdf                     ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/altsyncram_hg31.tdf                     ;         ;
+; db/add_sub_gvd.tdf                         ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/add_sub_gvd.tdf                         ;         ;
+; db/cntr_kkf.tdf                            ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/cntr_kkf.tdf                            ;         ;
+; db/cmpr_6cc.tdf                            ; yes             ; Auto-Generated Megafunction                           ; C:/Users/bruno/Documents/TrabFinal/pipeline/db/cmpr_6cc.tdf                            ;         ;
 +--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
 
 
@@ -235,84 +254,91 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,023 ;
+; Estimated Total logic elements              ; 941   ;
 ;                                             ;       ;
-; Total combinational functions               ; 753   ;
+; Total combinational functions               ; 770   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 538   ;
-;     -- 3 input functions                    ; 169   ;
-;     -- <=2 input functions                  ; 46    ;
+;     -- 4 input functions                    ; 547   ;
+;     -- 3 input functions                    ; 175   ;
+;     -- <=2 input functions                  ; 48    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 633   ;
-;     -- arithmetic mode                      ; 120   ;
+;     -- normal mode                          ; 648   ;
+;     -- arithmetic mode                      ; 122   ;
 ;                                             ;       ;
-; Total registers                             ; 506   ;
-;     -- Dedicated logic registers            ; 506   ;
+; Total registers                             ; 377   ;
+;     -- Dedicated logic registers            ; 377   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 59    ;
-; Total memory bits                           ; 18432 ;
+; Total memory bits                           ; 18534 ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
-; Maximum fan-out                             ; 634   ;
+; Maximum fan-out                             ; 539   ;
 ; Total fan-out                               ; 5300  ;
-; Average fan-out                             ; 3.67  ;
+; Average fan-out                             ; 3.87  ;
 +---------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                          ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
-; |Pipeline                                 ; 753 (4)           ; 506 (0)      ; 18432       ; 0            ; 0       ; 0         ; 59   ; 0            ; |Pipeline                                                                             ; work         ;
-;    |bregmips:breg_id|                     ; 79 (79)           ; 49 (49)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id                                                            ; work         ;
-;       |altsyncram:regs_rtl_0|             ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0                                      ; work         ;
-;          |altsyncram_u5h1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated       ; work         ;
-;       |altsyncram:regs_rtl_1|             ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1                                      ; work         ;
-;          |altsyncram_u5h1:auto_generated| ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated       ; work         ;
-;    |controle:controle_id|                 ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle:controle_id                                                        ; work         ;
-;    |controle_ula:ula_control|             ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle_ula:ula_control                                                    ; work         ;
-;    |conversor_7seg:conversor_0|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_0                                                  ; work         ;
-;    |conversor_7seg:conversor_1|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_1                                                  ; work         ;
-;    |conversor_7seg:conversor_2|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_2                                                  ; work         ;
-;    |conversor_7seg:conversor_3|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_3                                                  ; work         ;
-;    |conversor_7seg:conversor_4|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_4                                                  ; work         ;
-;    |conversor_7seg:conversor_5|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_5                                                  ; work         ;
-;    |conversor_7seg:conversor_6|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_6                                                  ; work         ;
-;    |conversor_7seg:conversor_7|           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_7                                                  ; work         ;
-;    |ex_mem:reg_exmem|                     ; 35 (35)           ; 136 (136)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ex_mem:reg_exmem                                                            ; work         ;
-;    |id_ex:reg_idex|                       ; 1 (1)             ; 131 (131)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex                                                              ; work         ;
-;    |if_id:reg_ifid|                       ; 0 (0)             ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|if_id:reg_ifid                                                              ; work         ;
-;    |mdata:md_mem|                         ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem                                                                ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component                                ; work         ;
-;          |altsyncram_55d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component|altsyncram_55d1:auto_generated ; work         ;
-;    |mem_wb:reg_memwb|                     ; 0 (0)             ; 104 (104)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mem_wb:reg_memwb                                                            ; work         ;
-;    |minst:mi_if|                          ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if                                                                 ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component                                 ; work         ;
-;          |altsyncram_ho81:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component|altsyncram_ho81:auto_generated  ; work         ;
-;    |mux2:mux2_ex_B|                       ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux2:mux2_ex_B                                                              ; work         ;
-;    |mux4:mux4_if|                         ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_if                                                                ; work         ;
-;    |mux4:mux4_saida_FPGA|                 ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_saida_FPGA                                                        ; work         ;
-;    |mux4:mux4_wb|                         ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_wb                                                                ; work         ;
-;    |pc:pc_reg|                            ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|pc:pc_reg                                                                   ; work         ;
-;    |somador:somador_if|                   ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|somador:somador_if                                                          ; work         ;
-;    |ula_mips:ula_ex|                      ; 280 (280)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ula_mips:ula_ex                                                             ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                     ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Library Name ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Pipeline                                       ; 770 (3)           ; 377 (0)      ; 18534       ; 0            ; 0       ; 0         ; 59   ; 0            ; |Pipeline                                                                                                                  ;              ;
+;    |bregmips:breg_id|                           ; 78 (78)           ; 49 (49)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id                                                                                                 ;              ;
+;       |altsyncram:regs_rtl_0|                   ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0                                                                           ;              ;
+;          |altsyncram_u5h1:auto_generated|       ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated                                            ;              ;
+;       |altsyncram:regs_rtl_1|                   ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1                                                                           ;              ;
+;          |altsyncram_u5h1:auto_generated|       ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated                                            ;              ;
+;    |comparador:comparador_id|                   ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|comparador:comparador_id                                                                                         ;              ;
+;    |controle:controle_id|                       ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle:controle_id                                                                                             ;              ;
+;    |controle_ula:ula_control|                   ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|controle_ula:ula_control                                                                                         ;              ;
+;    |conversor_7seg:conversor_0|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_0                                                                                       ;              ;
+;    |conversor_7seg:conversor_1|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_1                                                                                       ;              ;
+;    |conversor_7seg:conversor_2|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_2                                                                                       ;              ;
+;    |conversor_7seg:conversor_3|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_3                                                                                       ;              ;
+;    |conversor_7seg:conversor_4|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_4                                                                                       ;              ;
+;    |conversor_7seg:conversor_5|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_5                                                                                       ;              ;
+;    |conversor_7seg:conversor_6|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_6                                                                                       ;              ;
+;    |conversor_7seg:conversor_7|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|conversor_7seg:conversor_7                                                                                       ;              ;
+;    |ex_mem:reg_exmem|                           ; 5 (5)             ; 71 (71)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ex_mem:reg_exmem                                                                                                 ;              ;
+;    |id_ex:reg_idex|                             ; 8 (1)             ; 101 (97)     ; 102         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex                                                                                                   ;              ;
+;       |altshift_taps:idex_mem_to_reg_out_rtl_0| ; 7 (0)             ; 4 (0)        ; 102         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0                                                           ;              ;
+;          |shift_taps_q1m:auto_generated|        ; 7 (2)             ; 4 (2)        ; 102         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0|shift_taps_q1m:auto_generated                             ;              ;
+;             |altsyncram_hg31:altsyncram4|       ; 0 (0)             ; 0 (0)        ; 102         ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0|shift_taps_q1m:auto_generated|altsyncram_hg31:altsyncram4 ;              ;
+;             |cntr_kkf:cntr1|                    ; 5 (5)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0|shift_taps_q1m:auto_generated|cntr_kkf:cntr1              ;              ;
+;    |if_id:reg_ifid|                             ; 0 (0)             ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|if_id:reg_ifid                                                                                                   ;              ;
+;    |mdata:md_mem|                               ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem                                                                                                     ;              ;
+;       |altsyncram:altsyncram_component|         ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component                                                                     ;              ;
+;          |altsyncram_55d1:auto_generated|       ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mdata:md_mem|altsyncram:altsyncram_component|altsyncram_55d1:auto_generated                                      ;              ;
+;    |mem_wb:reg_memwb|                           ; 0 (0)             ; 70 (70)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mem_wb:reg_memwb                                                                                                 ;              ;
+;    |minst:mi_if|                                ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if                                                                                                      ;              ;
+;       |altsyncram:altsyncram_component|         ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component                                                                      ;              ;
+;          |altsyncram_ho81:auto_generated|       ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|minst:mi_if|altsyncram:altsyncram_component|altsyncram_ho81:auto_generated                                       ;              ;
+;    |mux2:mux2_ex_B|                             ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux2:mux2_ex_B                                                                                                   ;              ;
+;    |mux4:mux4_if|                               ; 67 (67)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_if                                                                                                     ;              ;
+;    |mux4:mux4_saida_FPGA|                       ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_saida_FPGA                                                                                             ;              ;
+;    |mux4:mux4_wb|                               ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|mux4:mux4_wb                                                                                                     ;              ;
+;    |pc:pc_reg|                                  ; 1 (1)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|pc:pc_reg                                                                                                        ;              ;
+;    |somador:somador_id|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|somador:somador_id                                                                                               ;              ;
+;    |somador:somador_if|                         ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|somador:somador_if                                                                                               ;              ;
+;    |ula_mips:ula_ex|                            ; 269 (269)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Pipeline|ula_mips:ula_ex                                                                                                  ;              ;
++-------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                 ;
-+----------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
-; Name                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                        ;
-+----------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
-; bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated|ALTSYNCRAM       ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ;
-; bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated|ALTSYNCRAM       ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ;
-; mdata:md_mem|altsyncram:altsyncram_component|altsyncram_55d1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port      ; 256          ; 32           ; --           ; --           ; 8192 ; memDados.mif                               ;
-; minst:mi_if|altsyncram:altsyncram_component|altsyncram_ho81:auto_generated|ALTSYNCRAM  ; AUTO ; ROM              ; 256          ; 32           ; --           ; --           ; 8192 ; ../memInstrucoes.mif                       ;
-+----------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                      ;
++-----------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
+; Name                                                                                                                        ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                        ;
++-----------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
+; bregmips:breg_id|altsyncram:regs_rtl_0|altsyncram_u5h1:auto_generated|ALTSYNCRAM                                            ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ;
+; bregmips:breg_id|altsyncram:regs_rtl_1|altsyncram_u5h1:auto_generated|ALTSYNCRAM                                            ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/pipeline.ram0_bregmips_f08f7cce.hdl.mif ;
+; id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0|shift_taps_q1m:auto_generated|altsyncram_hg31:altsyncram4|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 3            ; 34           ; 3            ; 34           ; 102  ; None                                       ;
+; mdata:md_mem|altsyncram:altsyncram_component|altsyncram_55d1:auto_generated|ALTSYNCRAM                                      ; AUTO ; Single Port      ; 256          ; 32           ; --           ; --           ; 8192 ; memDados.mif                               ;
+; minst:mi_if|altsyncram:altsyncram_component|altsyncram_ho81:auto_generated|ALTSYNCRAM                                       ; AUTO ; ROM              ; 256          ; 32           ; --           ; --           ; 8192 ; ../memInstrucoes.mif                       ;
++-----------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -320,133 +346,131 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File                                       ;
 +--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
-; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|mdata:md_mem ; C:/Users/bjpra/OneDrive/Documentos/pipeline/mdata.vhd ;
-; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|minst:mi_if  ; C:/Users/bjpra/OneDrive/Documentos/pipeline/minst.vhd ;
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|mdata:md_mem ; C:/Users/bruno/Documents/TrabFinal/pipeline/mdata.vhd ;
+; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Pipeline|minst:mi_if  ; C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd ;
 +--------+--------------+---------+--------------+--------------+------------------------+-------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                               ;
-+-------------------------------------------+------------------------------------------------------+
-; Register name                             ; Reason for Removal                                   ;
-+-------------------------------------------+------------------------------------------------------+
-; ex_mem:reg_exmem|exmem_out_pc4[0]         ; Merged with ex_mem:reg_exmem|exmem_adderesult_out[0] ;
-; ex_mem:reg_exmem|exmem_out_pc4[1]         ; Merged with ex_mem:reg_exmem|exmem_adderesult_out[1] ;
-; id_ex:reg_idex|idex_out_immediate[16..31] ; Merged with id_ex:reg_idex|idex_out_immediate[15]    ;
-; id_ex:reg_idex|idex_out_regdest[1]        ; Merged with id_ex:reg_idex|idex_mem_to_reg_out[1]    ;
-; bregmips:breg_id|regs_rtl_0_bypass[12]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[14]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[14]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[16]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[16]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[20]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[20]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[22]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[22]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[24]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[24]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[26]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[26]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[28]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[28]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[30]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[30]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[32]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[32]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[34]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[34]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[36]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[36]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[38]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[38]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[40]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[40]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[42]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[42]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[44]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[44]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[46]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[46]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[48]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[48]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[50]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[50]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[52]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[52]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[54]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[54]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[56]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[56]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[58]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[58]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[60]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[60]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[62]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[62]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[64]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[64]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[66]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[66]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[68]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[68]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[70]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[70]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[72]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[72]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[74]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[74]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[12]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[12]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[14]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[14]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[16]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[16]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[20]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[20]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[22]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[22]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[24]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[24]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[26]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[26]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[28]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[28]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[30]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[30]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[32]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[32]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[34]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[34]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[36]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[36]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[38]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[38]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[40]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[40]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[42]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[42]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[44]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[44]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[46]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[46]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[48]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[48]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[50]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[50]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[52]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[52]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[54]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[54]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[56]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[56]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[58]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[58]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[60]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[60]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[62]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[62]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[64]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[64]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[66]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[66]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[68]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[68]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[70]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[70]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[72]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[72]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[74]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[74]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[18]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[18]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[18]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[17]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[17]   ;
-; bregmips:breg_id|regs_rtl_1_bypass[0]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[0]    ;
-; bregmips:breg_id|regs_rtl_1_bypass[1]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[1]    ;
-; if_id:reg_ifid|out_instruction[21]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[2]    ;
-; bregmips:breg_id|regs_rtl_1_bypass[3]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[3]    ;
-; if_id:reg_ifid|out_instruction[22]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[4]    ;
-; bregmips:breg_id|regs_rtl_1_bypass[5]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[5]    ;
-; if_id:reg_ifid|out_instruction[23]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[6]    ;
-; bregmips:breg_id|regs_rtl_1_bypass[7]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[7]    ;
-; if_id:reg_ifid|out_instruction[24]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[8]    ;
-; bregmips:breg_id|regs_rtl_1_bypass[9]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[9]    ;
-; if_id:reg_ifid|out_instruction[25]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[10]   ;
-; if_id:reg_ifid|out_instruction[16]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[2]    ;
-; if_id:reg_ifid|out_instruction[17]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[4]    ;
-; if_id:reg_ifid|out_instruction[18]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[6]    ;
-; if_id:reg_ifid|out_instruction[19]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[8]    ;
-; if_id:reg_ifid|out_instruction[20]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[10]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[73]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[73]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[71]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[71]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[69]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[69]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[67]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[67]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[65]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[65]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[63]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[63]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[61]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[61]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[59]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[59]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[57]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[57]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[55]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[55]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[53]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[53]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[51]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[51]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[49]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[49]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[47]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[47]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[45]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[45]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[43]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[43]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[41]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[41]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[39]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[39]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[37]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[37]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[35]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[35]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[33]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[33]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[31]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[31]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[29]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[29]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[27]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[27]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[25]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[25]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[23]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[23]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[21]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[21]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[19]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[19]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[15]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[15]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[13]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[13]   ;
-; bregmips:breg_id|regs_rtl_0_bypass[11]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[11]   ;
-; Total Number of Removed Registers = 130   ;                                                      ;
-+-------------------------------------------+------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                             ;
++-------------------------------------------+----------------------------------------------------+
+; Register name                             ; Reason for Removal                                 ;
++-------------------------------------------+----------------------------------------------------+
+; id_ex:reg_idex|idex_out_immediate[16..31] ; Merged with id_ex:reg_idex|idex_out_immediate[15]  ;
+; id_ex:reg_idex|idex_out_regdest[1]        ; Merged with id_ex:reg_idex|idex_mem_to_reg_out[1]  ;
+; bregmips:breg_id|regs_rtl_1_bypass[12]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[14] ;
+; bregmips:breg_id|regs_rtl_1_bypass[14]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[16] ;
+; bregmips:breg_id|regs_rtl_1_bypass[16]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[18] ;
+; bregmips:breg_id|regs_rtl_1_bypass[18]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[20] ;
+; bregmips:breg_id|regs_rtl_1_bypass[20]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[22] ;
+; bregmips:breg_id|regs_rtl_1_bypass[22]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[24] ;
+; bregmips:breg_id|regs_rtl_1_bypass[24]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[26] ;
+; bregmips:breg_id|regs_rtl_1_bypass[26]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[28] ;
+; bregmips:breg_id|regs_rtl_1_bypass[28]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[30] ;
+; bregmips:breg_id|regs_rtl_1_bypass[30]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[32] ;
+; bregmips:breg_id|regs_rtl_1_bypass[32]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[34] ;
+; bregmips:breg_id|regs_rtl_1_bypass[34]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[36] ;
+; bregmips:breg_id|regs_rtl_1_bypass[36]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[38] ;
+; bregmips:breg_id|regs_rtl_1_bypass[38]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[40] ;
+; bregmips:breg_id|regs_rtl_1_bypass[40]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[42] ;
+; bregmips:breg_id|regs_rtl_1_bypass[42]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[44] ;
+; bregmips:breg_id|regs_rtl_1_bypass[44]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[46] ;
+; bregmips:breg_id|regs_rtl_1_bypass[46]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[48] ;
+; bregmips:breg_id|regs_rtl_1_bypass[48]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[50] ;
+; bregmips:breg_id|regs_rtl_1_bypass[50]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[52] ;
+; bregmips:breg_id|regs_rtl_1_bypass[52]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[54] ;
+; bregmips:breg_id|regs_rtl_1_bypass[54]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[56] ;
+; bregmips:breg_id|regs_rtl_1_bypass[56]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[58] ;
+; bregmips:breg_id|regs_rtl_1_bypass[58]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[60] ;
+; bregmips:breg_id|regs_rtl_1_bypass[60]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[62] ;
+; bregmips:breg_id|regs_rtl_1_bypass[62]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[64] ;
+; bregmips:breg_id|regs_rtl_1_bypass[64]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[66] ;
+; bregmips:breg_id|regs_rtl_1_bypass[66]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[68] ;
+; bregmips:breg_id|regs_rtl_1_bypass[68]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[70] ;
+; bregmips:breg_id|regs_rtl_1_bypass[70]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[72] ;
+; bregmips:breg_id|regs_rtl_1_bypass[72]    ; Merged with bregmips:breg_id|regs_rtl_1_bypass[74] ;
+; bregmips:breg_id|regs_rtl_1_bypass[74]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[12] ;
+; bregmips:breg_id|regs_rtl_0_bypass[12]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[14] ;
+; bregmips:breg_id|regs_rtl_0_bypass[14]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[16] ;
+; bregmips:breg_id|regs_rtl_0_bypass[16]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[18] ;
+; bregmips:breg_id|regs_rtl_0_bypass[18]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[20] ;
+; bregmips:breg_id|regs_rtl_0_bypass[20]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[22] ;
+; bregmips:breg_id|regs_rtl_0_bypass[22]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[24] ;
+; bregmips:breg_id|regs_rtl_0_bypass[24]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[26] ;
+; bregmips:breg_id|regs_rtl_0_bypass[26]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[28] ;
+; bregmips:breg_id|regs_rtl_0_bypass[28]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[30] ;
+; bregmips:breg_id|regs_rtl_0_bypass[30]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[32] ;
+; bregmips:breg_id|regs_rtl_0_bypass[32]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[34] ;
+; bregmips:breg_id|regs_rtl_0_bypass[34]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[36] ;
+; bregmips:breg_id|regs_rtl_0_bypass[36]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[38] ;
+; bregmips:breg_id|regs_rtl_0_bypass[38]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[40] ;
+; bregmips:breg_id|regs_rtl_0_bypass[40]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[42] ;
+; bregmips:breg_id|regs_rtl_0_bypass[42]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[44] ;
+; bregmips:breg_id|regs_rtl_0_bypass[44]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[46] ;
+; bregmips:breg_id|regs_rtl_0_bypass[46]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[48] ;
+; bregmips:breg_id|regs_rtl_0_bypass[48]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[50] ;
+; bregmips:breg_id|regs_rtl_0_bypass[50]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[52] ;
+; bregmips:breg_id|regs_rtl_0_bypass[52]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[54] ;
+; bregmips:breg_id|regs_rtl_0_bypass[54]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[56] ;
+; bregmips:breg_id|regs_rtl_0_bypass[56]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[58] ;
+; bregmips:breg_id|regs_rtl_0_bypass[58]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[60] ;
+; bregmips:breg_id|regs_rtl_0_bypass[60]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[62] ;
+; bregmips:breg_id|regs_rtl_0_bypass[62]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[64] ;
+; bregmips:breg_id|regs_rtl_0_bypass[64]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[66] ;
+; bregmips:breg_id|regs_rtl_0_bypass[66]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[68] ;
+; bregmips:breg_id|regs_rtl_0_bypass[68]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[70] ;
+; bregmips:breg_id|regs_rtl_0_bypass[70]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[72] ;
+; bregmips:breg_id|regs_rtl_0_bypass[72]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[74] ;
+; bregmips:breg_id|regs_rtl_1_bypass[73]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[73] ;
+; bregmips:breg_id|regs_rtl_1_bypass[0]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[0]  ;
+; bregmips:breg_id|regs_rtl_1_bypass[1]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[1]  ;
+; if_id:reg_ifid|out_instruction[21]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[2]  ;
+; bregmips:breg_id|regs_rtl_1_bypass[3]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[3]  ;
+; if_id:reg_ifid|out_instruction[22]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[4]  ;
+; bregmips:breg_id|regs_rtl_1_bypass[5]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[5]  ;
+; if_id:reg_ifid|out_instruction[23]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[6]  ;
+; bregmips:breg_id|regs_rtl_1_bypass[7]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[7]  ;
+; if_id:reg_ifid|out_instruction[24]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[8]  ;
+; bregmips:breg_id|regs_rtl_1_bypass[9]     ; Merged with bregmips:breg_id|regs_rtl_0_bypass[9]  ;
+; if_id:reg_ifid|out_instruction[25]        ; Merged with bregmips:breg_id|regs_rtl_0_bypass[10] ;
+; bregmips:breg_id|regs_rtl_1_bypass[71]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[71] ;
+; bregmips:breg_id|regs_rtl_1_bypass[69]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[69] ;
+; bregmips:breg_id|regs_rtl_1_bypass[67]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[67] ;
+; bregmips:breg_id|regs_rtl_1_bypass[65]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[65] ;
+; bregmips:breg_id|regs_rtl_1_bypass[63]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[63] ;
+; bregmips:breg_id|regs_rtl_1_bypass[61]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[61] ;
+; bregmips:breg_id|regs_rtl_1_bypass[59]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[59] ;
+; bregmips:breg_id|regs_rtl_1_bypass[57]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[57] ;
+; bregmips:breg_id|regs_rtl_1_bypass[55]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[55] ;
+; bregmips:breg_id|regs_rtl_1_bypass[53]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[53] ;
+; bregmips:breg_id|regs_rtl_1_bypass[51]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[51] ;
+; bregmips:breg_id|regs_rtl_1_bypass[49]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[49] ;
+; bregmips:breg_id|regs_rtl_1_bypass[47]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[47] ;
+; bregmips:breg_id|regs_rtl_1_bypass[45]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[45] ;
+; bregmips:breg_id|regs_rtl_1_bypass[43]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[43] ;
+; bregmips:breg_id|regs_rtl_1_bypass[41]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[41] ;
+; bregmips:breg_id|regs_rtl_1_bypass[39]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[39] ;
+; bregmips:breg_id|regs_rtl_1_bypass[37]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[37] ;
+; bregmips:breg_id|regs_rtl_1_bypass[35]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[35] ;
+; bregmips:breg_id|regs_rtl_1_bypass[33]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[33] ;
+; bregmips:breg_id|regs_rtl_1_bypass[31]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[31] ;
+; bregmips:breg_id|regs_rtl_1_bypass[29]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[29] ;
+; bregmips:breg_id|regs_rtl_1_bypass[27]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[27] ;
+; bregmips:breg_id|regs_rtl_1_bypass[25]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[25] ;
+; bregmips:breg_id|regs_rtl_1_bypass[23]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[23] ;
+; bregmips:breg_id|regs_rtl_1_bypass[21]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[21] ;
+; bregmips:breg_id|regs_rtl_1_bypass[19]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[19] ;
+; bregmips:breg_id|regs_rtl_1_bypass[17]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[17] ;
+; bregmips:breg_id|regs_rtl_1_bypass[15]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[15] ;
+; bregmips:breg_id|regs_rtl_1_bypass[13]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[13] ;
+; bregmips:breg_id|regs_rtl_1_bypass[11]    ; Merged with bregmips:breg_id|regs_rtl_0_bypass[11] ;
+; if_id:reg_ifid|out_instruction[16]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[2]  ;
+; if_id:reg_ifid|out_instruction[17]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[4]  ;
+; if_id:reg_ifid|out_instruction[18]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[6]  ;
+; if_id:reg_ifid|out_instruction[19]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[8]  ;
+; if_id:reg_ifid|out_instruction[20]        ; Merged with bregmips:breg_id|regs_rtl_1_bypass[10] ;
+; Total Number of Removed Registers = 128   ;                                                    ;
++-------------------------------------------+----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -454,7 +478,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 506   ;
+; Total registers                              ; 377   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -469,7 +493,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; bregmips:breg_id|regs_rtl_0_bypass[18] ; 2       ;
+; bregmips:breg_id|regs_rtl_0_bypass[74] ; 2       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -632,20 +656,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+-----------------------------+
 
 
++------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                   ;
++----------------------------------------+------------------------------------------+------------+
+; Register Name                          ; Megafunction                             ; Type       ;
++----------------------------------------+------------------------------------------+------------+
+; mem_wb:reg_memwb|memwb_out_memtoreg[0] ; id_ex:reg_idex|idex_mem_to_reg_out_rtl_0 ; SHIFT_TAPS ;
+; ex_mem:reg_exmem|exmem_memtoreg_out[0] ; id_ex:reg_idex|idex_mem_to_reg_out_rtl_0 ; SHIFT_TAPS ;
+; id_ex:reg_idex|idex_mem_to_reg_out[0]  ; id_ex:reg_idex|idex_mem_to_reg_out_rtl_0 ; SHIFT_TAPS ;
+; mem_wb:reg_memwb|memwb_out_pc4[0..31]  ; id_ex:reg_idex|idex_mem_to_reg_out_rtl_0 ; SHIFT_TAPS ;
+; ex_mem:reg_exmem|exmem_out_pc4[0..31]  ; id_ex:reg_idex|idex_mem_to_reg_out_rtl_0 ; SHIFT_TAPS ;
+; id_ex:reg_idex|idex_out_pc4[0..31]     ; id_ex:reg_idex|idex_mem_to_reg_out_rtl_0 ; SHIFT_TAPS ;
+; mem_wb:reg_memwb|memwb_out_regwrite    ; id_ex:reg_idex|idex_mem_to_reg_out_rtl_0 ; SHIFT_TAPS ;
+; ex_mem:reg_exmem|exmem_regwrite_out    ; id_ex:reg_idex|idex_mem_to_reg_out_rtl_0 ; SHIFT_TAPS ;
+; id_ex:reg_idex|idex_regwrite_out       ; id_ex:reg_idex|idex_mem_to_reg_out_rtl_0 ; SHIFT_TAPS ;
++----------------------------------------+------------------------------------------+------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Pipeline|pc:pc_reg|out_pc[0]                    ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |Pipeline|pc:pc_reg|out_pc[27]                   ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Pipeline|ex_mem:reg_exmem|exmem_writereg_out[4] ;
-; 64:1               ; 4 bits    ; 168 LEs       ; 40 LEs               ; 128 LEs                ; Yes        ; |Pipeline|id_ex:reg_idex|idex_mem_to_reg_out[1]  ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |Pipeline|pc:pc_reg|out_pc[25]                   ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Pipeline|ex_mem:reg_exmem|exmem_writereg_out[2] ;
+; 64:1               ; 3 bits    ; 126 LEs       ; 24 LEs               ; 102 LEs                ; Yes        ; |Pipeline|id_ex:reg_idex|idex_mem_to_reg_out[1]  ;
 ; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipeline|mux4:mux4_saida_FPGA|Mux28             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipeline|mux4:mux4_wb|Mux7                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Pipeline|mux4:mux4_wb|Mux27                     ;
 ; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |Pipeline|controle_ula:ula_control|Mux7          ;
-; 16:1               ; 15 bits   ; 150 LEs       ; 90 LEs               ; 60 LEs                 ; No         ; |Pipeline|ula_mips:ula_ex|Mux18                  ;
-; 16:1               ; 15 bits   ; 150 LEs       ; 90 LEs               ; 60 LEs                 ; No         ; |Pipeline|ula_mips:ula_ex|Mux2                   ;
+; 16:1               ; 15 bits   ; 150 LEs       ; 90 LEs               ; 60 LEs                 ; No         ; |Pipeline|ula_mips:ula_ex|Mux28                  ;
+; 16:1               ; 15 bits   ; 150 LEs       ; 90 LEs               ; 60 LEs                 ; No         ; |Pipeline|ula_mips:ula_ex|Mux3                   ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 14 LEs               ; 70 LEs                 ; No         ; |Pipeline|controle:controle_id|Mux12             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
 
@@ -685,6 +727,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+--------------------+------+--------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0|shift_taps_q1m:auto_generated|altsyncram_hg31:altsyncram4 ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                        ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                         ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |Pipeline ;
 +----------------+-------+-------------------------------------------------+
@@ -712,6 +763,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------+
 ; WSIZE          ; 32    ; Signed Integer                ;
 +----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: somador:somador_if ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; WSIZE          ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -796,6 +857,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: comparador:comparador_id ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; WSIZE          ; 32    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: somador:somador_id ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; WSIZE          ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: id_ex:reg_idex ;
 +----------------+-------+------------------------------------+
@@ -803,6 +884,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------------+
 ; WSIZE          ; 32    ; Signed Integer                     ;
 +----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: somador:ex_somador ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; WSIZE          ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1059,6 +1150,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0 ;
++----------------+----------------+-----------------------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                                  ;
++----------------+----------------+-----------------------------------------------------------------------+
+; WIDTH_BYTEENA  ; 1              ; Untyped                                                               ;
+; NUMBER_OF_TAPS ; 1              ; Untyped                                                               ;
+; TAP_DISTANCE   ; 3              ; Untyped                                                               ;
+; WIDTH          ; 34             ; Untyped                                                               ;
+; POWER_UP_STATE ; CLEARED        ; Untyped                                                               ;
+; CBXI_PARAMETER ; shift_taps_q1m ; Untyped                                                               ;
++----------------+----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                         ;
 +-------------------------------------------+----------------------------------------------+
@@ -1112,6 +1218,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------+
 
 
++-------------------------------------------------------------------------------------+
+; altshift_taps Parameter Settings by Entity Instance                                 ;
++----------------------------+--------------------------------------------------------+
+; Name                       ; Value                                                  ;
++----------------------------+--------------------------------------------------------+
+; Number of entity instances ; 1                                                      ;
+; Entity Instance            ; id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0 ;
+;     -- NUMBER_OF_TAPS      ; 1                                                      ;
+;     -- TAP_DISTANCE        ; 3                                                      ;
+;     -- WIDTH               ; 34                                                     ;
++----------------------------+--------------------------------------------------------+
+
+
 +------------------------------------------+
 ; Port Connectivity Checks: "mux4:mux4_wb" ;
 +------+-------+----------+----------------+
@@ -1130,13 +1249,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ex_mem:reg_exmem"                                                                                ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port              ; Type   ; Severity ; Details                                                                             ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------+
-; exmem_memread_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ex_mem:reg_exmem"                                                                                   ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                             ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; exmem_adderesult_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; exmem_memread_out    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; exmem_zero_out       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------+
@@ -1155,6 +1276,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port    ; Type  ; Severity ; Details           ;
 +---------+-------+----------+-------------------+
 ; b[1..0] ; Input ; Info     ; Stuck at GND      ;
++---------+-------+----------+-------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "somador:somador_id" ;
++---------+-------+----------+-------------------+
+; Port    ; Type  ; Severity ; Details           ;
++---------+-------+----------+-------------------+
+; a[1..0] ; Input ; Info     ; Stuck at GND      ;
 +---------+-------+----------+-------------------+
 
 
@@ -1183,7 +1313,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1192,8 +1322,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Dec 11 15:17:35 2017
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Mon Dec 11 20:45:24 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pipeline -c Pipeline
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file mux_41.vhd
@@ -1203,7 +1333,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file ula_mip
     Info (12022): Found design unit 1: ula_mips-rt1
     Info (12023): Found entity 1: ula_mips
 Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
-    Info (12022): Found design unit 1: somador-somador_arq
+    Info (12022): Found design unit 1: somador-behavior
     Info (12023): Found entity 1: somador
 Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
     Info (12022): Found design unit 1: pc-behavioral
@@ -1254,6 +1384,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux2.vh
     Info (12022): Found design unit 1: mux2-behavioral
     Info (12023): Found entity 1: mux2
 Info (12127): Elaborating entity "Pipeline" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(313): object "mem_zero_alu" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(318): object "mem_somador_result" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at Pipeline.vhd(323): object "mem_read_sig" assigned a value but never read
 Info (12128): Elaborating entity "mux4" for hierarchy "mux4:mux4_if"
 Info (12128): Elaborating entity "pc" for hierarchy "pc:pc_reg"
@@ -1280,6 +1412,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
 Info (12128): Elaborating entity "altsyncram_ho81" for hierarchy "minst:mi_if|altsyncram:altsyncram_component|altsyncram_ho81:auto_generated"
 Info (12128): Elaborating entity "if_id" for hierarchy "if_id:reg_ifid"
 Info (12128): Elaborating entity "bregmips" for hierarchy "bregmips:breg_id"
+Info (12128): Elaborating entity "comparador" for hierarchy "comparador:comparador_id"
 Info (12128): Elaborating entity "controle" for hierarchy "controle:controle_id"
 Info (12128): Elaborating entity "sign_extend" for hierarchy "sign_extend:sign_extend_id"
 Info (12128): Elaborating entity "id_ex" for hierarchy "id_ex:reg_idex"
@@ -1313,7 +1446,7 @@ Info (12128): Elaborating entity "mem_wb" for hierarchy "mem_wb:reg_memwb"
 Info (12128): Elaborating entity "conversor_7seg" for hierarchy "conversor_7seg:conversor_7"
 Warning (276020): Inferred RAM node "bregmips:breg_id|regs_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276020): Inferred RAM node "bregmips:breg_id|regs_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
-Info (19000): Inferred 2 megafunctions from design logic
+Info (19000): Inferred 3 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "bregmips:breg_id|regs_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 32
@@ -1346,6 +1479,10 @@ Info (19000): Inferred 2 megafunctions from design logic
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
         Info (286033): Parameter INIT_FILE set to db/pipeline.ram0_bregmips_f08f7cce.hdl.mif
+    Info (276034): Inferred altshift_taps megafunction from the following design logic: "id_ex:reg_idex|idex_mem_to_reg_out_rtl_0"
+        Info (286033): Parameter NUMBER_OF_TAPS set to 1
+        Info (286033): Parameter TAP_DISTANCE set to 3
+        Info (286033): Parameter WIDTH set to 34
 Info (12130): Elaborated megafunction instantiation "bregmips:breg_id|altsyncram:regs_rtl_0"
 Info (12133): Instantiated megafunction "bregmips:breg_id|altsyncram:regs_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -1365,17 +1502,32 @@ Info (12133): Instantiated megafunction "bregmips:breg_id|altsyncram:regs_rtl_0"
     Info (12134): Parameter "INIT_FILE" = "db/pipeline.ram0_bregmips_f08f7cce.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_u5h1.tdf
     Info (12023): Found entity 1: altsyncram_u5h1
+Info (12130): Elaborated megafunction instantiation "id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0"
+Info (12133): Instantiated megafunction "id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0" with the following parameter:
+    Info (12134): Parameter "NUMBER_OF_TAPS" = "1"
+    Info (12134): Parameter "TAP_DISTANCE" = "3"
+    Info (12134): Parameter "WIDTH" = "34"
+Info (12021): Found 1 design units, including 1 entities, in source file db/shift_taps_q1m.tdf
+    Info (12023): Found entity 1: shift_taps_q1m
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hg31.tdf
+    Info (12023): Found entity 1: altsyncram_hg31
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_gvd.tdf
+    Info (12023): Found entity 1: add_sub_gvd
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_kkf.tdf
+    Info (12023): Found entity 1: cntr_kkf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_6cc.tdf
+    Info (12023): Found entity 1: cmpr_6cc
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1335 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1321 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 1148 logic cells
-    Info (21064): Implemented 128 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info (21061): Implemented 1100 logic cells
+    Info (21064): Implemented 162 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 550 megabytes
-    Info: Processing ended: Mon Dec 11 15:17:52 2017
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Processing ended: Mon Dec 11 20:45:29 2017
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 
