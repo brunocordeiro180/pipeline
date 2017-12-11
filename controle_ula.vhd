@@ -23,6 +23,7 @@ architecture  behav of controle_ula is
 	constant ULA_NOR		: std_logic_vector(3 downto 0) := "0101";
 	constant ULA_NOP		: std_logic_vector(3 downto 0) := "1111";
 	constant ULA_SLT		: std_logic_vector(3 downto 0) := "0100";
+	constant ULA_SLTI		: std_logic_vector(3 downto 0) := "0100";
 	constant ULA_LUI		: std_logic_vector(3 downto 0) := "1000";
 	constant ULA_ADDI		: std_logic_vector(3 downto 0) := "0111";
 
@@ -38,7 +39,9 @@ begin
 			
 			when "001" => alu_ctr <= ULA_SUB; 	
 				
-			when "100" => alu_ctr <=  ULA_LUI; 
+			when "100" => alu_ctr <=  ULA_LUI;
+		
+			when "011" => alu_ctr <=  ULA_SLTI;
 			
 			when "010" =>
 				case funct is

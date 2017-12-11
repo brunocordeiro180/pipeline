@@ -15,12 +15,12 @@ entity Pipeline is
 			Saida_FPGA_7seg_4 : out std_logic_vector(0 to 6);
 			Saida_FPGA_7seg_5 : out std_logic_vector(0 to 6);
 			Saida_FPGA_7seg_6 : out std_logic_vector(0 to 6);
-			Saida_FPGA_7seg_7 : out std_logic_vector(0 to 6);
+			Saida_FPGA_7seg_7 : out std_logic_vector(0 to 6)
 			
-			FPGA_ula : out std_logic_vector(WSIZE-1 downto 0);
-			FPGA_mem : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
-			FPGA_inst : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
-			FPGA_pc : out std_LOGIC_VECTOR(WSIZE-1 downto 0)
+--			FPGA_ula : out std_logic_vector(WSIZE-1 downto 0);
+--			FPGA_mem : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
+--			FPGA_inst : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
+--			FPGA_pc : out std_LOGIC_VECTOR(WSIZE-1 downto 0)
 
 		);
 			
@@ -682,10 +682,10 @@ reg_idex: id_ex
 		saida => saida_FPGA_7seg_0
 	);
 	
-	FPGA_inst <= if_instruction;
-	FPGA_mem <= mem_readdata;
-	FPGA_pc <= if_pc;
-	FPGA_ula <= ex_ula_result;
+--	FPGA_inst <= if_instruction;
+--	FPGA_mem <= mem_readdata;
+--	FPGA_pc <= if_pc;
+--	FPGA_ula <= ex_ula_result;
 
 
 	

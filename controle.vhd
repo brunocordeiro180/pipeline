@@ -122,7 +122,7 @@ begin
 						MemRead<='0'; 
 						MemWrite<='0';
 						Jump <='0';
-						ALUOp <= "010"; -- JR sinais de controle
+						ALUOp <= "010"; --sinais de controle
 						sig_beq<='0';
 						sig_bne<='0';
 						sig_jr<='0';
