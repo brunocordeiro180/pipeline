@@ -17,7 +17,7 @@
 -- suit user's needs .Comments are provided in each section to help the user  
 -- fill out necessary details.                                                
 -- ***************************************************************************
--- Generated on "12/11/2017 00:08:11"
+-- Generated on "12/11/2017 21:04:03"
                                                             
 -- Vhdl Test Bench template for design  :  Pipeline
 -- 
@@ -33,6 +33,10 @@ ARCHITECTURE Pipeline_arch OF Pipeline_vhd_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clock : STD_LOGIC;
+SIGNAL FPGA_inst : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL FPGA_mem : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL FPGA_pc : STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL FPGA_ula : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL Saida_FPGA_7seg_0 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL Saida_FPGA_7seg_1 : STD_LOGIC_VECTOR(0 TO 6);
 SIGNAL Saida_FPGA_7seg_2 : STD_LOGIC_VECTOR(0 TO 6);
@@ -45,6 +49,10 @@ SIGNAL Sel_Saida_FPGA : STD_LOGIC_VECTOR(1 DOWNTO 0);
 COMPONENT Pipeline
 	PORT (
 	clock : IN STD_LOGIC;
+	FPGA_inst : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	FPGA_mem : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	FPGA_pc : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+	FPGA_ula : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	Saida_FPGA_7seg_0 : OUT STD_LOGIC_VECTOR(0 TO 6);
 	Saida_FPGA_7seg_1 : OUT STD_LOGIC_VECTOR(0 TO 6);
 	Saida_FPGA_7seg_2 : OUT STD_LOGIC_VECTOR(0 TO 6);
@@ -61,6 +69,10 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	clock => clock,
+	FPGA_inst => FPGA_inst,
+	FPGA_mem => FPGA_mem,
+	FPGA_pc => FPGA_pc,
+	FPGA_ula => FPGA_ula,
 	Saida_FPGA_7seg_0 => Saida_FPGA_7seg_0,
 	Saida_FPGA_7seg_1 => Saida_FPGA_7seg_1,
 	Saida_FPGA_7seg_2 => Saida_FPGA_7seg_2,
