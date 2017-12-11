@@ -334,6 +334,7 @@ signal wb_reg_write : std_logic;
 
 
 signal jump_aux : std_logic_vector(31 downto 0);
+signal resultado_comparador : std_logic;
   
 begin
 
@@ -400,6 +401,13 @@ begin
 		wdata => wb_write_data,
 		r1 =>  id_reg1,
 		r2 =>  id_reg2
+	);
+	
+	comparador_id : comparador
+	PORT MAP (
+		A => id_reg1,
+		B => id_reg2,
+		q => resultado_comparador
 	);
 
 	controle_id : controle
