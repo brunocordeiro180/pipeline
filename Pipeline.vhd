@@ -16,7 +16,7 @@ entity Pipeline is
 			Saida_FPGA_7seg_5 : out std_logic_vector(0 to 6);
 			Saida_FPGA_7seg_6 : out std_logic_vector(0 to 6);
 			Saida_FPGA_7seg_7 : out std_logic_vector(0 to 6)
---			
+			
 --			FPGA_ula : out std_logic_vector(WSIZE-1 downto 0);
 --			FPGA_mem : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
 --			FPGA_inst : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
@@ -45,6 +45,8 @@ component id_ex is
 		idex_regdest_in 			: in std_logic_vector(1 downto 0);
 		idex_opalu_in  			: in std_logic_vector(2 downto 0);
 		idex_alusrc_in 			: in std_logic;
+		idex_beq_in					: in std_logic;
+		idex_bne_in 				: in std_logic;
 		idex_mem_read_in			: in std_logic;
 		idex_mem_write_in 		: in std_logic;
 		idex_regwrite_in 			: in std_logic;
@@ -59,6 +61,8 @@ component id_ex is
 		idex_out_regdest 		: out std_logic_vector(1 downto 0);
 		idex_out_alu_op 		: out std_logic_vector(2 downto 0);
 		idex_out_alusrc 		: out std_logic;
+		idex_beq_out			: out std_logic;
+		idex_bne_out 			: out std_logic;
 		idex_mem_read_out		: out std_logic;
 		idex_mem_write_out 	: out std_logic;
 		idex_regwrite_out 	: out std_logic;
@@ -77,6 +81,8 @@ component ex_mem is
 		exmem_in_pc4 		 			: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_adderesult_in 			: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_aluresult_in 			: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_beq_in 		  			: in std_logic;
+		exmem_bne_in					: in std_logic;
 		exmem_memread_in 				: in std_logic;
 		exmem_regwrite_in 			: in std_logic;
 		exmem_memwrite_in 			: in std_logic;
@@ -87,6 +93,8 @@ component ex_mem is
 		exmem_out_pc4 		 			: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_adderesult_out 		: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_aluresult_out 			: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_beq_out 		  			: out std_logic;
+		exmem_bne_out					: out std_logic;
 		exmem_memread_out 			: out std_logic;
 		exmem_regwrite_out			: out std_logic;
 		exmem_memwrite_out 			: out std_logic;
@@ -294,7 +302,8 @@ signal ex_write_reg		: std_logic_vector(4 downto 0);
 signal ex_zero_ula	: std_logic;
 
 
-
+signal ex_beq 			: std_logic;
+signal ex_bne			: std_logic;
 signal ex_memread		: std_logic;
 signal ex_memwrite	: std_logic;
 signal ex_regwrite	: std_logic;
@@ -321,6 +330,8 @@ signal mem_regwrite : std_logic;
 signal mem_read_mem : std_logic_vector(WSIZE-1 DOWNTO 0);
 signal mem_write_mem : std_logic;
 signal mem_read_sig: std_logic;
+signal mem_beq: std_logic;
+signal mem_bne : std_logic;
 
 
 ---------------------------------------- WB Signals --------------------------------------------------------
@@ -334,9 +345,6 @@ signal wb_reg_write : std_logic;
 
 
 signal jump_aux : std_logic_vector(31 downto 0);
-signal resultado_comparador : std_logic;
-signal id_branch_result : std_LOGIC_VECTOR(31 downto 0);
-signal id_shift_branch : std_LOGIC_VECTOR(31 downto 0);
   
 begin
 
@@ -344,7 +352,7 @@ begin
 	
 ---------------------------------------------Etapa IF----------------------------------------------
 	
-	if_sel_mux(0) <= (id_ctrl_beq AND resultado_comparador) OR (id_ctrl_bne AND (NOT resultado_comparador)) OR id_ctrl_jr;
+	if_sel_mux(0) <= (mem_beq AND mem_zero_alu) OR (mem_bne AND (NOT mem_zero_alu)) OR id_ctrl_jr;
 	if_sel_mux(1) <= id_ctrl_j OR id_ctrl_jr;
 	
 	jump_aux <= id_pc4(31 downto 28) &  id_instruction(25 downto 0) & "00";
@@ -353,7 +361,7 @@ begin
 	PORT MAP (
 		sel =>  if_sel_mux, 
 		in_0 => if_pc4, 
-		in_1 => id_branch_result, 
+		in_1 => mem_somador_result, 
 		in_2 => jump_aux, 
 		in_3 => id_reg1, 
 		Z => if_new_pc
@@ -392,9 +400,7 @@ begin
 	);
 
 -----------------------------------------------Etapa ID----------------------------------------------
-	id_immediate_ext(15 downto 0) <= id_instruction(15 downto 0);
-	id_immediate_ext(31 downto 16) <= (others => id_instruction(15));
-	
+
  breg_id : bregmips
 	PORT MAP (
 		clk => clk_fpga, 
@@ -405,13 +411,6 @@ begin
 		wdata => wb_write_data,
 		r1 =>  id_reg1,
 		r2 =>  id_reg2
-	);
-	
-	comparador_id : comparador
-	PORT MAP (
-		A => id_reg1,
-		B => id_reg2,
-		eq => resultado_comparador
 	);
 
 	controle_id : controle
@@ -438,15 +437,6 @@ begin
 		
 		);		
 		
-		id_shift_branch <= std_LOGIC_VECTOR(shift_left(unsigned(id_immediate_ext),2));
-		
-		somador_id : somador 
-		PORT MAP(
-			a => id_shift_branch,
-			b => id_pc4,
-			s => id_branch_result
-		);
-		
 
 
 ------------------------------------------Transicao ID/EX-------------------------------------
@@ -460,6 +450,8 @@ reg_idex: id_ex
 		idex_regdest_in => 	id_ctrl_regdst,
 		idex_opalu_in  	=>id_ctrl_aluop,	
 		idex_alusrc_in => id_ctrl_alusrc,
+		idex_beq_in		=> id_ctrl_beq,	
+		idex_bne_in  => id_ctrl_bne,
 		idex_mem_read_in	=> id_ctrl_memread,		
 		idex_mem_write_in => id_ctrl_memwrite,
 		idex_regwrite_in 	=> id_ctrl_regwrite,
@@ -472,6 +464,8 @@ reg_idex: id_ex
 		idex_out_regdest 	=> ex_reg_dst, 
 		idex_out_alu_op 	=>	ex_aluop,
 		idex_out_alusrc 	=>	ex_alu_src,
+		idex_beq_out		=> ex_beq,
+		idex_bne_out 		=> ex_bne,
 		idex_mem_read_out	=>	ex_memread,
 		idex_mem_write_out =>ex_memwrite,
 		idex_regwrite_out =>	ex_regwrite,
@@ -537,7 +531,9 @@ reg_idex: id_ex
 		clk => clk_fpga, 
 		exmem_in_pc4 => ex_pc4,		 		
 		exmem_adderesult_in 	=> ex_somador_result,		
-		exmem_aluresult_in 	=> ex_ula_result,			
+		exmem_aluresult_in 	=> ex_ula_result,	
+		exmem_beq_in 		 => ex_beq, 			
+		exmem_bne_in		=> ex_bne,		
 		exmem_memread_in 	=> ex_memread,		
 		exmem_regwrite_in => ex_regwrite,		
 		exmem_memwrite_in => ex_memwrite,	
@@ -549,7 +545,9 @@ reg_idex: id_ex
 		
 		exmem_out_pc4 		 => mem_pc4,			
 		exmem_adderesult_out => mem_somador_result,
-		exmem_aluresult_out 	=> mem_result_alu,			
+		exmem_aluresult_out 	=> mem_result_alu,	
+		exmem_beq_out 	=> mem_beq,	  			
+		exmem_bne_out	=> mem_bne,			
 		exmem_memread_out => mem_read_sig,		
 		exmem_regwrite_out => mem_regwrite,	
 		exmem_memwrite_out => mem_write_mem,		
@@ -611,7 +609,6 @@ reg_idex: id_ex
 		in_1 => if_instruction,
 		in_2 => mem_readdata,
 		in_3 => ex_ula_result,
-		--in_3 => id_branch_result,
 		Z => saida_FPGA_32bits
 	);
 	

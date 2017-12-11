@@ -11,6 +11,8 @@ entity id_ex is
 		idex_regdest_in 			: in std_logic_vector(1 downto 0);
 		idex_opalu_in  			: in std_logic_vector(2 downto 0);
 		idex_alusrc_in 			: in std_logic;
+		idex_beq_in					: in std_logic;
+		idex_bne_in 				: in std_logic;
 		idex_mem_read_in			: in std_logic;
 		idex_mem_write_in 		: in std_logic;
 		idex_regwrite_in 			: in std_logic;
@@ -25,6 +27,8 @@ entity id_ex is
 		idex_out_regdest 		: out std_logic_vector(1 downto 0);
 		idex_out_alu_op 		: out std_logic_vector(2 downto 0);
 		idex_out_alusrc 		: out std_logic;
+		idex_beq_out			: out std_logic;
+		idex_bne_out 			: out std_logic;
 		idex_mem_read_out		: out std_logic;
 		idex_mem_write_out 	: out std_logic;
 		idex_regwrite_out 	: out std_logic;
@@ -52,6 +56,8 @@ proc_id_ex: process(clk)
 		idex_out_regdest <= idex_regdest_in;
 		idex_out_alu_op <=idex_opalu_in;
 		idex_out_alusrc <= idex_alusrc_in;
+		idex_beq_out <= idex_beq_in;
+		idex_bne_out <= idex_bne_in ;
 		idex_mem_read_out <= idex_mem_read_in;
 		idex_mem_write_out <= idex_mem_write_in;
       idex_regwrite_out <= idex_regwrite_in;

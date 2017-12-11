@@ -10,6 +10,8 @@ entity ex_mem is
 		exmem_in_pc4 		 			: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_adderesult_in 			: in std_logic_vector(WSIZE-1 downto 0);
 		exmem_aluresult_in 			: in std_logic_vector(WSIZE-1 downto 0);
+		exmem_beq_in 		  			: in std_logic;
+		exmem_bne_in					: in std_logic;
 		exmem_memread_in 				: in std_logic;
 		exmem_regwrite_in 			: in std_logic;
 		exmem_memwrite_in 			: in std_logic;
@@ -22,6 +24,8 @@ entity ex_mem is
 		exmem_out_pc4 		 			: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_adderesult_out 		: out std_logic_vector(WSIZE-1 downto 0);
 		exmem_aluresult_out 			: out std_logic_vector(WSIZE-1 downto 0);
+		exmem_beq_out 		  			: out std_logic;
+		exmem_bne_out					: out std_logic;
 		exmem_memread_out 			: out std_logic;
 		exmem_regwrite_out			: out std_logic;
 		exmem_memwrite_out 			: out std_logic;
@@ -41,6 +45,8 @@ proc_exmem: process(clk)
 		exmem_out_pc4 		 		<= exmem_in_pc4;
 		exmem_adderesult_out 	<= exmem_adderesult_in;
 		exmem_aluresult_out 		<= exmem_aluresult_in;
+		exmem_beq_out 		  		<= exmem_beq_in ;
+		exmem_bne_out				<= exmem_bne_in	;
 		exmem_memread_out 		<= exmem_memread_in;
 		exmem_regwrite_out		<= exmem_regwrite_in;
 		exmem_memwrite_out 		<= exmem_memwrite_in;

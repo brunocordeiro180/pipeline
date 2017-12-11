@@ -47,8 +47,7 @@ architecture rt1 of ula_mips is
 			when "0100" => a32 <= (0 => aux(WISE-1), others => '0');   --slt
 			when "1000" => a32 <= std_logic_vector(shift_left(unsigned(B), 16));
 			when "0101" => a32 <= A nor B;
-			--when "0110" => a32 <= ((not A and B) or (A and not B) );
-			when "0110" => a32 <= std_logic_vector(unsigned(B) xor unsigned(A));
+			when "0110" => a32 <= A xor B;
 			when others => a32 <= (others => '0');
 		end case;
 

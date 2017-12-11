@@ -22,7 +22,6 @@ vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/ex_mem.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/mem_wb.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/conversor_7seg.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/mux4.vhd}
-vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/comparador.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/mux2.vhd}
 
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline_tb.vhd}
