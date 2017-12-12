@@ -47,6 +47,7 @@ SIGNAL	FPGA_ula :  std_logic_vector(31 downto 0);
 SIGNAL			FPGA_mem :  std_LOGIC_VECTOR(31 downto 0);
 SIGNAL	FPGA_inst :  std_LOGIC_VECTOR(31 downto 0);
 SIGNAL FPGA_pc :  std_LOGIC_VECTOR(31 downto 0);
+SIGNAL FPGA_selectmux : std_logic_vector(1 downto 0);
 COMPONENT Pipeline
 	PORT (
 	clock : IN STD_LOGIC;
@@ -62,6 +63,7 @@ COMPONENT Pipeline
 			FPGA_mem : out std_LOGIC_VECTOR(31 downto 0);
 			FPGA_inst : out std_LOGIC_VECTOR(31 downto 0);
 			FPGA_pc : out std_LOGIC_VECTOR(31 downto 0);
+			FPGA_selectmux : out std_LOGIC_VECTOR(1 downto 0);
 	Sel_Saida_FPGA : IN STD_LOGIC_VECTOR(1 DOWNTO 0)
 	);
 END COMPONENT;
@@ -82,6 +84,7 @@ BEGIN
 	FPGA_mem => FPGA_mem,
 	FPGA_pc => FPGA_pc,
 	FPGA_ula => FPGA_ula,
+	FPGA_selectmux => FPGA_selectmux,
 	Sel_Saida_FPGA => Sel_Saida_FPGA
 	);
 process is

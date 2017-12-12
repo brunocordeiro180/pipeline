@@ -15,12 +15,13 @@ entity Pipeline is
 			Saida_FPGA_7seg_4 : out std_logic_vector(0 to 6);
 			Saida_FPGA_7seg_5 : out std_logic_vector(0 to 6);
 			Saida_FPGA_7seg_6 : out std_logic_vector(0 to 6);
-			Saida_FPGA_7seg_7 : out std_logic_vector(0 to 6)
+			Saida_FPGA_7seg_7 : out std_logic_vector(0 to 6);
 			
---			FPGA_ula : out std_logic_vector(WSIZE-1 downto 0);
---			FPGA_mem : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
---			FPGA_inst : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
---			FPGA_pc : out std_LOGIC_VECTOR(WSIZE-1 downto 0)
+			FPGA_ula : out std_logic_vector(WSIZE-1 downto 0);
+			FPGA_mem : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
+			FPGA_inst : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
+			FPGA_pc : out std_LOGIC_VECTOR(WSIZE-1 downto 0);
+			FPGA_selectmux : out std_LOGIC_VECTOR (1 downto 0)
 
 		);
 			
@@ -345,6 +346,9 @@ signal wb_reg_write : std_logic;
 
 
 signal jump_aux : std_logic_vector(31 downto 0);
+signal id_somador_result : std_logic_vector(31 downto 0) := (others => '0');
+signal comparador_result : std_logic;
+signal id_immediate_ext_shift : std_LOGIC_VECTOR(31 downto 0) := (others => '0');
   
 begin
 
@@ -352,7 +356,7 @@ begin
 	
 ---------------------------------------------Etapa IF----------------------------------------------
 	
-	if_sel_mux(0) <= (mem_beq AND mem_zero_alu) OR (mem_bne AND (NOT mem_zero_alu)) OR id_ctrl_jr;
+	if_sel_mux(0) <= (id_ctrl_beq AND comparador_result) OR (id_ctrl_bne AND (NOT comparador_result)) OR id_ctrl_jr;
 	if_sel_mux(1) <= id_ctrl_j OR id_ctrl_jr;
 	
 	jump_aux <= id_pc4(31 downto 28) &  id_instruction(25 downto 0) & "00";
@@ -361,11 +365,13 @@ begin
 	PORT MAP (
 		sel =>  if_sel_mux, 
 		in_0 => if_pc4, 
-		in_1 => mem_somador_result, 
+		in_1 => id_somador_result, 
 		in_2 => jump_aux, 
 		in_3 => id_reg1, 
 		Z => if_new_pc
 	);
+	
+	
 
 
 	pc_reg: PC
@@ -401,6 +407,9 @@ begin
 
 -----------------------------------------------Etapa ID----------------------------------------------
 
+	id_immediate_ext(15 downto 0) <= id_instruction(15 downto 0);
+	id_immediate_ext(WSIZE-1 downto 16) <= (others => id_instruction(15));
+
  breg_id : bregmips
 	PORT MAP (
 		clk => clk_fpga, 
@@ -411,6 +420,13 @@ begin
 		wdata => wb_write_data,
 		r1 =>  id_reg1,
 		r2 =>  id_reg2
+	);
+	
+	comparador_id : comparador
+	port map (
+		a => id_reg1,
+		b => id_reg2,
+		eq => comparador_result
 	);
 
 	controle_id : controle
@@ -430,12 +446,21 @@ begin
 			ALUOp => id_ctrl_aluop
 		);
 		
-	sign_extend_id : sign_extend
-		PORT MAP(
-			imm16 => id_instruction(15 downto 0),
-			imm32 => id_immediate_ext
-		
-		);		
+--	sign_extend_id : sign_extend
+--		PORT MAP(
+--			imm16 => id_instruction(15 downto 0),
+--			imm32 => id_immediate_ext
+--		
+--		);		
+
+	id_immediate_ext_shift <= std_logic_vector(shift_left(signed(id_immediate_ext), 2));
+	
+	somador_id : somador
+	port map (
+		a => id_immediate_ext_shift,
+		b => id_pc4,
+		s => id_somador_result
+	);
 		
 
 
@@ -682,10 +707,11 @@ reg_idex: id_ex
 		saida => saida_FPGA_7seg_0
 	);
 	
---	FPGA_inst <= if_instruction;
---	FPGA_mem <= mem_readdata;
---	FPGA_pc <= if_pc;
---	FPGA_ula <= ex_ula_result;
+	FPGA_inst <= if_instruction;
+	FPGA_mem <= mem_readdata;
+	FPGA_pc <= if_pc;
+	FPGA_ula <= ex_ula_result;
+	FPGA_selectmux <= if_sel_mux;
 
 
 	

@@ -15,13 +15,13 @@ vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/mdata.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/controle_ula.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/controle.vhd}
-vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/sign_extend.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/if_id.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/id_ex.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/ex_mem.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/mem_wb.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/conversor_7seg.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/mux4.vhd}
+vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/comparador.vhd}
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/mux2.vhd}
 
 vcom -93 -work work {C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline_tb.vhd}
