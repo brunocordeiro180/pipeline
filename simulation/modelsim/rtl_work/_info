@@ -16,7 +16,7 @@ L5
 V0CV[Y>LHi8P5aIIGgIPT83
 Z8 OV;C;10.1d;51
 31
-Z9 !s108 1513088387.682000
+Z9 !s108 1513100155.700000
 Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/bregmips.vhd|
 Z11 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/bregmips.vhd|
 Z12 o-93 -work work -O0
@@ -55,7 +55,7 @@ L6
 V@Z9Yz:gR=[P:B:fDo8TVA2
 R8
 31
-Z18 !s108 1513088392.058000
+Z18 !s108 1513100160.128000
 Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/comparador.vhd|
 Z20 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/comparador.vhd|
 R12
@@ -94,7 +94,7 @@ L5
 VRGaLVKO0BTDCj_QAO3jhB1
 R8
 31
-Z24 !s108 1513088389.276000
+Z24 !s108 1513100157.382000
 Z25 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/controle.vhd|
 Z26 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/controle.vhd|
 R12
@@ -131,7 +131,7 @@ L5
 VOji>_D[kOJVQ5TDYKBQgA1
 R8
 31
-Z30 !s108 1513088388.948000
+Z30 !s108 1513100157.038000
 Z31 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/controle_ula.vhd|
 Z32 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/controle_ula.vhd|
 R12
@@ -170,7 +170,7 @@ L6
 V^39ZemhGa3m^^e;Bc5GSU3
 R8
 31
-Z35 !s108 1513088391.308000
+Z35 !s108 1513100159.247000
 Z36 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/conversor_7seg.vhd|
 Z37 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/conversor_7seg.vhd|
 R12
@@ -211,7 +211,7 @@ L6
 VII`mm8NC_d[bRb3l;WM<f0
 R8
 31
-Z41 !s108 1513088390.604000
+Z41 !s108 1513100158.647000
 Z42 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/ex_mem.vhd|
 Z43 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/ex_mem.vhd|
 R12
@@ -252,7 +252,7 @@ L6
 VN5?WCK9kz9fnPBij=Wach1
 R8
 31
-Z46 !s108 1513088389.948000
+Z46 !s108 1513100158.339000
 Z47 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/id_ex.vhd|
 Z48 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/id_ex.vhd|
 R12
@@ -293,7 +293,7 @@ L6
 VkOelUL_WW1d9J2BegV@0S0
 R8
 31
-Z51 !s108 1513088389.604000
+Z51 !s108 1513100157.983000
 Z52 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/if_id.vhd|
 Z53 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/if_id.vhd|
 R12
@@ -331,7 +331,7 @@ L42
 V0[4zRR6BX<kS=2fgEW=491
 R8
 31
-Z57 !s108 1513088388.604000
+Z57 !s108 1513100156.627000
 Z58 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/mdata.vhd|
 Z59 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/mdata.vhd|
 R12
@@ -369,7 +369,7 @@ L6
 VdkSFzJkHng7^1_O1blnL>3
 R8
 31
-Z63 !s108 1513088390.917000
+Z63 !s108 1513100158.914000
 Z64 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/mem_wb.vhd|
 Z65 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/mem_wb.vhd|
 R12
@@ -407,7 +407,7 @@ L42
 VGN;DCi18e_5=NmiDHdLQi3
 R8
 31
-Z69 !s108 1513088388.276000
+Z69 !s108 1513100156.303000
 Z70 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd|
 Z71 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/minst.vhd|
 R12
@@ -445,7 +445,7 @@ L6
 VcXeeajCeEKMThMFP@SglQ3
 R8
 31
-Z75 !s108 1513088392.402000
+Z75 !s108 1513100160.511000
 Z76 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/mux2.vhd|
 Z77 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/mux2.vhd|
 R12
@@ -486,7 +486,7 @@ L6
 V;R;HQ4@=@]M=45e?ZM@Y:2
 R8
 31
-Z80 !s108 1513088391.667000
+Z80 !s108 1513100159.678000
 Z81 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/mux4.vhd|
 Z82 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/mux4.vhd|
 R12
@@ -527,7 +527,7 @@ L6
 V6Z;AZ<jMe7>LJ^]g4=SeA2
 R8
 31
-Z86 !s108 1513088386.559000
+Z86 !s108 1513100154.082000
 Z87 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/mux_41.vhd|
 Z88 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/mux_41.vhd|
 R12
@@ -568,7 +568,7 @@ L6
 V:6dVI6ZVD9Z2T>7H@e54=0
 R8
 31
-Z91 !s108 1513088387.385000
+Z91 !s108 1513100155.061000
 Z92 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/pc.vhd|
 Z93 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/pc.vhd|
 R12
@@ -609,7 +609,7 @@ L6
 VKHCe4T[1Lgja9Umn7LDHC0
 R8
 31
-Z97 !s108 1513088387.964000
+Z97 !s108 1513100156.015000
 Z98 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline.vhd|
 Z99 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline.vhd|
 R12
@@ -649,7 +649,7 @@ Vbi53XC_@boSfERi4g3QFG1
 R8
 31
 !i10b 1
-Z103 !s108 1513088392.777000
+Z103 !s108 1513100160.894000
 Z104 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline_tb.vhd|
 Z105 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/Pipeline_tb.vhd|
 R12
@@ -684,7 +684,7 @@ L5
 VNnCWiWHE@cZ4Qn7CATfBR0
 R8
 31
-Z109 !s108 1513088387.088000
+Z109 !s108 1513100154.717000
 Z110 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/somador.vhd|
 Z111 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/somador.vhd|
 R12
@@ -710,21 +710,21 @@ R13
 !s100 H4Gm6z3dBb]zk0j5MC4YT0
 !i10b 1
 Eula_mips
-R38
+Z112 w1513099849
 R2
 R3
 R4
 R5
-Z112 8C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd
-Z113 FC:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd
+Z113 8C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd
+Z114 FC:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd
 l0
 L8
 Vk;3CHbno7aWkL=M<B4SZP1
 R8
 31
-Z114 !s108 1513088386.854000
-Z115 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd|
-Z116 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd|
+Z115 !s108 1513100154.428000
+Z116 !s90 -reportprogress|300|-93|-work|work|C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd|
+Z117 !s107 C:/Users/bruno/Documents/TrabFinal/pipeline/ula_mips.vhd|
 R12
 R13
 !s100 :R3SkfhCE==fDYGUfFOG<3
@@ -736,13 +736,13 @@ R4
 DEx4 work 8 ula_mips 0 22 k;3CHbno7aWkL=M<B4SZP1
 l26
 L23
-VH7AmVcz`A;TCdc?aee6V:3
+VhUeINHE5XN9?bh;4FF9km2
 R8
 31
-R114
 R115
 R116
+R117
 R12
 R13
-!s100 m1<HBe`CE8NS??8^ePahm2
+!s100 =Sk>oh_b5E9CkZW5dFfZb3
 !i10b 1
