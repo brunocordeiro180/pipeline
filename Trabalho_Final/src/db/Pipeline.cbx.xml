@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Pipeline">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Pipeline|bregmips:breg_id|altsyncram:regs_rtl_0" CBX_FILE_NAME="altsyncram_u5h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Pipeline|id_ex:reg_idex|altshift_taps:idex_mem_to_reg_out_rtl_0" CBX_FILE_NAME="shift_taps_q1m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Pipeline|mdata:md_mem|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_55d1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Pipeline|bregmips:breg_id|altsyncram:regs_rtl_1" CBX_FILE_NAME="altsyncram_u5h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Pipeline|minst:mi_if|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_6k81.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
